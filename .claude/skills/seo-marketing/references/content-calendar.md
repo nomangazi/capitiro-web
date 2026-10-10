@@ -9,7 +9,7 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | ✅ 0 | 15-year vs 30-year mortgage | Debt avalanche vs snowball | mortgage, credit-card-payoff |
 | ✅ 0 | The Rule of 72 | — | compound-interest |
 | ✅ 1 | How much house can I afford? (28/36 rule) | What is PMI and how to avoid it | mortgage |
-| 2 | How extra mortgage payments save you money | Should you refinance? Break-even explained | loan-amortization |
+| ✅ 2 | How extra mortgage payments save you money | Should you refinance? Break-even explained | loan-amortization |
 | 3 | How long to pay off $5,000 / $10,000 of credit card debt | Balance transfer cards: the real math | credit-card-payoff |
 | 4 | The 4% rule explained | How much should I have saved for retirement by age? | retirement |
 | 5 | SIP vs lump sum investing | How a 1% fee eats your returns | sip-return, compound-interest |

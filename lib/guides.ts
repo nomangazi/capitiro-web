@@ -13,6 +13,26 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "extra-mortgage-payments",
+    title: "How Extra Mortgage Payments Save You Money",
+    description:
+      "See exactly how much paying an extra $100, $200 or $500 a month off your mortgage saves, the best ways to pay extra, and when not to.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 6,
+    calculator: "loan-amortization",
+  },
+  {
+    slug: "refinance-break-even",
+    title: "Should You Refinance? Mortgage Break-Even Explained",
+    description:
+      "How to calculate your mortgage refinance break-even point, with a worked example showing when refinancing saves money and when it costs more.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 6,
+    calculator: "loan-amortization",
+  },
+  {
     slug: "how-much-house-can-i-afford",
     title: "How Much House Can I Afford? The 28/36 Rule Explained",
     description:
