@@ -17,6 +17,8 @@ export const siteConfig = {
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@capitiro.com",
   /** Date the legal pages were last reviewed. Update whenever their content changes. */
   legalUpdated: "2026-10-10",
+  /** Microsoft Clarity project id (heatmaps + session recordings). Public value; override with NEXT_PUBLIC_CLARITY_ID, set to "" to disable. */
+  clarityId: process.env.NEXT_PUBLIC_CLARITY_ID ?? "yvn44sv5s0",
   adsense: {
     /** e.g. "ca-pub-1234567890123456". Ads and ads.txt are disabled while this is empty. */
     client: process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "",
