@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/guides"), lastModified: latestGuide, changeFrequency: "weekly", priority: 0.7 },
     { url: absoluteUrl("/about"), changeFrequency: "yearly", priority: 0.4 },
     { url: absoluteUrl("/contact"), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/embed"), lastModified: latestCalculator, changeFrequency: "monthly", priority: 0.5 },
     ...["/privacy-policy", "/terms-of-service", "/disclaimer"].map((path) => ({
       url: absoluteUrl(path),
       lastModified: siteConfig.legalUpdated,
