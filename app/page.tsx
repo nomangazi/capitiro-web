@@ -138,7 +138,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
-          {guides.map((g) => (
+          {guides.slice(0, 3).map((g) => (
             <Link
               key={g.slug}
               href={guidePath(g.slug)}
