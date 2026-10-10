@@ -16,11 +16,19 @@ interface PageMetaInput {
   modified?: string;
 }
 
+const CONTENT_PATH = /^\/(calculators|guides)\/([^/]+)\/?$/;
+
+/** /calculators/<slug> and /guides/<slug> get their own /og/... image; everything else uses the default. */
+function ogImagePath(path: string): string {
+  const match = CONTENT_PATH.exec(path);
+  return match ? `/og/${match[1]}/${match[2]}` : "/opengraph-image";
+}
+
 /** Canonical, Open Graph and Twitter metadata for any page. */
 export function buildMetadata({ title, description, path, type = "website", absoluteTitle, published, modified }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
   // Page-level openGraph replaces the root one, so the default share image must be repeated here.
-  const images = [{ url: absoluteUrl("/opengraph-image"), width: 1200, height: 630, alt: `${siteConfig.name} – Free financial calculators` }];
+  const images = [{ url: absoluteUrl(ogImagePath(path)), width: 1200, height: 630, alt: CONTENT_PATH.test(path) ? title : `${siteConfig.name} – Free financial calculators` }];
   const base = { title, description, url, siteName: siteConfig.name, locale: siteConfig.locale, images };
   return {
     title: absoluteTitle ? { absolute: title } : title,
