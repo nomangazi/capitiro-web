@@ -37,6 +37,16 @@ const faqs: FaqItem[] = [
     answer:
       "The calculator assumes deposits at the end of each month, which is slightly conservative compared with saving at the start of the month.",
   },
+  {
+    question: "Should I adjust my savings goal for inflation?",
+    answer:
+      "For goals more than a year or two away, yes. If prices rise 3% a year, a 30,000 goal costs about 32,782 in 3 years, which raises the monthly amount from about 727 to about 800 at 4% interest. Add a cushion or re-check the goal each year.",
+  },
+  {
+    question: "Is the interest I earn on savings taxable?",
+    answer:
+      "It depends on where you live and the account. In the US, savings interest is generally taxable income. In the UK, interest in a cash ISA is tax-free, while other savings may use allowances. EU rules vary by country, so check official guidance.",
+  },
 ];
 
 export default function SavingsGoalPage() {
@@ -70,6 +80,98 @@ export default function SavingsGoalPage() {
           <p>
             To reach <strong>30,000 in 3 years</strong>, starting with <strong>2,000</strong> in an account paying <strong>4%</strong>,
             you&apos;d need to save about <strong>727 a month</strong>. Interest contributes around 1,840 of the total.
+          </p>
+
+          <h2>How much does the interest rate change the monthly amount?</h2>
+          <p>
+            Less than most people expect over a short goal. Reaching <strong>30,000 in 3 years from 2,000 saved</strong> takes about
+            778 a month at 0% interest and about 714 a month at 5%, a gap of roughly 64 a month.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Interest rate</th>
+                <th>Monthly deposit</th>
+                <th>Total deposited</th>
+                <th>Interest earned</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>0%</td><td>778</td><td>28,000</td><td>0</td></tr>
+              <tr><td>2%</td><td>752</td><td>27,072</td><td>928</td></tr>
+              <tr><td>4%</td><td>727</td><td>26,160</td><td>1,840</td></tr>
+              <tr><td>5%</td><td>714</td><td>25,711</td><td>2,289</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Interest helps, but the amount you save and the time you allow matter far more. Use 0% as a worst case, then see how
+            much a better account would add. The <a href="/calculators/compound-interest">compound interest calculator</a> shows how
+            growth builds when you save for many years.
+          </p>
+
+          <h2>Is it better to save for longer or save more each month?</h2>
+          <p>
+            Saving for longer lowers the monthly amount sharply and lets interest do more, but it delays the goal. Using the same
+            30,000 target, 2,000 starting balance and 4% rate, the monthly deposit falls from about 2,284 over one year to about 183
+            over ten.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Time allowed</th>
+                <th>Monthly deposit</th>
+                <th>Total deposited</th>
+                <th>Interest earned</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1 year</td><td>2,284</td><td>27,410</td><td>590</td></tr>
+              <tr><td>2 years</td><td>1,116</td><td>26,782</td><td>1,218</td></tr>
+              <tr><td>3 years</td><td>727</td><td>26,160</td><td>1,840</td></tr>
+              <tr><td>5 years</td><td>416</td><td>24,940</td><td>3,060</td></tr>
+              <tr><td>10 years</td><td>183</td><td>22,018</td><td>5,982</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Pick the timeline that fits your budget, not the one that looks best. A goal you can afford each month is one you are
+            more likely to finish.
+          </p>
+
+          <h2>What are common savings goal mistakes?</h2>
+          <p>
+            The most common mistakes are ignoring inflation, trusting a rate that can change and forgetting tax.
+          </p>
+          <ul>
+            <li>
+              <strong>Ignoring inflation:</strong> if prices rise 3% a year, a 30,000 goal costs about 32,782 in 3 years. Saving for the
+              higher figure at 4% takes about 800 a month instead of 727, roughly 73 more. Estimate it with the{" "}
+              <a href="/calculators/inflation">inflation calculator</a>.
+            </li>
+            <li>
+              <strong>Assuming the rate stays fixed:</strong> easy-access rates move with central bank rates. Re-run the calculator
+              when your rate changes, or lock a fixed-term rate if you want certainty.
+            </li>
+            <li>
+              <strong>Forgetting tax on interest:</strong> in the US, savings interest is generally taxable income. A UK cash ISA pays
+              interest tax-free, and EU rules vary by country.
+            </li>
+            <li>
+              <strong>Mixing up rate types:</strong> enter the account&apos;s quoted rate (APY in the US, AER in the UK). The calculator
+              compounds monthly, so using an APY or AER makes the result very slightly optimistic. Ignore any bonus rate that lasts only
+              a few months.
+            </li>
+          </ul>
+
+          <h2>How to plan for a house deposit or an emergency fund</h2>
+          <p>
+            Both use the same calculation. For a 15,000 emergency fund in 2 years from nothing, you would save 625 a month at 0% or
+            about 601 a month at 4%, with roughly 567 of the total coming from interest.
+          </p>
+          <p>
+            For a deposit, work out the target first with the{" "}
+            <a href="/guides/how-much-house-can-i-afford">how much house can I afford guide</a>. Keep money you need within a few
+            years in a savings account, and consider a longer-term plan such as the{" "}
+            <a href="/calculators/retirement">retirement calculator</a> for goals decades away.
           </p>
 
           <h2>Tips for hitting your savings goal</h2>
