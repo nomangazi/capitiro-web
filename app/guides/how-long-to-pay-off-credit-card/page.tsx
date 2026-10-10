@@ -345,7 +345,7 @@ export default function Page() {
           more in interest.
         </li>
         <li>
-          <strong>Forgetting the APR can change.</strong> Most card rates are variable, so recheck your numbers when the rate moves.
+          <strong>Forgetting the APR can change.</strong> In the US most card rates are variable, so recheck your numbers when the rate moves.
         </li>
       </ul>
 

@@ -244,7 +244,7 @@ export default function Page() {
       </table>
       <p>
         For example, $500 a month from 25 gives $1,135,080 in future dollars, which is about $402,369 of today&apos;s buying power.
-        At a 4% withdrawal that nest egg would pay roughly $3,784 a month before inflation adjustment and tax. The{" "}
+        At a 4% withdrawal that nest egg would pay roughly $3,784 a month in future dollars (about $1,341 in today&apos;s money), before tax. The{" "}
         <Link href="/calculators/inflation">inflation calculator</Link> lets you test other rates. Keep this in mind when you see a
         round target like &quot;$1 million&quot;.
       </p>
@@ -276,7 +276,7 @@ export default function Page() {
         </tbody>
       </table>
       <p>
-        Working three more years cuts the required monthly saving by by roughly 25% to 29% in these cases. Savings keep
+        Working three more years cuts the required monthly saving by roughly 25% to 29% in these cases. Savings keep
         growing, and you have fewer years to fund.
       </p>
       <p>

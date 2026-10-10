@@ -140,7 +140,7 @@ export default function Page() {
       <h2>Why does inflation matter for withdrawals?</h2>
       <p>
         The rule raises your withdrawal each year, so the dollar amount grows even if your portfolio does not. At 3% inflation, a
-        $40,000 first-year withdrawal becomes about $53,757 in year 10, $72,244 in year 20 and $97,090 in year 30. The{" "}
+        $40,000 first-year withdrawal grows to about $53,757 after 10 years of increases, $72,244 after 20 and $97,090 after 30. The{" "}
         <Link href="/calculators/inflation">inflation calculator</Link> shows how fast prices can erode a fixed income.
       </p>
 
@@ -149,8 +149,8 @@ export default function Page() {
       <p>
         Poor returns early in retirement hurt more than poor returns later, because you are withdrawing from a shrinking balance.
         The example below uses a $1,000,000 portfolio and a $40,000 first withdrawal that rises 3% a year. Both retirees get the same
-        ten annual returns, in opposite order. The average return is identical, yet the outcomes differ sharply. This is a
-        hypothetical illustration, not a forecast.
+        ten annual returns, in opposite order. The average return is identical, yet the outcomes differ sharply. Each withdrawal is taken at the start of the
+        year, before that year&apos;s return. This is a hypothetical illustration, not a forecast.
       </p>
       <table>
         <thead>
@@ -284,7 +284,8 @@ export default function Page() {
         <a href="https://www.gov.uk/new-state-pension" target="_blank" rel="noopener noreferrer">
           GOV.UK State Pension page
         </a>{" "}
-        for the current amount. If you want £30,000 a year, the portfolio only needs to cover about £18,027. At 4% that is
+        for the current amount. Using that 2025/26 figure, if you want £30,000 a year the portfolio only needs to cover about £18,027 (recalculate with the
+        current rate, which will be higher). At 4% that is
         £450,675, and at 3.5% about £515,057.
       </p>
       <p>
@@ -301,7 +302,7 @@ export default function Page() {
       <h2>Frequently asked questions</h2>
       <h3>Is the 4% rule still safe?</h3>
       <p>
-        It has never been guaranteed. It worked for every 30-year US retirement in the historical data, but future markets can
+        It has never been guaranteed. It held up in nearly all 30-year periods in the original US studies&apos; historical data, but future markets can
         differ. Using 3.5% or a flexible method adds a margin of safety.
       </p>
       <p>

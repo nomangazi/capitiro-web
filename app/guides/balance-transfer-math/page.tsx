@@ -108,7 +108,7 @@ export default function Page() {
         </tbody>
       </table>
       <p>
-        Two patterns stand out. First, promo length can matter as much as the fee: the 18-month offer with a 5% fee ($338) costs less
+        One pattern stands out: promo length can matter as much as the fee: the 18-month offer with a 5% fee ($338) costs less
         than the 15-month offer with a 5% fee ($437), and the 21-month 5% offer costs the same $300 as the 15-month 3% offer while
         leaving no balance exposed to the regular rate.
       </p>
