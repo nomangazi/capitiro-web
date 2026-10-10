@@ -13,6 +13,26 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "how-much-house-can-i-afford",
+    title: "How Much House Can I Afford? The 28/36 Rule Explained",
+    description:
+      "Use the 28/36 rule to work out how much house you can afford, with a worked example, the factors that change your budget and costs lenders ignore.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 6,
+    calculator: "mortgage",
+  },
+  {
+    slug: "what-is-pmi",
+    title: "What Is PMI? How Much It Costs and How to Avoid It",
+    description:
+      "Private mortgage insurance explained: what PMI costs at 5%, 10% and 15% down, when it's removed, and five ways to avoid or shorten it.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 6,
+    calculator: "mortgage",
+  },
+  {
     slug: "15-vs-30-year-mortgage",
     title: "15-Year vs. 30-Year Mortgage: Which Saves You More?",
     description:
