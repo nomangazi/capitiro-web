@@ -1,43 +1,75 @@
 import Link from "next/link";
+import { ConsentSettingsLink } from "@/components/ads/ConsentSettingsLink";
+import { calculatorCategories, calculatorPath, calculators } from "@/lib/calculators";
+import { guides } from "@/lib/guides";
+import { siteConfig } from "@/lib/site";
+import { Logo } from "./Logo";
+
+const COMPANY_LINKS = [
+  { href: "/about", label: "About us" },
+  { href: "/contact", label: "Contact" },
+  { href: "/privacy-policy", label: "Privacy policy" },
+  { href: "/terms-of-service", label: "Terms of service" },
+  { href: "/disclaimer", label: "Disclaimer" },
+];
+
+const linkClass = "text-sm text-muted-foreground transition-colors hover:text-foreground";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-muted/40 py-12 md:py-16">
-      <div className="container flex flex-col items-center justify-between gap-6 md:flex-row">
-        <div className="flex flex-col items-center gap-2 md:items-start md:gap-4">
-          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} Capitiro. All rights reserved.
-          </p>
-          <p className="text-center text-xs text-muted-foreground md:text-left">
-            Not financial advice, for educational purposes only.
+    <footer className="border-t bg-muted/40">
+      <div className="container grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
+        <div className="space-y-4">
+          <Logo />
+          <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+            Free, accurate financial calculators. Every calculation runs privately in your browser — we never see or store your
+            numbers.
           </p>
         </div>
-        <nav className="flex gap-4 sm:gap-6">
-          <Link
-            href="/about"
-            className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline"
-          >
-            About
-          </Link>
-          <Link
-            href="/privacy-policy"
-            className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="/terms-of-service"
-            className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline"
-          >
-            Terms of Service
-          </Link>
-          <Link
-            href="/disclaimer"
-            className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline"
-          >
-            Disclaimer
-          </Link>
-        </nav>
+        {calculatorCategories.map((category) => (
+          <div key={category}>
+            <h2 className="mb-3 text-sm font-semibold">{category}</h2>
+            <ul className="space-y-2">
+              {calculators
+                .filter((c) => c.category === category)
+                .map((c) => (
+                  <li key={c.slug}>
+                    <Link href={calculatorPath(c.slug)} className={linkClass}>
+                      {c.title}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
+        <div>
+          <h2 className="mb-3 text-sm font-semibold">Company</h2>
+          <ul className="space-y-2">
+            {COMPANY_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className={linkClass}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href="/guides" className={linkClass}>
+                Guides ({guides.length})
+              </Link>
+            </li>
+            <li>
+              <ConsentSettingsLink className={`${linkClass} cursor-pointer text-left`} />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t">
+        <div className="container flex flex-col gap-2 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p>
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          </p>
+          <p>For educational purposes only — not financial, tax or legal advice.</p>
+        </div>
       </div>
     </footer>
   );
