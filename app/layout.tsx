@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { JsonLd } from "@/components/site/JsonLd";
 import { websiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -41,30 +42,37 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background font-sans">
         <JsonLd data={websiteJsonLd()} />
-        <Navbar />
+        {/* /embed/<slug> widgets are iframed on other sites: no navbar, footer, Clarity or AdSense there. */}
+        <SiteChrome>
+          <Navbar />
+        </SiteChrome>
         <main id="main" className="flex-1">
           {children}
         </main>
-        <Footer />
+        <SiteChrome>
+          <Footer />
+        </SiteChrome>
         {/* Cookieless page-view analytics (Vercel Web Analytics); no consent banner required. */}
         <Analytics />
-        {siteConfig.clarityId && (
-          // Microsoft Clarity: heatmaps and session recordings. Masking must stay "Strict" in the Clarity
-          // dashboard so calculator inputs are never recorded (we promise visitors their numbers stay private).
-          <Script id="clarity" strategy="afterInteractive">
-            {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",${JSON.stringify(siteConfig.clarityId)});`}
-          </Script>
-        )}
-        {siteConfig.adsense.client && (
-          // Loads AdSense (including Auto ads and Google's consent message for EEA/UK visitors).
-          <Script
-            id="adsense"
-            async
-            strategy="afterInteractive"
-            crossOrigin="anonymous"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
-          />
-        )}
+        <SiteChrome>
+          {siteConfig.clarityId && (
+            // Microsoft Clarity: heatmaps and session recordings. Masking must stay "Strict" in the Clarity
+            // dashboard so calculator inputs are never recorded (we promise visitors their numbers stay private).
+            <Script id="clarity" strategy="afterInteractive">
+              {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",${JSON.stringify(siteConfig.clarityId)});`}
+            </Script>
+          )}
+          {siteConfig.adsense.client && (
+            // Loads AdSense (including Auto ads and Google's consent message for EEA/UK visitors).
+            <Script
+              id="adsense"
+              async
+              strategy="afterInteractive"
+              crossOrigin="anonymous"
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.client}`}
+            />
+          )}
+        </SiteChrome>
       </body>
     </html>
   );

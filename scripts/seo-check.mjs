@@ -7,11 +7,13 @@ import { join, relative } from "node:path";
 
 const ROOT = join(process.cwd(), ".next/server/app");
 const SKIP = new Set(["_not-found.html", "_global-error.html"]);
+// /embed/<slug> widgets are noindex by design (canonical points at the full calculator page).
+const SKIP_DIRS = new Set(["embed"]);
 
 function walk(dir) {
   return readdirSync(dir).flatMap((name) => {
     const full = join(dir, name);
-    if (statSync(full).isDirectory()) return walk(full);
+    if (statSync(full).isDirectory()) return dir === ROOT && SKIP_DIRS.has(name) ? [] : walk(full);
     return name.endsWith(".html") && !SKIP.has(name) ? [full] : [];
   });
 }
