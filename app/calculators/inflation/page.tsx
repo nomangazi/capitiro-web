@@ -42,7 +42,6 @@ export default function InflationPage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="Find out what today's money will be worth in the future — and how much more everyday costs could be — at any inflation rate."
       calculator={<Inflation />}
       faqs={faqs}

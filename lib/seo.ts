@@ -11,23 +11,23 @@ interface PageMetaInput {
   type?: "website" | "article";
   /** Absolute title override (skips the template), e.g. for the homepage */
   absoluteTitle?: boolean;
+  /** ISO dates for articles, emitted as article:published_time / article:modified_time */
+  published?: string;
+  modified?: string;
 }
 
 /** Canonical, Open Graph and Twitter metadata for any page. */
-export function buildMetadata({ title, description, path, type = "website", absoluteTitle }: PageMetaInput): Metadata {
+export function buildMetadata({ title, description, path, type = "website", absoluteTitle, published, modified }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
+  const base = { title, description, url, siteName: siteConfig.name, locale: siteConfig.locale };
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
-    openGraph: {
-      title,
-      description,
-      url,
-      siteName: siteConfig.name,
-      locale: siteConfig.locale,
-      type,
-    },
+    openGraph:
+      type === "article"
+        ? { ...base, type, publishedTime: published, modifiedTime: modified ?? published }
+        : { ...base, type },
     twitter: { card: "summary_large_image", title, description },
   };
 }
@@ -65,7 +65,13 @@ export function faqJsonLd(faqs: FaqItem[]): JsonLdObject {
   };
 }
 
-export function calculatorJsonLd({ name, description, path }: { name: string; description: string; path: string }): JsonLdObject {
+export function calculatorJsonLd({ name, description, path, published, updated }: {
+  name: string;
+  description: string;
+  path: string;
+  published: string;
+  updated: string;
+}): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -76,6 +82,8 @@ export function calculatorJsonLd({ name, description, path }: { name: string; de
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript",
     isAccessibleForFree: true,
+    datePublished: published,
+    dateModified: updated,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     publisher: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   };

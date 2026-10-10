@@ -43,7 +43,6 @@ export default function CompoundInterestPage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="See how your savings grow when interest earns interest. Enter a starting amount, a monthly contribution and a rate to project your future balance."
       calculator={<CompoundInterest />}
       faqs={faqs}

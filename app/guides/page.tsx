@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import { formatDate } from "@/lib/dates";
 import { guidePath, guides } from "@/lib/guides";
 import { buildMetadata } from "@/lib/seo";
 
@@ -32,10 +33,8 @@ export default function GuidesIndex() {
               <h2 className="text-lg font-semibold group-hover:text-primary">{g.title}</h2>
               <p className="mt-1.5 text-muted-foreground">{g.description}</p>
               <p className="mt-3 text-xs text-muted-foreground">
-                {g.readingMinutes} min read · Updated{" "}
-                <time dateTime={g.updated}>
-                  {new Date(g.updated).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}
-                </time>
+                {g.readingMinutes} min read · Published <time dateTime={g.published}>{formatDate(g.published)}</time> · Updated{" "}
+                <time dateTime={g.updated}>{formatDate(g.updated)}</time>
               </p>
             </Link>
           </li>

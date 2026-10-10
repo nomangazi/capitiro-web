@@ -24,6 +24,10 @@ export interface CalculatorMeta {
   icon: LucideIcon;
   /** Primary search keywords this page targets (see .claude/skills/seo-marketing) */
   keywords: string[];
+  /** ISO date the page first went live */
+  published: string;
+  /** ISO date the content was last genuinely reviewed or changed. Never bump without a real change. */
+  updated: string;
 }
 
 /**
@@ -40,6 +44,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Borrowing",
     icon: Home,
     keywords: ["mortgage calculator", "monthly mortgage payment", "mortgage payment with taxes and insurance", "PMI calculator"],
+    published: "2026-10-10",
+    updated: "2026-10-10",
   },
   {
     slug: "loan-amortization",
@@ -50,6 +56,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Borrowing",
     icon: Landmark,
     keywords: ["loan calculator", "amortization schedule", "loan amortization calculator", "extra payment calculator"],
+    published: "2026-07-12",
+    updated: "2026-10-10",
   },
   {
     slug: "credit-card-payoff",
@@ -60,6 +68,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Borrowing",
     icon: CreditCard,
     keywords: ["credit card payoff calculator", "credit card interest calculator", "debt payoff calculator"],
+    published: "2026-10-10",
+    updated: "2026-10-10",
   },
   {
     slug: "compound-interest",
@@ -70,6 +80,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Investing",
     icon: TrendingUp,
     keywords: ["compound interest calculator", "investment calculator", "savings growth calculator"],
+    published: "2026-07-12",
+    updated: "2026-10-10",
   },
   {
     slug: "sip-return",
@@ -80,6 +92,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Investing",
     icon: Repeat,
     keywords: ["SIP calculator", "systematic investment plan calculator", "monthly investment calculator", "step-up SIP"],
+    published: "2026-07-12",
+    updated: "2026-10-10",
   },
   {
     slug: "retirement",
@@ -90,6 +104,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Planning",
     icon: PiggyBank,
     keywords: ["retirement calculator", "retirement savings calculator", "how much do I need to retire"],
+    published: "2026-10-10",
+    updated: "2026-10-10",
   },
   {
     slug: "savings-goal",
@@ -100,6 +116,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Planning",
     icon: Target,
     keywords: ["savings goal calculator", "how much to save per month", "savings calculator"],
+    published: "2026-10-10",
+    updated: "2026-10-10",
   },
   {
     slug: "inflation",
@@ -110,6 +128,8 @@ export const calculators: CalculatorMeta[] = [
     category: "Planning",
     icon: LineChart,
     keywords: ["inflation calculator", "future value of money", "purchasing power calculator"],
+    published: "2026-10-10",
+    updated: "2026-10-10",
   },
 ];
 

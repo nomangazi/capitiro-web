@@ -43,7 +43,6 @@ export default function SIPPage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="Find out what a regular monthly investment could grow to. Add an annual step-up to see the effect of increasing your contributions as your income grows."
       calculator={<SIPReturn />}
       faqs={faqs}

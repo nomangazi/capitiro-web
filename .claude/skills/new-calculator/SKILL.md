@@ -22,7 +22,8 @@ US/UK/EU keywords. Don't duplicate an existing tool. Extend it instead (e.g. add
 - `pnpm test` must pass.
 
 ## 3. Registry: `lib/calculators.ts`
-Add a `CalculatorMeta` entry (slug, title, shortTitle, summary under 160 chars, category, lucide icon, keywords).
+Add a `CalculatorMeta` entry (slug, title, shortTitle, summary under 160 chars, category, lucide icon, keywords,
+`published` and `updated` as today's ISO date). The dates feed the visible byline, JSON-LD and sitemap `lastmod`.
 The navbar, homepage, footer, sitemap and related links all update automatically.
 
 ## 4. Client component: `components/calculators/<Name>.tsx`
@@ -37,7 +38,6 @@ Copy an existing page (e.g. `app/calculators/savings-goal/page.tsx`) and replace
 - `intro`: 1–2 sentences answering "what will this tell me?"
 - `article` must contain: **How to use** (ordered list), **Formula explained** (the real formula and variable definitions), **Worked example** (numbers verified with the math function), **Tips** (with 1–2 internal links to other calculators).
 - `faqs`: 4–6 real questions people search for (People Also Ask), with plain-text answers of 40–80 words.
-- `updated`: today's ISO date.
 
 ## 6. Verify
 1. Run the worked-example numbers through the function in a scratch script and make sure the article matches.

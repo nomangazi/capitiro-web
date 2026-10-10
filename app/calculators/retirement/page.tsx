@@ -43,7 +43,6 @@ export default function RetirementPage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="Project how much you could have saved by retirement, what that's worth in today's money, and the monthly income it might support using a safe withdrawal rate."
       calculator={<Retirement />}
       faqs={faqs}
