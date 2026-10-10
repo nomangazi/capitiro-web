@@ -19,7 +19,9 @@ interface PageMetaInput {
 /** Canonical, Open Graph and Twitter metadata for any page. */
 export function buildMetadata({ title, description, path, type = "website", absoluteTitle, published, modified }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
-  const base = { title, description, url, siteName: siteConfig.name, locale: siteConfig.locale };
+  // Page-level openGraph replaces the root one, so the default share image must be repeated here.
+  const images = [{ url: absoluteUrl("/opengraph-image"), width: 1200, height: 630, alt: `${siteConfig.name} – Free financial calculators` }];
+  const base = { title, description, url, siteName: siteConfig.name, locale: siteConfig.locale, images };
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
@@ -28,7 +30,7 @@ export function buildMetadata({ title, description, path, type = "website", abso
       type === "article"
         ? { ...base, type, publishedTime: published, modifiedTime: modified ?? published }
         : { ...base, type },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: images.map((i) => i.url) },
   };
 }
 

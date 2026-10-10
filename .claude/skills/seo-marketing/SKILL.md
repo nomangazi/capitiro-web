@@ -10,6 +10,9 @@ piece of work should increase **qualified traffic** (people with a real money qu
 (E-E-A-T) or **RPM**. Search engines and AdSense reviewers both reward the same thing: original,
 accurate, genuinely helpful pages.
 
+> For audits and fixes (technical, schema, E-E-A-T, AI search, backlinks) use `.claude/skills/seo-toolkit`,
+> and run `pnpm build && pnpm seo:check` after any content or metadata change.
+
 ## 1. Keyword strategy
 
 - One page = one primary intent. Calculators target "<topic> calculator" and guides target questions ("15 vs 30 year mortgage").
@@ -24,7 +27,7 @@ accurate, genuinely helpful pages.
 - [ ] The meta description is 120–160 characters, states the benefit and includes the keyword.
 - [ ] Exactly one H1, containing the keyword. H2s are written as questions or tasks people search for.
 - [ ] The intro answers the query in the first 2 sentences.
-- [ ] Structured data: calculators get WebApplication + FAQPage + Breadcrumb (automatic), and guides get Article + Breadcrumb (automatic).
+- [ ] Structured data: calculators get WebApplication + FAQPage + Breadcrumb (automatic), and guides get Article + Breadcrumb (automatic). FAQ rich results were retired by Google in May 2026; keep the FAQPage markup but expect no SERP feature from it.
 - [ ] 2–4 **internal links** with descriptive anchor text (never "click here"). Every guide links to its calculator, and every calculator links to 1–2 related tools.
 - [ ] The worked example uses verified numbers. Run them through `lib/math.ts`, never guess.
 - [ ] `published` and `updated` dates set in the registry. Both are shown on the page and emitted in JSON-LD, OG tags and the sitemap (see §2a).

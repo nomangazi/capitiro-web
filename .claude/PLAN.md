@@ -65,6 +65,12 @@ Skills to use while working (in `.claude/skills/`):
 - [x] Vercel Web Analytics (cookieless) + privacy policy updated
 - [ ] GA4 with Consent Mode v2 after AdSense approval (link GA4 ↔ AdSense)
 
+## Phase 6b: SEO depth (from seo-toolkit audit)
+- [x] og:image on every page, titles ≤ 60 chars, meta descriptions 120–160, `pnpm seo:check` in `pnpm check`
+- [ ] Expand calculator pages to 600+ words and guides to 1,200+ (examples, tables, US/UK/EU notes, 5–10 internal links)
+- [ ] Embeddable calculator widget (backlink engine)
+- [ ] Organization `sameAs` once social profiles exist
+
 ## Phase 7: Monetise (about week 6+, once pages are indexed)
 - [ ] Apply to AdSense, then set `NEXT_PUBLIC_ADSENSE_CLIENT` and redeploy
 - [ ] Configure the GDPR message in AdSense → Privacy & messaging (required for EEA/UK)

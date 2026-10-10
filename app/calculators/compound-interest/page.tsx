@@ -5,7 +5,7 @@ import { buildMetadata, type FaqItem } from "@/lib/seo";
 const SLUG = "compound-interest";
 
 export const metadata = buildMetadata({
-  title: "Compound Interest Calculator with Monthly Contributions",
+  title: "Compound Interest Calculator with Contributions",
   description:
     "Free compound interest calculator. Project how an initial deposit and monthly contributions grow with daily, monthly, quarterly or yearly compounding.",
   path: `/calculators/${SLUG}`,

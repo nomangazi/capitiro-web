@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Privacy Policy",
+  title: "Privacy Policy: Cookies, Ads & Your Data Rights",
   description:
     "How Capitiro handles your data: calculations stay in your browser, and how we and Google use cookies for advertising, with your GDPR, UK GDPR and CCPA rights.",
   path: "/privacy-policy",

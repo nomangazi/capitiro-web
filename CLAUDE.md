@@ -7,7 +7,8 @@ deployed to Vercel on push and monetised with Google AdSense. Full roadmap: `.cl
 - `pnpm dev`: local dev server
 - `pnpm test`: math unit tests (`lib/math.test.ts`, Node test runner)
 - `pnpm lint` / `pnpm build`
-- `pnpm check`: lint + test + build. Run it before every commit.
+- `pnpm seo:check`: on-page SEO check of the built pages (run after `pnpm build`)
+- `pnpm check`: lint + test + build + seo:check. Run it before every commit.
 
 ## Skills: load the relevant one before working
 | Task | Skill |
@@ -15,6 +16,7 @@ deployed to Vercel on push and monetised with Google AdSense. Full roadmap: `.cl
 | Any UI, layout, color, chart work | `.claude/skills/capitiro-design` |
 | Add a calculator | `.claude/skills/new-calculator` |
 | Copy, metadata, guides, traffic, marketing | `.claude/skills/seo-marketing` |
+| SEO audits, schema, E-E-A-T, AI search, backlinks | `.claude/skills/seo-toolkit` |
 | Ads, consent, privacy, ads.txt | `.claude/skills/adsense-compliance` |
 | Pushing / deploying / env vars | `.claude/skills/deploy-vercel` |
 

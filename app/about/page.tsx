@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "About Capitiro",
+  title: "About Us: Free, Accurate Financial Calculators",
   description:
     "Capitiro builds free, accurate and private financial calculators to help people in the US, UK and Europe make better money decisions.",
   path: "/about",

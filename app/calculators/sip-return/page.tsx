@@ -5,7 +5,7 @@ import { buildMetadata, type FaqItem } from "@/lib/seo";
 const SLUG = "sip-return";
 
 export const metadata = buildMetadata({
-  title: "SIP Calculator – Monthly Investment Returns with Step-Up",
+  title: "SIP Calculator: Monthly Investment Returns",
   description:
     "Estimate the future value of a systematic investment plan (SIP) or any regular monthly investment, with an optional yearly step-up in contributions.",
   path: `/calculators/${SLUG}`,

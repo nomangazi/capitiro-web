@@ -3,8 +3,9 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Contact Us",
-  description: "Get in touch with the Capitiro team with questions, feedback, corrections or partnership enquiries.",
+  title: "Contact Us: Feedback, Corrections & Questions",
+  description:
+    "Contact the Capitiro team with questions about our financial calculators, feedback, corrections, privacy requests or partnership enquiries.",
   path: "/contact",
 });
 

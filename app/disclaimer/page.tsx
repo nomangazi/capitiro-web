@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Disclaimer",
+  title: "Financial Disclaimer: Not Financial Advice",
   description:
     "Capitiro's calculators and guides are for educational purposes only and are not financial, investment, tax or legal advice.",
   path: "/disclaimer",
