@@ -260,7 +260,8 @@ export default function Page() {
 
       <h2>Does this work in the UK and Europe?</h2>
       <p>
-        Yes, the maths is identical. Use the APR shown on your statement or loan agreement. In the UK, many
+        Yes, the ordering logic is identical. Use the rate shown on your statement or loan agreement (a UK APR already
+        includes compounding, so the monthly rate is slightly below APR ÷ 12, but the payoff order doesn&apos;t change). In the UK, many
         borrowers also consider 0% balance transfer cards and consolidation loans, and the independent{" "}
         <a href="https://www.moneyhelper.org.uk/en/money-troubles" target="_blank" rel="noopener noreferrer">MoneyHelper service</a>{" "}
         offers free guidance if you are struggling. In the US, nonprofit credit counseling agencies, such as members of the{" "}

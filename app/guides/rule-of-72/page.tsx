@@ -43,7 +43,7 @@ export default function Page() {
         <li>The rule is most accurate between roughly 6% and 10%. At 1% to 3% the rule of 70 fits slightly better.</li>
         <li>It works in reverse too. To double in 10 years you need roughly 7.2% a year (exactly 7.18%).</li>
         <li>It also measures damage. A 24% APR card balance doubles in under three years, and 3% inflation halves cash in about 24 years.</li>
-        <li>A 1% lower return matters more than it sounds. Over 40 years, 7% grows money about 15.0 times and 6% about 10.3 times.</li>
+        <li>A 1% lower return matters more than it sounds. Over 40 years, an assumed 7% grows money about 15.0 times and 6% about 10.3 times.</li>
       </ul>
 
       <h2>The formula</h2>
@@ -320,8 +320,9 @@ export default function Page() {
       <p>
         Yes. The rule only needs a yearly rate. In the UK, use the AER (annual equivalent rate) quoted on a savings account, or the
         net return on an ISA or pension. In the US, use the APY on savings. Euro-area accounts usually quote a nominal annual rate,
-        so check whether it already includes compounding. For loans and cards, the APR is slightly lower than the true yearly cost
-        when interest compounds monthly, which is why the debt doubling time came out a little shorter above.
+        so check whether it already includes compounding. For US loans and cards, the quoted APR is a nominal rate, slightly lower than the true yearly cost
+        when interest compounds monthly, which is why the debt doubling time came out a little shorter above. A UK APR already
+        includes compounding, so you can use it directly.
       </p>
       <p>For a precise projection with regular contributions, use the calculator below.</p>
     </GuideLayout>

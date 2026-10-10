@@ -198,7 +198,7 @@ export default function Page() {
         </tbody>
       </table>
       <p>
-        Each one-point rise in the rate trims roughly $30,000 to $35,000 from the budget. A shorter term changes the picture again:
+        Each one-point rise in the rate trims roughly $29,000 to $35,000 from the budget. A shorter term changes the picture again:
         see <Link href="/guides/15-vs-30-year-mortgage">15 vs 30 year mortgage</Link> for the trade-off between a bigger payment and
         far less interest.
       </p>

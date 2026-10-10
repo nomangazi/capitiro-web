@@ -57,7 +57,7 @@ export default function Page() {
             <td>$1,911</td>
             <td>$326</td>
             <td>≈ 24 months</td>
-            <td>Saves ≈ $29,000</td>
+            <td>Saves ≈ $29,100</td>
           </tr>
           <tr>
             <td>6.25%, 27 years</td>
@@ -136,9 +136,9 @@ export default function Page() {
         </tbody>
       </table>
       <p>
-        Every extra 1% of closing costs adds roughly 9 to 10 months to the 30-year break-even. Ask each lender for a{" "}
-        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">Loan Estimate</a>{" "}
-        and compare the same figures side by side before you choose.
+        Every extra 1% of closing costs adds roughly 9 to 10 months to the 30-year break-even. Ask each lender for a Loan Estimate (the{" "}
+        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">CFPB home buying guide</a>{" "}
+        explains how to read one) and compare the same figures side by side before you choose.
       </p>
 
       <h2>How much does the new rate matter?</h2>
@@ -208,7 +208,7 @@ export default function Page() {
 
       <h2>What about rolling closing costs into the loan?</h2>
       <p>
-        Adding the $7,761 of costs to a 6.25%, 30-year loan makes the new balance $318,206 and the payment $1,959, so your monthly
+        Adding the $7,761 of costs to a 6.25%, 30-year loan makes the new balance $318,207 and the payment $1,959, so your monthly
         saving is $278 instead of $326. You avoid paying cash at closing, but the lifetime result falls from about $29,100 to about
         $27,400. It is a reasonable choice if cash is tight, as long as you see the cost for what it is.
       </p>
