@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"lib/**/*.test.ts\"",
-    "check": "pnpm lint && pnpm test && pnpm build"
+    "check": "pnpm lint && pnpm test && pnpm build && pnpm seo:check",
+    "seo:check": "node scripts/seo-check.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

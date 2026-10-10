@@ -4,8 +4,9 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "Terms of Service",
-  description: "The terms that govern your use of Capitiro's free financial calculators and guides.",
+  title: "Terms of Service for Using Our Calculators",
+  description:
+    "The terms for using Capitiro's free financial calculators and guides: educational use only, no warranty, acceptable use and limitation of liability.",
   path: "/terms-of-service",
 });
 

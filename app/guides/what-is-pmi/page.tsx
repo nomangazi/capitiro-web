@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 const SLUG = "what-is-pmi";
 const guide = getGuide(SLUG);
 
-export const metadata = buildMetadata({ title: guide.title, description: guide.description, path: guidePath(SLUG), type: "article", published: guide.published, modified: guide.updated });
+export const metadata = buildMetadata({ title: guide.seoTitle ?? guide.title, description: guide.description, path: guidePath(SLUG), type: "article", published: guide.published, modified: guide.updated });
 
 export default function Page() {
   return (

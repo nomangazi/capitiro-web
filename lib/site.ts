@@ -11,7 +11,7 @@ export const siteConfig = {
   name: "Capitiro",
   tagline: "Smart Financial Projections",
   description:
-    "Free, accurate financial calculators for mortgages, loans, compound interest, retirement, savings and debt payoff. Private by design — every calculation runs in your browser.",
+    "Free, accurate calculators for mortgages, loans, compound interest, retirement, savings and debt payoff. Private by design: everything runs in your browser.",
   url: resolveSiteUrl(),
   locale: "en_US",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@capitiro.com",

@@ -1,6 +1,9 @@
 export interface GuideMeta {
   slug: string;
+  /** H1 and default <title> */
   title: string;
+  /** Shorter <title> when `title` + " | Capitiro" would exceed ~60 characters */
+  seoTitle?: string;
   description: string;
   /** ISO dates */
   published: string;
@@ -65,6 +68,7 @@ export const guides: GuideMeta[] = [
   {
     slug: "debt-avalanche-vs-snowball",
     title: "Debt Avalanche vs. Debt Snowball: Which Payoff Method Wins?",
+    seoTitle: "Debt Avalanche vs. Snowball: Which Method Wins?",
     description:
       "How the avalanche and snowball debt payoff methods work, a worked example with three debts, and how to choose the right one for you.",
     published: "2026-10-10",
@@ -75,6 +79,7 @@ export const guides: GuideMeta[] = [
   {
     slug: "rule-of-72",
     title: "The Rule of 72: How Long Does It Take to Double Your Money?",
+    seoTitle: "Rule of 72: How Long to Double Your Money?",
     description:
       "Learn the Rule of 72 shortcut for estimating how fast money doubles, how accurate it is, and how to use it for investing, debt and inflation.",
     published: "2026-10-10",
