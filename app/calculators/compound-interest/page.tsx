@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   {
     question: "What is the difference between APR, APY and AER?",
     answer:
-      "APR is a nominal yearly rate that ignores compounding. APY (US) and AER (UK and EU) include compounding, so they show what you actually earn in a year. For example, 5% compounded monthly is an APY of about 5.12%. Use APY or AER when comparing savings accounts.",
+      "APR is a nominal yearly rate quoted without compounding. APY (US) and AER (UK) include compounding; banks elsewhere in Europe usually quote an equivalent "effective annual rate", so they show what you actually earn in a year. For example, 5% compounded monthly is an APY of about 5.12%. Use APY or AER when comparing savings accounts.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function CompoundInterestPage() {
             </tbody>
           </table>
           <p>
-            US banks quote APY and UK and EU banks quote AER. Both already include compounding. If you only know the APY or AER,
+            US banks quote APY, UK banks quote AER and many other European banks quote an effective annual rate. All of these already include compounding. If you only know one of them,
             choose yearly compounding and enter it as the rate.
           </p>
 
@@ -132,7 +132,7 @@ export default function CompoundInterestPage() {
           </table>
           <p>
             Starting later has a clear cost. Saving $500 a month from zero at 7% gives about $609,985 after 30 years but only about
-            $260,463 after 20, so the extra decade more than doubles the result. Rate matters too. Over 20 years with the same deposits,
+            $260,463 after 20, so the extra decade more than doubles the result. Rate matters too. With the $10,000 starting deposit and $500 a month over 20 years,
             3% reaches about $182,359, 5% reaches $232,643 and 9% reaches $394,035. To estimate doubling time, try the{" "}
             <a href="/guides/rule-of-72">Rule of 72 guide</a>.
           </p>

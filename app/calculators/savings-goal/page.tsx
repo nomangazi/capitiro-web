@@ -156,8 +156,9 @@ export default function SavingsGoalPage() {
               interest tax-free, and EU rules vary by country.
             </li>
             <li>
-              <strong>Mixing up rate types:</strong> enter the APY (US) or AER (UK and EU), which include compounding, not a nominal
-              rate. Ignore any bonus rate that lasts only a few months.
+              <strong>Mixing up rate types:</strong> enter the account&apos;s quoted rate (APY in the US, AER in the UK). The calculator
+              compounds monthly, so using an APY or AER makes the result very slightly optimistic. Ignore any bonus rate that lasts only
+              a few months.
             </li>
           </ul>
 
