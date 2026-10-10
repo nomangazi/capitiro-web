@@ -16,6 +16,28 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "how-long-to-pay-off-credit-card",
+    title: "How Long Will It Take to Pay Off $5,000 or $10,000 of Credit Card Debt?",
+    seoTitle: "How Long to Pay Off $5K or $10K Credit Card Debt",
+    description:
+      "How many months $5,000 or $10,000 of credit card debt takes at 20-28% APR, why minimum payments drag on for decades, and what to pay to be free in 12-36 months.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "credit-card-payoff",
+  },
+  {
+    slug: "balance-transfer-math",
+    title: "Balance Transfer Cards: The Real Math (Fees, 0% Periods and Break-Even)",
+    seoTitle: "Balance Transfer Math: Fees, 0% & Break-Even",
+    description:
+      "Is a balance transfer worth it? Compare 3% and 5% fees on 15, 18 and 21-month 0% offers against a 24% card, plus break-even, revert-rate risk and UK notes.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "credit-card-payoff",
+  },
+  {
     slug: "extra-mortgage-payments",
     title: "How Extra Mortgage Payments Save You Money",
     description:
