@@ -4,13 +4,10 @@ import { ArrowRight, Clock } from "lucide-react";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { calculatorPath, getCalculator } from "@/lib/calculators";
 import { getGuide, guidePath } from "@/lib/guides";
+import { formatDate } from "@/lib/dates";
 import { articleJsonLd } from "@/lib/seo";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
-}
 
 /** Shared shell for long-form guides: breadcrumb, byline, article, calculator CTA, disclaimer. */
 export function GuideLayout({ slug, children }: { slug: string; children: ReactNode }) {
@@ -51,6 +48,10 @@ export function GuideLayout({ slug, children }: { slug: string; children: ReactN
         <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
           <span>
             By <Link href="/about" className="font-medium text-foreground hover:underline">Capitiro Editorial Team</Link>
+          </span>
+          <span aria-hidden>·</span>
+          <span>
+            Published <time dateTime={guide.published}>{formatDate(guide.published)}</time>
           </span>
           <span aria-hidden>·</span>
           <span>

@@ -27,8 +27,20 @@ accurate, genuinely helpful pages.
 - [ ] Structured data: calculators get WebApplication + FAQPage + Breadcrumb (automatic), and guides get Article + Breadcrumb (automatic).
 - [ ] 2–4 **internal links** with descriptive anchor text (never "click here"). Every guide links to its calculator, and every calculator links to 1–2 related tools.
 - [ ] The worked example uses verified numbers. Run them through `lib/math.ts`, never guess.
-- [ ] A visible "Updated" date, changed only on real review.
+- [ ] `published` and `updated` dates set in the registry. Both are shown on the page and emitted in JSON-LD, OG tags and the sitemap (see §2a).
 - [ ] The page is added to the registry (`lib/calculators.ts` or `lib/guides.ts`) so the sitemap includes it.
+
+## 2a. Dates (freshness signals)
+
+Every calculator (`lib/calculators.ts`) and guide (`lib/guides.ts`) has `published` and `updated` ISO dates. The site
+shows them ("Published … · Updated …") and emits them as `datePublished`/`dateModified` (JSON-LD),
+`article:published_time`/`modified_time` (OG, guides) and `<lastmod>` in the sitemap.
+
+- **Never change `published`.**
+- **Bump `updated` only for a real content change**: new section, corrected or refreshed numbers, new FAQ or rewritten copy.
+  Typo fixes and code or design changes don't count. Google ignores (and can distrust) fake "updated" dates.
+- Review each page at least every 6–12 months: re-check rates in examples, links and rules (e.g. PMI or tax rules),
+  then bump `updated`.
 
 ## 3. Writing style (YMYL)
 

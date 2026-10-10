@@ -43,7 +43,6 @@ export default function LoanAmortizationPage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="Find your monthly payment and total interest for any fixed-rate loan, explore the month-by-month schedule, and see what paying a little extra could save."
       calculator={<LoanAmortization />}
       faqs={faqs}

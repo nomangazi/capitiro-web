@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 const SLUG = "debt-avalanche-vs-snowball";
 const guide = getGuide(SLUG);
 
-export const metadata = buildMetadata({ title: guide.title, description: guide.description, path: guidePath(SLUG), type: "article" });
+export const metadata = buildMetadata({ title: guide.title, description: guide.description, path: guidePath(SLUG), type: "article", published: guide.published, modified: guide.updated });
 
 export default function Page() {
   return (

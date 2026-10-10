@@ -43,7 +43,6 @@ export default function MortgagePage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="Estimate your full monthly house payment — principal, interest, property tax, insurance, PMI and HOA — and see how much the loan really costs over time."
       calculator={<Mortgage />}
       faqs={faqs}

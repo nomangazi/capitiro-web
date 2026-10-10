@@ -43,7 +43,6 @@ export default function SavingsGoalPage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="Set a target and a deadline, and find the exact monthly amount you need to save — with interest doing part of the work."
       calculator={<SavingsGoal />}
       faqs={faqs}

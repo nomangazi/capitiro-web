@@ -43,7 +43,6 @@ export default function CreditCardPayoffPage() {
   return (
     <CalculatorPage
       slug={SLUG}
-      updated="2026-10-10"
       intro="Enter your balance, APR and monthly payment to see your debt-free date and total interest — or pick a target and get the payment you need."
       calculator={<CreditCardPayoff />}
       faqs={faqs}

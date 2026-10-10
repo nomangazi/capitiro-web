@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { CheckCircle2, Lock, Sparkles } from "lucide-react";
+import { CalendarDays, CheckCircle2, Lock } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { calculatorPath, getCalculator, getRelatedCalculators } from "@/lib/calculators";
+import { formatDate } from "@/lib/dates";
 import { calculatorJsonLd, faqJsonLd, type FaqItem } from "@/lib/seo";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { CalculatorCard } from "./CalculatorCard";
@@ -18,24 +19,21 @@ interface CalculatorPageProps {
   /** Long-form explainer: must include H2 "How to use", H2 "Formula explained" and a worked example */
   article: ReactNode;
   faqs: FaqItem[];
-  /** ISO date the content was last reviewed — shown to readers (E-E-A-T) */
-  updated: string;
 }
 
 /**
  * Standard anatomy for every calculator page (see .claude/skills/capitiro-design):
  * breadcrumb → H1 + intro + trust row → calculator → ad → article → FAQ → related → disclaimer.
  */
-export function CalculatorPage({ slug, intro, calculator, article, faqs, updated }: CalculatorPageProps) {
+export function CalculatorPage({ slug, intro, calculator, article, faqs }: CalculatorPageProps) {
   const meta = getCalculator(slug);
   const path = calculatorPath(slug);
   const related = getRelatedCalculators(slug);
   const Icon = meta.icon;
-  const updatedLabel = new Date(updated).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 
   return (
     <div className="pb-16">
-      <JsonLd data={[calculatorJsonLd({ name: meta.title, description: meta.summary, path }), faqJsonLd(faqs)]} />
+      <JsonLd data={[calculatorJsonLd({ name: meta.title, description: meta.summary, path, published: meta.published, updated: meta.updated }), faqJsonLd(faqs)]} />
 
       <div className="border-b bg-gradient-to-b from-secondary/70 to-background">
         <div className="container space-y-5 pt-6 pb-8">
@@ -63,7 +61,12 @@ export function CalculatorPage({ slug, intro, calculator, article, faqs, updated
               <Lock className="size-4 text-accent" aria-hidden /> Private — runs in your browser
             </li>
             <li className="flex items-center gap-1.5">
-              <Sparkles className="size-4 text-accent" aria-hidden /> Updated <time dateTime={updated}>{updatedLabel}</time>
+              <CalendarDays className="size-4 text-accent" aria-hidden />
+              <span>
+                Published <time dateTime={meta.published}>{formatDate(meta.published)}</time>
+                <span aria-hidden> · </span>
+                Updated <time dateTime={meta.updated}>{formatDate(meta.updated)}</time>
+              </span>
             </li>
           </ul>
         </div>
