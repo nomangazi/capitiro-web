@@ -36,3 +36,19 @@ deployed to Vercel on push and monetised with Google AdSense. Full roadmap: `.cl
 - Numbers in content must be verified against `lib/math.ts`. This is a YMYL site.
 - Never hard-code "$" in calculator UI; use `useCurrency()`.
 - Never place ads between calculator inputs and results.
+
+## Delivery workflow (owner-approved; the owner does not review PRs)
+1. **Build with subagents.** Split work into independent tasks and run them in parallel, each in its own git worktree
+   and branch. Main agent: Opus (high). Subagents: Sonnet (medium/high); Opus (low) only for tricky design/architecture.
+2. **Cross-check with a different agent.** Every change is verified by a separate verifier subagent that did not write it:
+   recomputes every number with `lib/math.ts`, checks claims and links, reviews code, runs `pnpm check`. Fix all
+   FAIL findings and re-verify before opening/merging the PR.
+3. **Main agent opens the PR, reviews the diff and merges it** (no waiting for the owner) once verification passes and
+   `pnpm check` is green. Report merged PRs and live links to the owner afterwards.
+4. **Features with sub-features:** create `feature/<name>` from `main`; each sub-feature gets its own branch and PR
+   targeting `feature/<name>`; verify and merge them there; finally open one PR `feature/<name>` → `main`, verify the
+   combined result and merge it.
+5. Branch names: `content/…` (guides, copy), `feature/…` (features), `fix/…` (bugs), `chore/…` (docs, tooling).
+   PR titles say plainly what changes. Delete merged branches.
+6. Never merge anything that touches ads, privacy/consent or legal pages without verification, and never invent facts:
+   if a fact or external link can't be verified, use a stable source page or flag it in the PR and the report.
