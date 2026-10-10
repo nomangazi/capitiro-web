@@ -270,7 +270,7 @@ export default function Page() {
         <strong>illustrative assumptions</strong>: an upfront premium of 1.75% added to the loan and an annual premium of 0.55% of the
         starting loan, spread over 12 months. Real FHA premiums depend on loan size, term and down payment and change over time, and
         they are calculated on a declining balance, so the lifetime figure here is an upper estimate. Check the current schedule on{" "}
-        <a href="https://www.hud.gov/buying/loans" target="_blank" rel="noopener noreferrer">HUD.gov</a>. The home is $350,000 with
+        <a href="https://www.hud.gov/" target="_blank" rel="noopener noreferrer">HUD.gov</a>. The home is $350,000 with
         5% down at 6.5% for 30 years.
       </p>
       <table>

@@ -253,10 +253,9 @@ export default function Page() {
         rates rose, so the multiple on offer can be lower than the headline. Expect to need a deposit, often 5% to 10% or more of the price.
       </p>
       <p>
-        For the US rules in plain language, the Consumer Financial Protection Bureau explains{" "}
-        <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-debt-to-income-ratio-why-is-the-43-debt-to-income-ratio-important-en-1791/" target="_blank" rel="noopener noreferrer">debt-to-income ratios</a>{" "}
-        and the home buying process at{" "}
-        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">consumerfinance.gov</a>.
+        For the US rules in plain language, including debt-to-income ratios and each step of the home buying process, see the
+        Consumer Financial Protection Bureau&apos;s{" "}
+        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">home buying guide</a>.
       </p>
 
       <h2>What are the most common mistakes?</h2>

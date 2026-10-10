@@ -303,8 +303,9 @@ export default function Page() {
         Paying 15-year money into the 30-year loan leaves you with about $33,000 more interest than a true 15-year loan
         ($195,814 versus $162,955). That is the price of keeping the option to pay less. Our guide to{" "}
         <Link href="/guides/extra-mortgage-payments">extra mortgage payments</Link> covers how to set this up, and checking for
-        prepayment penalties first is wise (see the{" "}
-        <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-prepayment-penalty-en-1769/" target="_blank" rel="noopener noreferrer">CFPB explainer</a>).
+        prepayment penalties first is wise (your Loan Estimate and closing documents list them; the{" "}
+        <a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank" rel="noopener noreferrer">CFPB home buying guide</a>{" "}
+        explains how to read them).
       </p>
 
       <h2>What mistakes do people make when choosing a term?</h2>
