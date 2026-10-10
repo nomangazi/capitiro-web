@@ -61,7 +61,7 @@ Use the following Shadcn-compatible theme structure:
 
 To the AI Agent: Await the user's explicit prompt to execute a specific Phase. Do not execute everything at once.
 
-### [ ] Phase 1: Initial Setup & Layout Design
+### [x] Phase 1: Initial Setup & Layout Design
 
 **Goal:** Setup the boilerplate, design system, and global layout.
 
@@ -73,7 +73,7 @@ To the AI Agent: Await the user's explicit prompt to execute a specific Phase. D
 6. Create `components/layout/Footer.tsx` (Links to legal pages, copyright).
 7. Apply Navbar and Footer to `app/layout.tsx`.
 
-### [ ] Phase 2: Core Calculators Development (The MVPs)
+### [x] Phase 2: Core Calculators Development (The MVPs)
 
 **Goal:** Build the primary traffic-driving tools. Follow the separation of Client and Server components.
 
@@ -94,7 +94,7 @@ To the AI Agent: Await the user's explicit prompt to execute a specific Phase. D
 
 
 
-### [ ] Phase 3: Legal Pages & Homepage Generation
+### [x] Phase 3: Legal Pages & Homepage Generation
 
 **Goal:** Build the required pages for Google AdSense approval and user navigation.
 
@@ -111,7 +111,7 @@ To the AI Agent: Await the user's explicit prompt to execute a specific Phase. D
 
 
 
-### [ ] Phase 4: SEO Optimization & Deployment Prep
+### [x] Phase 4: SEO Optimization & Deployment Prep
 
 **Goal:** Finalize routing, sitemaps, and prepare for Vercel deployment.
 
@@ -123,4 +123,4 @@ To the AI Agent: Await the user's explicit prompt to execute a specific Phase. D
 
 ---
 
-*AI Agent: Acknowledge you have read this file when the user initializes the prompt, and ask which Phase you should begin with.*
+*Status: Phases 1–4 are complete. The living roadmap is now `.claude/PLAN.md`, and working rules are in `CLAUDE.md` and `.claude/skills/`.*

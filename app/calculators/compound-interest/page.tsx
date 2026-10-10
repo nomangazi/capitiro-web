@@ -1,79 +1,95 @@
-import { Metadata } from "next";
 import { CompoundInterest } from "@/components/calculators/CompoundInterest";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { CalculatorPage } from "@/components/site/CalculatorPage";
+import { buildMetadata, type FaqItem } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Free Compound Interest Calculator | Capitiro",
-  description: "Calculate how your money can grow over time with the power of compound interest. A free, accurate, and lightning-fast tool by Capitiro.",
-};
+const SLUG = "compound-interest";
+
+export const metadata = buildMetadata({
+  title: "Compound Interest Calculator with Monthly Contributions",
+  description:
+    "Free compound interest calculator. Project how an initial deposit and monthly contributions grow with daily, monthly, quarterly or yearly compounding.",
+  path: `/calculators/${SLUG}`,
+});
+
+const faqs: FaqItem[] = [
+  {
+    question: "What is compound interest?",
+    answer:
+      "Compound interest is interest earned on both your original money and on the interest it has already earned. Over long periods this 'interest on interest' makes balances grow faster and faster.",
+  },
+  {
+    question: "How often is interest compounded?",
+    answer:
+      "It depends on the account. Savings accounts often compound daily or monthly, bonds semi-annually, and long-term investment returns are usually quoted annually. Use the compounding selector to match your account; contributions are added at the end of each month.",
+  },
+  {
+    question: "What is the Rule of 72?",
+    answer:
+      "The Rule of 72 is a quick way to estimate doubling time: divide 72 by the annual interest rate. At 8% your money doubles in about 9 years; at 6% in about 12 years.",
+  },
+  {
+    question: "What interest rate should I use?",
+    answer:
+      "For savings accounts, use the advertised APY. For a diversified stock portfolio, many planners use 5–7% after inflation or 7–10% before inflation, but returns are never guaranteed and past performance does not predict future results.",
+  },
+  {
+    question: "Does this calculator include taxes or inflation?",
+    answer:
+      "No. Results are before tax and in future (nominal) money. To see what a future amount is worth today, use our inflation calculator.",
+  },
+];
 
 export default function CompoundInterestPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Compound Interest Calculator",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  };
-
   return (
-    <div className="container py-10 space-y-12">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Compound Interest Calculator</h1>
-        <p className="text-lg text-muted-foreground max-w-3xl">
-          Discover the power of compounding. Use our calculator to project how your initial investment and monthly contributions will grow over time.
-        </p>
-      </section>
+    <CalculatorPage
+      slug={SLUG}
+      updated="2026-10-10"
+      intro="See how your savings grow when interest earns interest. Enter a starting amount, a monthly contribution and a rate to project your future balance."
+      calculator={<CompoundInterest />}
+      faqs={faqs}
+      article={
+        <>
+          <h2>How to use the compound interest calculator</h2>
+          <ol>
+            <li><strong>Initial deposit</strong> — the amount you are starting with (can be zero).</li>
+            <li><strong>Monthly contribution</strong> — what you plan to add each month.</li>
+            <li><strong>Years to grow</strong> — how long the money stays invested.</li>
+            <li><strong>Annual interest rate</strong> — the expected yearly rate of return.</li>
+            <li><strong>Compounding frequency</strong> — how often interest is added to the balance.</li>
+          </ol>
+          <p>The chart compares your growing balance with the money you actually put in. The gap between the two lines is compound interest at work.</p>
 
-      <CompoundInterest />
-
-      <article className="max-w-4xl space-y-8 prose prose-slate dark:prose-invert">
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">How to use this calculator</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Using our compound interest calculator is simple. Start by entering your <strong>Initial Deposit</strong>. 
-            Then, if you plan to add money regularly, enter that amount in the <strong>Monthly Contribution</strong> field.
-            Input the <strong>Investment Time</strong> (how many years you plan to keep the money invested), and finally,
-            enter the expected <strong>Annual Interest Rate</strong>. The chart will instantly update to show your projected growth.
+          <h2>Compound interest formula explained</h2>
+          <p>For a single deposit, the classic formula is:</p>
+          <p><strong>A = P × (1 + r/n)<sup>n×t</sup></strong></p>
+          <ul>
+            <li><strong>A</strong> = final amount, <strong>P</strong> = initial deposit</li>
+            <li><strong>r</strong> = annual rate (as a decimal), <strong>n</strong> = compounding periods per year</li>
+            <li><strong>t</strong> = number of years</li>
+          </ul>
+          <p>
+            Monthly contributions add the future value of a series of payments: <strong>PMT × [(1 + i)<sup>m</sup> − 1] ÷ i</strong>,
+            where i is the monthly rate equivalent to your compounding frequency and m is the number of months. The calculator
+            simulates every month so both parts are combined precisely.
           </p>
-        </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Formula Explained</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Compound interest is the interest on savings calculated on both the initial principal and the accumulated interest from previous periods. 
-            The formula we use incorporates both your principal amount and any ongoing monthly contributions, compounding them over the specified time horizon.
+          <h2>Worked example</h2>
+          <p>
+            Investing <strong>$10,000</strong> and adding <strong>$500 a month</strong> for <strong>20 years at 7%</strong>, compounded
+            monthly, grows to roughly <strong>$300,000</strong>. You contribute $130,000; the other ~$170,000 is interest — more than
+            half of the final balance.
           </p>
-        </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-          <Accordion className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>What is compound interest?</AccordionTrigger>
-              <AccordionContent>
-                Compound interest is the addition of interest to the principal sum of a loan or deposit, or in other words, interest on interest. It is the result of reinvesting interest, rather than paying it out, so that interest in the next period is then earned on the principal sum plus previously accumulated interest.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>How often is the interest compounded?</AccordionTrigger>
-              <AccordionContent>
-                Our calculator assumes monthly compounding and monthly contributions to provide a realistic projection of typical savings accounts and investment portfolios.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </section>
-      </article>
-    </div>
+          <h2>How to make compounding work harder for you</h2>
+          <ul>
+            <li><strong>Start early.</strong> Time is the most powerful input — ten extra years can double the result.</li>
+            <li><strong>Contribute consistently.</strong> Automate monthly deposits so you never skip.</li>
+            <li><strong>Keep fees low.</strong> A 1% annual fee can consume a quarter of long-term growth.</li>
+            <li><strong>Reinvest returns</strong> instead of withdrawing dividends or interest.</li>
+            <li>Planning for later life? Try the <a href="/calculators/retirement">retirement calculator</a>.</li>
+          </ul>
+        </>
+      }
+    />
   );
 }

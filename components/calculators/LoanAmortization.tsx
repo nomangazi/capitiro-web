@@ -1,117 +1,65 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { useCurrency } from "@/components/providers/currency";
 import { calculateLoanAmortization } from "@/lib/math";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from "recharts";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { formatDuration } from "@/lib/format";
+import { CalculatorShell, Notice, Panel, ResultSummary } from "./shared/CalculatorShell";
+import { NumberField } from "./shared/NumberField";
+import { BreakdownDonut } from "./shared/charts";
+import { ScheduleTable } from "./shared/ScheduleTable";
 
 export function LoanAmortization() {
-  const [loanAmount, setLoanAmount] = useState(250000);
-  const [years, setYears] = useState(30);
-  const [annualRate, setAnnualRate] = useState(6.5);
+  const { symbol, money } = useCurrency();
+  const [loanAmount, setLoanAmount] = useState(25000);
+  const [annualRate, setAnnualRate] = useState(7.5);
+  const [years, setYears] = useState(5);
+  const [extra, setExtra] = useState(0);
 
-  const data = calculateLoanAmortization(loanAmount, annualRate, years);
-
-  const pieData = [
-    { name: "Principal", value: loanAmount },
-    { name: "Total Interest", value: data.totalInterest },
-  ];
-
-  const COLORS = ["hsl(var(--primary))", "hsl(var(--destructive))"];
+  const loan = calculateLoanAmortization(loanAmount, annualRate, years, extra);
+  const baseline = extra > 0 ? calculateLoanAmortization(loanAmount, annualRate, years) : loan;
+  const interestSaved = baseline.totalInterest - loan.totalInterest;
+  const monthsSaved = baseline.months - loan.months;
 
   return (
-    <div className="grid gap-6 md:grid-cols-3">
-      <Card className="md:col-span-1 h-fit">
-        <CardHeader>
-          <CardTitle>Input Details</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="loanAmount">Loan Amount ($)</Label>
-            <Input id="loanAmount" type="number" min={0} value={loanAmount} onChange={(e) => setLoanAmount(Number(e.target.value) || 0)} />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="years">Loan Term (Years)</Label>
-            <Input id="years" type="number" min={1} max={50} value={years} onChange={(e) => setYears(Number(e.target.value) || 1)} />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="annualRate">Interest Rate (%)</Label>
-            <Input id="annualRate" type="number" min={0} max={100} value={annualRate} onChange={(e) => setAnnualRate(Number(e.target.value) || 0)} />
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card className="md:col-span-2">
-        <CardHeader>
-          <CardTitle>Repayment Summary</CardTitle>
-          <div className="flex flex-wrap gap-6 text-sm mt-4">
-            <div className="flex flex-col">
-              <span className="text-muted-foreground">Monthly EMI</span>
-              <span className="font-bold text-2xl text-foreground">${data.emi.toLocaleString()}</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-muted-foreground">Total Payment</span>
-              <span className="font-bold text-xl text-muted-foreground">${data.totalPayment.toLocaleString()}</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-muted-foreground">Total Interest</span>
-              <span className="font-bold text-xl text-destructive">${data.totalInterest.toLocaleString()}</span>
-            </div>
-          </div>
-        </CardHeader>
-        <CardContent className="h-[300px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={pieData}
-                cx="50%"
-                cy="50%"
-                innerRadius={60}
-                outerRadius={100}
-                paddingAngle={2}
-                dataKey="value"
-              >
-                {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip formatter={(value: any) => `$${Number(value).toLocaleString()}`} />
-              <Legend />
-            </PieChart>
-          </ResponsiveContainer>
-        </CardContent>
-      </Card>
-
-      <Card className="md:col-span-3">
-        <CardHeader>
-          <CardTitle>Amortization Schedule (Yearly Summary)</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Year</TableHead>
-                <TableHead>Principal Paid</TableHead>
-                <TableHead>Interest Paid</TableHead>
-                <TableHead className="text-right">Remaining Balance</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {data.schedule.filter(s => s.month % 12 === 0).map((row, i) => (
-                <TableRow key={row.month}>
-                  <TableCell className="font-medium">{row.month / 12}</TableCell>
-                  <TableCell>${(row.principalComponent * 12).toLocaleString()}</TableCell>
-                  <TableCell>${(row.interestComponent * 12).toLocaleString()}</TableCell>
-                  <TableCell className="text-right">${row.balance.toLocaleString()}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
-    </div>
+    <CalculatorShell
+      inputs={
+        <>
+          <NumberField id="amount" label="Loan amount" prefix={symbol} value={loanAmount} onChange={setLoanAmount} sliderMax={500000} step={500} />
+          <NumberField id="rate" label="Interest rate (APR)" suffix="%" value={annualRate} onChange={setAnnualRate} max={50} sliderMax={25} step={0.1} />
+          <NumberField id="years" label="Loan term" suffix="years" value={years} onChange={setYears} min={1} max={50} sliderMax={30} />
+          <NumberField id="extra" label="Extra monthly payment" prefix={symbol} hint="Optional" value={extra} onChange={setExtra} sliderMax={2000} step={25} />
+        </>
+      }
+    >
+      <ResultSummary
+        stats={[
+          { label: "Monthly payment", value: money(loan.monthlyPayment, 2), hint: extra > 0 ? `+ ${money(extra)} extra = ${money(loan.monthlyPayment + extra, 2)} per month` : undefined },
+          { label: "Total interest", value: money(loan.totalInterest), tone: "negative" },
+          { label: "Total repaid", value: money(loan.totalPaid) },
+          { label: "Paid off in", value: formatDuration(loan.months) },
+        ]}
+      />
+      {extra > 0 && interestSaved > 0 && (
+        <Notice tone="success">
+          Paying <strong>{money(extra)}</strong> extra each month saves <strong>{money(interestSaved)}</strong> in interest and
+          clears the loan <strong>{formatDuration(monthsSaved)}</strong> sooner.
+        </Notice>
+      )}
+      <Panel title="Principal vs. interest" description="Where your repayments go over the life of the loan.">
+        <BreakdownDonut
+          ariaLabel="Principal and interest breakdown"
+          centerLabel="total repaid"
+          centerValue={money(loan.totalPaid)}
+          slices={[
+            { key: "principal", label: "Principal", value: Math.max(0, loanAmount || 0), color: "var(--chart-1)" },
+            { key: "interest", label: "Interest", value: loan.totalInterest, color: "var(--chart-3)" },
+          ]}
+        />
+      </Panel>
+      <Panel title="Amortization schedule">
+        <ScheduleTable yearly={loan.yearly} monthly={loan.schedule} />
+      </Panel>
+    </CalculatorShell>
   );
 }
