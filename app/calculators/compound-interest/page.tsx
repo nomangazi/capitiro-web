@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   {
     question: "What is the difference between APR, APY and AER?",
     answer:
-      "APR is a nominal yearly rate quoted without compounding. APY (US) and AER (UK) include compounding; banks elsewhere in Europe usually quote an equivalent "effective annual rate", so they show what you actually earn in a year. For example, 5% compounded monthly is an APY of about 5.12%. Use APY or AER when comparing savings accounts.",
+      "APR is a nominal yearly rate quoted without compounding. APY (US) and AER (UK) include compounding; banks elsewhere in Europe usually quote an equivalent effective annual rate, so they show what you actually earn in a year. For example, 5% compounded monthly is an APY of about 5.12%. Use APY or AER when comparing savings accounts.",
   },
 ];
 
