@@ -60,5 +60,9 @@ Auto ads can be switched on in the AdSense dashboard on top of these.
 
 ## 6. Privacy policy must stay in sync
 
+Microsoft Clarity is loaded in `app/layout.tsx`. Its dashboard **must** keep Masking = Strict (calculator inputs are never
+recorded) and Cookies = Off until the AdSense CMP is live; then cookies may be re-enabled with consent.
+
+
 If you add analytics, a newsletter, affiliate links or any new cookie, update `app/privacy-policy/page.tsx`,
 change `siteConfig.legalUpdated`, and check the consent message covers it.

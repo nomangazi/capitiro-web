@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>The numbers you type into our calculators are processed <strong>only in your browser</strong>. We never receive or store them.</li>
         <li>We don&apos;t require accounts and don&apos;t ask for your name, email or financial details.</li>
-        <li>We measure visits with cookieless, privacy-friendly analytics (Vercel Web Analytics).</li>
+        <li>We measure visits with cookieless analytics (Vercel Web Analytics) and study page usability with Microsoft Clarity, with every typed value masked.</li>
         <li>We show ads from Google AdSense. Google and its partners may use cookies to show and measure ads, subject to your consent where required by law.</li>
       </ul>
 
@@ -49,6 +49,15 @@ export default function PrivacyPolicyPage() {
         We use Vercel Web Analytics to understand which pages are visited, from which country and on what type of device. It does
         not use cookies, does not track you across other websites and does not store your IP address; visitors are counted using
         an anonymous identifier that is discarded after 24 hours. We only see aggregated statistics.
+      </p>
+      <h3>Usability analytics (Microsoft Clarity)</h3>
+      <p>
+        To improve the Site, we use Microsoft Clarity to see how visitors interact with our pages, through aggregated heatmaps and
+        anonymised session replays (clicks, scrolling and mouse movement). All text and numbers you type, including every
+        calculator input, are masked before anything is sent, so Clarity never receives your figures. Clarity is provided by
+        Microsoft; see the{" "}
+        <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft Privacy Statement</a>.
+        You can block it with most ad or tracker blockers.
       </p>
       <h3>If you contact us</h3>
       <p>If you email us, we receive your email address and the content of your message, and use them only to reply.</p>
