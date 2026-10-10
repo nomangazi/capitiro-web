@@ -8,6 +8,7 @@ import { Logo } from "./Logo";
 const COMPANY_LINKS = [
   { href: "/about", label: "About us" },
   { href: "/contact", label: "Contact" },
+  { href: "/embed", label: "Free widgets" },
   { href: "/privacy-policy", label: "Privacy policy" },
   { href: "/terms-of-service", label: "Terms of service" },
   { href: "/disclaimer", label: "Disclaimer" },
