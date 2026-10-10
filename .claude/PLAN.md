@@ -62,7 +62,8 @@ Skills to use while working (in `.claude/skills/`):
 - [ ] 2 guides per week until about 15–20 guides
 - [ ] Next calculators: refinance break-even, multi-debt payoff, auto loan, home affordability (see keyword-targets.md)
 - [ ] Pinterest pins + Reddit/Quora answers for each new page
-- [ ] Optional: privacy-friendly analytics (update the privacy policy if added)
+- [x] Vercel Web Analytics (cookieless) + privacy policy updated
+- [ ] GA4 with Consent Mode v2 after AdSense approval (link GA4 ↔ AdSense)
 
 ## Phase 7: Monetise (about week 6+, once pages are indexed)
 - [ ] Apply to AdSense, then set `NEXT_PUBLIC_ADSENSE_CLIENT` and redeploy
