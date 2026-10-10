@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
@@ -45,6 +46,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
         </main>
         <Footer />
+        {/* Cookieless page-view analytics (Vercel Web Analytics); no consent banner required. */}
+        <Analytics />
         {siteConfig.adsense.client && (
           // Loads AdSense (including Auto ads and Google's consent message for EEA/UK visitors).
           <Script

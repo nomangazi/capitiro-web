@@ -24,6 +24,7 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>The numbers you type into our calculators are processed <strong>only in your browser</strong>. We never receive or store them.</li>
         <li>We don&apos;t require accounts and don&apos;t ask for your name, email or financial details.</li>
+        <li>We measure visits with cookieless, privacy-friendly analytics (Vercel Web Analytics).</li>
         <li>We show ads from Google AdSense. Google and its partners may use cookies to show and measure ads, subject to your consent where required by law.</li>
       </ul>
 
@@ -42,6 +43,12 @@ export default function PrivacyPolicyPage() {
         Like most websites, our hosting provider (Vercel Inc.) automatically processes technical information such as IP address,
         browser type, the pages requested and the time of the request, in order to deliver the Site securely and prevent abuse.
         These server logs are kept for a limited period.
+      </p>
+      <h3>Website analytics</h3>
+      <p>
+        We use Vercel Web Analytics to understand which pages are visited, from which country and on what type of device. It does
+        not use cookies, does not track you across other websites and does not store your IP address; visitors are counted using
+        an anonymous identifier that is discarded after 24 hours. We only see aggregated statistics.
       </p>
       <h3>If you contact us</h3>
       <p>If you email us, we receive your email address and the content of your message, and use them only to reply.</p>
