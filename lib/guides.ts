@@ -16,6 +16,28 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "4-percent-rule",
+    title: "The 4% Rule Explained: How Much Can You Withdraw in Retirement?",
+    seoTitle: "4% Rule Explained: How Much Can You Withdraw?",
+    description:
+      "The 4% rule explained: where it comes from, the 25x spending target, what $500k to $1.5M can pay each month, and where the rule falls short.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "retirement",
+  },
+  {
+    slug: "retirement-savings-by-age",
+    title: "How Much Should You Have Saved for Retirement by Age?",
+    seoTitle: "Retirement Savings by Age: Benchmarks & Targets",
+    description:
+      "Common retirement savings benchmarks by age, plus our projections of what $300, $500 or $1,000 a month grows to by 67 and how to catch up.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "retirement",
+  },
+  {
     slug: "extra-mortgage-payments",
     title: "How Extra Mortgage Payments Save You Money",
     description:
