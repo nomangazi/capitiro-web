@@ -16,6 +16,50 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "how-long-to-pay-off-credit-card",
+    title: "How Long Will It Take to Pay Off $5,000 or $10,000 of Credit Card Debt?",
+    seoTitle: "How Long to Pay Off $5K or $10K Credit Card Debt",
+    description:
+      "How many months $5,000 or $10,000 of credit card debt takes at 20-28% APR, why minimum payments drag on for decades, and what to pay to be free in 12-36 months.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "credit-card-payoff",
+  },
+  {
+    slug: "balance-transfer-math",
+    title: "Balance Transfer Cards: The Real Math (Fees, 0% Periods and Break-Even)",
+    seoTitle: "Balance Transfer Math: Fees, 0% & Break-Even",
+    description:
+      "Is a balance transfer worth it? Compare 3% and 5% fees on 15, 18 and 21-month 0% offers against a 24% card, plus break-even, revert-rate risk and UK notes.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "credit-card-payoff",
+  },
+  {
+    slug: "4-percent-rule",
+    title: "The 4% Rule Explained: How Much Can You Withdraw in Retirement?",
+    seoTitle: "4% Rule Explained: How Much Can You Withdraw?",
+    description:
+      "The 4% rule explained: where it comes from, the 25x spending target, what $500k to $1.5M can pay each month, and where the rule falls short.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "retirement",
+  },
+  {
+    slug: "retirement-savings-by-age",
+    title: "How Much Should You Have Saved for Retirement by Age?",
+    seoTitle: "Retirement Savings by Age: Benchmarks & Targets",
+    description:
+      "Common retirement savings benchmarks by age, plus our projections of what $300, $500 or $1,000 a month grows to by 67 and how to catch up.",
+    published: "2026-10-10",
+    updated: "2026-10-10",
+    readingMinutes: 8,
+    calculator: "retirement",
+  },
+  {
     slug: "extra-mortgage-payments",
     title: "How Extra Mortgage Payments Save You Money",
     description:
