@@ -85,6 +85,13 @@ static generation for every route, breadcrumbs, and fast pages. After deploy:
 
 Never buy links, use PBNs or spam forums. Google penalties also kill AdSense revenue.
 
+**Ready-to-use material:** `references/marketing-kit.md` has the Pinterest boards and a pin title/description for every
+guide and calculator, 8 draft Reddit/Quora answers, outreach email templates, a weekly 1-hour routine and the one-time
+setup checklist. Pin images are generated at `/pin/guides/<slug>` and `/pin/calculators/<slug>` (1000×1500, from the
+registries, see `app/pin/[...slug]/route.tsx` and `renderPinCard` in `lib/og-card.tsx`); they are not in the sitemap. When
+you ship a new guide or calculator, add its pin entry to the kit. Every number in a kit draft must be copied from the
+guide it links to.
+
 ## 7. Measure
 
 - Search Console: impressions, clicks and average position per page. Refresh pages that sit at positions 8–20.
