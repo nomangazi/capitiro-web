@@ -205,7 +205,7 @@ export default function Page() {
       </table>
       <p>
         After three years the salary has risen 6.1% on paper (1.02<sup>3</sup>) and prices 12.5% (1.04<sup>3</sup>), so real pay has
-        fallen 5.7%. The gap in year three alone is $3,819 a year, about $318 a month. For £40,000 the same pattern gives £42,448
+        fallen 5.7%. By year three the gap is $3,819 a year, about $318 a month. For £40,000 the same pattern gives £42,448
         against £44,995 needed, which is worth £37,736 in starting prices.
       </p>
       <p>

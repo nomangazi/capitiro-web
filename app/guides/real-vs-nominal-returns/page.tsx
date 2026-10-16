@@ -188,7 +188,7 @@ export default function Page() {
       <h2>What mistakes should you avoid?</h2>
       <ul>
         <li><strong>Judging a plan by the nominal balance alone.</strong> A bigger number is not a bigger lifestyle.</li>
-        <li><strong>Subtracting inflation from a high rate.</strong> The shortcut understates the gap when rates are large.</li>
+        <li><strong>Subtracting inflation from a high rate.</strong> The shortcut overstates the real return when rates are large.</li>
         <li><strong>Assuming inflation is the same for everyone.</strong> Official figures average a broad basket. Your own costs may differ.</li>
         <li><strong>Ignoring tax and fees.</strong> Both reduce the nominal return before inflation does its work.</li>
         <li><strong>Treating illustrative rates as predictions.</strong> Real returns vary widely from year to year.</li>
