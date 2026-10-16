@@ -35,7 +35,7 @@ const faqs: FaqItem[] = [
   {
     question: "How does a cash-out refinance change the result?",
     answer:
-      "A cash-out refinance replaces your loan with a larger one and pays you the difference. The bigger balance raises the payment and the interest, so monthly savings shrink or turn negative. The calculator does not count the cash as a saving, because you repay it with interest.",
+      "A cash-out refinance replaces your loan with a larger one and pays you the difference. The bigger balance raises the payment and the interest, so monthly savings shrink or turn negative. The lifetime figure captures that cost, because you repay the cash with interest.",
   },
   {
     question: "What closing costs should I enter?",
@@ -100,6 +100,7 @@ export default function RefinancePage() {
 
           <h2>How do the term and closing costs change the answer?</h2>
           <p>Here is the same $310,000 balance under different choices. Each row changes one thing from the example above.</p>
+          <div className="overflow-x-auto">
           <table>
             <thead>
               <tr>
@@ -119,6 +120,7 @@ export default function RefinancePage() {
               <tr><td>6.25%, 30 years, $40,000 cash-out</td><td>$2,155</td><td>Saves $79</td><td>≈ 98 months</td><td>Costs ≈ $19,649 more</td></tr>
             </tbody>
           </table>
+          </div>
           <p>
             Closing costs matter just as much. With the 30-year, 6.25% loan, costs of $3,100 (1% of the balance) break even in about
             10 months, while $15,500 (5%) takes about 48 months. The shorter terms never reach break-even because the payment goes up,

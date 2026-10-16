@@ -7,6 +7,7 @@ import {
   calculateInflation,
   calculateLoanAmortization,
   calculateMortgage,
+  calculateRefinance,
   calculateRetirement,
   calculateSavingsGoal,
   calculateSIP,
@@ -198,7 +199,6 @@ test("inflation: future cost and purchasing power", () => {
 /* Mortgage refinance (expected values computed independently with python3)   */
 /* -------------------------------------------------------------------------- */
 
-import { calculateRefinance } from "./math.ts";
 
 const refiBase = {
   currentBalance: 310_446,
@@ -279,6 +279,9 @@ test("refinance: cash-out increases the new loan and interest", () => {
   close(r.breakEvenMonths!, 273.838, 0.01);
   close(r.lifetimeSavings, -75_332.38, 0.05);
   assert.equal(r.cashOut, 50_000);
+  // The chart includes the cash received, so it ends exactly on the headline lifetime figure.
+  assert.equal(r.series[0].cumulativeSavings, 50_000 - 6000);
+  close(r.series.at(-1)!.cumulativeSavings, r.lifetimeSavings, 0.01);
 });
 
 test("refinance: 0% rates and free refinances", () => {

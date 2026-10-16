@@ -39,7 +39,7 @@ export function Refinance() {
       ? "Never"
       : r.breakEvenMonths <= 0
         ? "Immediately"
-        : formatDuration(Math.max(1, Math.round(r.breakEvenMonths)));
+        : `${Math.max(1, Math.round(r.breakEvenMonths))} ${Math.max(1, Math.round(r.breakEvenMonths)) === 1 ? "month" : "months"}`;
   const lifetimeGood = r.lifetimeSavings >= 0;
   const extending = r.newMonths > r.currentMonths;
   const shortening = r.newMonths < r.currentMonths;
@@ -132,13 +132,13 @@ export function Refinance() {
       )}
       {cashOut > 0 && (
         <Notice tone="info">
-          The <strong>{money(r.cashOut)}</strong> cash-out is borrowed money that you repay with interest, so it is not counted as a saving.
-          It raises the new loan to {money(r.newLoanAmount)}.
+          The <strong>{money(r.cashOut)}</strong> cash-out is borrowed money that you repay with interest. It raises the new loan to{" "}
+          {money(r.newLoanAmount)}, and the extra interest is part of the lifetime figure. The chart adds the cash you receive.
         </Notice>
       )}
       <Panel
         title="Cumulative savings after closing costs"
-        description="Monthly payments saved to date, minus any closing costs paid at closing. Where the line crosses zero is your break-even point."
+        description="Monthly payments saved to date, plus any cash-out received, minus closing costs paid at closing. The last point on the line is the lifetime figure above."
       >
         <TimeSeriesChart
           data={r.series}

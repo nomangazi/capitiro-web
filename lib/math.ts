@@ -512,7 +512,7 @@ export interface RefinanceSeriesPoint {
   month: number;
   /** month ÷ 12, rounded to one decimal (chart axis) */
   year: number;
-  /** Payments saved to date minus cash paid at closing. Cash-out is borrowed money, so it is not counted. */
+  /** Payments saved to date, plus any cash-out received, minus cash paid at closing. The last point equals lifetimeSavings. */
   cumulativeSavings: number;
 }
 
@@ -572,7 +572,7 @@ export function calculateRefinance(input: RefinanceInput): RefinanceResult {
 
   const horizon = Math.max(currentMonths, newMonths);
   const cumulativeAt = (m: number) =>
-    Math.min(m, currentMonths) * currentPayment - Math.min(m, newMonths) * newPayment - paidUpfront;
+    Math.min(m, currentMonths) * currentPayment - Math.min(m, newMonths) * newPayment - paidUpfront + cashOut;
   const series: RefinanceSeriesPoint[] = [];
   for (let m = 0; m <= horizon; m += 12) {
     series.push({ month: m, year: Math.round((m / 12) * 10) / 10, cumulativeSavings: cumulativeAt(m) });
