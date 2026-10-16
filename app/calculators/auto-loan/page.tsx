@@ -40,7 +40,7 @@ const faqs: FaqItem[] = [
   {
     question: "Does this work for UK and EU car finance?",
     answer:
-      "It works for a standard fixed-rate instalment loan, such as hire purchase, with equal monthly payments. Prices in the UK and most of the EU normally include VAT, so set the sales tax rate to 0%. It does not model PCP deals with a final balloon payment.",
+      "It works for a standard fixed-rate instalment loan, such as hire purchase, with equal monthly payments. Prices in the UK and most of the EU normally include VAT, so set the sales tax rate to 0%. Enter the APR, not a flat rate, if a dealer quotes both. It does not model PCP deals with a final balloon payment.",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function AutoLoanPage() {
           <ul>
             <li><strong>Compare the total cost, not only the payment.</strong> A low payment can hide a long term and a lot of interest.</li>
             <li><strong>Get pre-approved</strong> by a bank or credit union before visiting the dealer, so you have a rate to compare with the dealer&apos;s offer.</li>
-            <li><strong>Pick the shortest term you can comfortably afford.</strong> Many buyers use the 20/4/10 rule of thumb as a starting point: 20% down, 4 years or less, and car costs under 10% of income.</li>
+            <li><strong>Pick the shortest term you can comfortably afford.</strong> A common rule of thumb is 20/4/10, as a starting point: 20% down, 4 years or less, and car costs under 10% of income.</li>
             <li><strong>Check what you owe on your trade-in</strong> before you shop. If it is negative, rolling it into a new loan makes the new loan larger.</li>
             <li><strong>Remember the running costs.</strong> Insurance, fuel and maintenance are not part of the loan, but they belong in your budget.</li>
           </ul>
