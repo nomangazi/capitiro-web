@@ -1,10 +1,11 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Bookmark, Clock } from "lucide-react";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { calculatorPath, getCalculator } from "@/lib/calculators";
 import { getGuide, guidePath } from "@/lib/guides";
 import { formatDate } from "@/lib/dates";
+import { pinImagePath, pinterestSaveUrl } from "@/lib/pin";
 import { articleJsonLd } from "@/lib/seo";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
@@ -65,6 +66,17 @@ export function GuideLayout({ slug, children }: { slug: string; children: ReactN
       </header>
       <article className="prose-content">{children}</article>
       {cta}
+      <p className="text-sm text-muted-foreground">
+        <a
+          href={pinterestSaveUrl({ pagePath: path, imagePath: pinImagePath("guides", slug), description: guide.title })}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-10 items-center gap-1.5 hover:text-foreground hover:underline"
+        >
+          <Bookmark className="size-3.5" aria-hidden /> Save to Pinterest
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+      </p>
       <AdSlot className="mt-10" />
       <p className="mt-10 rounded-lg bg-muted px-4 py-3 text-xs leading-relaxed text-muted-foreground">
         <strong className="text-foreground">Disclaimer:</strong> This guide is general educational information, not personal financial
