@@ -17,6 +17,10 @@ export const siteConfig = {
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@capitiro.com",
   /** Date the legal pages were last reviewed. Update whenever their content changes. */
   legalUpdated: "2026-10-10",
+  /** Official brand profiles, emitted as Organization `sameAs` and linked from the footer. */
+  social: {
+    pinterest: "https://www.pinterest.com/capitirofinance/",
+  },
   /** Microsoft Clarity project id (heatmaps + session recordings). Public value; override with NEXT_PUBLIC_CLARITY_ID, set to "" to disable. */
   clarityId: process.env.NEXT_PUBLIC_CLARITY_ID ?? "yvn44sv5s0",
   adsense: {

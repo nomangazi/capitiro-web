@@ -135,6 +135,7 @@ export function websiteJsonLd(): JsonLdObject[] {
       url: siteConfig.url,
       logo: absoluteUrl("/icon.svg"),
       email: siteConfig.contactEmail,
+      sameAs: Object.values(siteConfig.social),
     },
   ];
 }
