@@ -623,3 +623,105 @@ export function calculateHomeAffordability(input: HomeAffordabilityInput): HomeA
     totalMonthly: hasPrice ? principalAndInterest + monthlyTax + monthlyInsurance + monthlyPmi + hoa : 0,
   };
 }
+
+/* -------------------------------------------------------------------------- */
+/* Auto loan (trade-in, sales tax, fees, negative equity)                     */
+/* -------------------------------------------------------------------------- */
+
+export interface AutoLoanInput {
+  vehiclePrice: number;
+  /** Cash paid at signing toward the vehicle */
+  downPayment: number;
+  /** Value the dealer gives you for your current vehicle */
+  tradeInValue: number;
+  /** Loan balance still owed on the trade-in (a payoff above its value is negative equity) */
+  tradeInOwed: number;
+  /** Sales tax as a % of the taxable price */
+  salesTaxRate: number;
+  /** Title, registration and documentation fees combined */
+  fees: number;
+  annualRate: number;
+  termMonths: number;
+  /** true = add sales tax and fees to the loan; false = pay them in cash at signing */
+  financeTaxAndFees: boolean;
+  /** true = tax is charged on (price - trade-in value); false = on the full price. Varies by US state. */
+  tradeInReducesTax: boolean;
+}
+
+export interface AutoLoanYear {
+  year: number;
+  /** Loan balance at the end of the year (year 0 = amount financed) */
+  balance: number;
+  /** Cumulative interest paid by the end of the year */
+  interestPaid: number;
+}
+
+export interface AutoLoanResult {
+  salesTax: number;
+  /** Positive equity: trade-in value above what is owed on it */
+  tradeInEquity: number;
+  /** Negative equity (owed above trade-in value) that ends up inside the loan */
+  negativeEquityRolledIn: number;
+  amountFinanced: number;
+  monthlyPayment: number;
+  totalInterest: number;
+  /** Sum of all monthly payments */
+  totalOfPayments: number;
+  /** Down payment actually needed, plus tax and fees paid upfront */
+  cashAtSigning: number;
+  /** Cash at signing plus every monthly payment (the trade-in vehicle itself is not counted) */
+  totalCost: number;
+  termMonths: number;
+  yearly: AutoLoanYear[];
+}
+
+export function calculateAutoLoan(input: AutoLoanInput): AutoLoanResult {
+  const big = Number.MAX_SAFE_INTEGER;
+  const price = clamp(input.vehiclePrice, 0, big);
+  const down = clamp(input.downPayment, 0, big);
+  const tradeIn = clamp(input.tradeInValue, 0, big);
+  const owed = clamp(input.tradeInOwed, 0, big);
+  const taxRate = clamp(input.salesTaxRate, 0, 30);
+  const fees = clamp(input.fees, 0, big);
+  const term = Math.round(clamp(input.termMonths, 1, 120));
+
+  const taxableBase = input.tradeInReducesTax ? Math.max(0, price - tradeIn) : price;
+  const salesTax = (taxableBase * taxRate) / 100;
+  const tradeInEquity = Math.max(0, tradeIn - owed);
+  const negativeEquity = Math.max(0, owed - tradeIn);
+
+  // Vehicle price plus any trade-in payoff, less the trade-in credit. Never below zero.
+  const vehicleNet = Math.max(0, price + owed - tradeIn);
+  const taxAndFees = salesTax + fees;
+  const financeExtras = !!input.financeTaxAndFees;
+
+  const needToCover = financeExtras ? vehicleNet + taxAndFees : vehicleNet;
+  const downApplied = Math.min(down, needToCover);
+  const amountFinanced = needToCover - downApplied;
+  const upfrontExtras = financeExtras ? 0 : taxAndFees;
+
+  const amort = amortize(amountFinanced, input.annualRate, term, 0);
+  const totalOfPayments = amort.monthlyPayment * amort.months;
+  const cashAtSigning = downApplied + upfrontExtras;
+
+  const yearly: AutoLoanYear[] = [{ year: 0, balance: amountFinanced, interestPaid: 0 }];
+  let cumulativeInterest = 0;
+  for (const row of amort.yearly) {
+    cumulativeInterest += row.interest;
+    yearly.push({ year: row.year, balance: row.balance, interestPaid: cumulativeInterest });
+  }
+
+  return {
+    salesTax,
+    tradeInEquity,
+    negativeEquityRolledIn: Math.min(negativeEquity, amountFinanced),
+    amountFinanced,
+    monthlyPayment: amort.monthlyPayment,
+    totalInterest: amort.totalInterest,
+    totalOfPayments,
+    cashAtSigning,
+    totalCost: cashAtSigning + totalOfPayments,
+    termMonths: term,
+    yearly,
+  };
+}

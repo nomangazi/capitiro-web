@@ -1,4 +1,5 @@
 import type { ComponentType } from "react";
+import { AutoLoan } from "@/components/calculators/AutoLoan";
 import { CompoundInterest } from "@/components/calculators/CompoundInterest";
 import { CreditCardPayoff } from "@/components/calculators/CreditCardPayoff";
 import { HomeAffordability } from "@/components/calculators/HomeAffordability";
@@ -14,6 +15,7 @@ export const calculatorComponents: Record<string, ComponentType> = {
   mortgage: Mortgage,
   "home-affordability": HomeAffordability,
   "loan-amortization": LoanAmortization,
+  "auto-loan": AutoLoan,
   "credit-card-payoff": CreditCardPayoff,
   "compound-interest": CompoundInterest,
   "sip-return": SIPReturn,
