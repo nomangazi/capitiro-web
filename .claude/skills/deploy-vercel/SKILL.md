@@ -39,3 +39,17 @@ For UI changes, also check 390px and 1366px widths (see the capitiro-design skil
 ## Rollback
 
 Vercel → Deployments → pick the last good deployment → "Promote to Production". Then fix forward on the branch.
+
+## IndexNow (instant indexing for Bing, Yandex, Seznam, Naver)
+
+- `pnpm build` ends with `node scripts/indexnow.mjs` (chained in the `build` script, because pnpm does not run `postbuild` hooks by
+  default). Vercel runs the package's `build` script, so every production deploy submits changed URLs automatically.
+- It does nothing unless `VERCEL_ENV=production` (previews and local `pnpm check` never touch the network). It reads
+  `.next/server/app/sitemap.xml.body`, takes URLs with `<lastmod>` in the last 3 days plus `/`, `/guides` and `/calculators`,
+  and POSTs them to `https://api.indexnow.org/indexnow`. It never fails the build: errors are logged and ignored.
+- The key is public by design: constant `KEY` in `scripts/indexnow.mjs`, served as `public/<key>.txt` (file content = the key).
+  Keep the filename, content and constant in sync if the key is ever rotated. The first deploy ships the key file and the first
+  submission together; IndexNow verifies the key file afterwards, so this is fine.
+- Host comes from `NEXT_PUBLIC_SITE_URL` (must be the live host, `https://www.capitiro.com`), so URLs on any other host are never sent.
+- Manual run after a build: `node scripts/indexnow.mjs --force` (add `--days=N` to widen the window, `--dry-run` to print the payload only).
+- Check results in Bing Webmaster Tools → IndexNow (submissions and any key/host errors). HTTP 200/202 in the build log = accepted.
