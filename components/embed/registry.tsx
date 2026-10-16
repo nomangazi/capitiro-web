@@ -4,6 +4,7 @@ import { CreditCardPayoff } from "@/components/calculators/CreditCardPayoff";
 import { Inflation } from "@/components/calculators/Inflation";
 import { LoanAmortization } from "@/components/calculators/LoanAmortization";
 import { Mortgage } from "@/components/calculators/Mortgage";
+import { Refinance } from "@/components/calculators/Refinance";
 import { Retirement } from "@/components/calculators/Retirement";
 import { SavingsGoal } from "@/components/calculators/SavingsGoal";
 import { SIPReturn } from "@/components/calculators/SIPReturn";
@@ -13,6 +14,7 @@ export const calculatorComponents: Record<string, ComponentType> = {
   mortgage: Mortgage,
   "loan-amortization": LoanAmortization,
   "credit-card-payoff": CreditCardPayoff,
+  refinance: Refinance,
   "compound-interest": CompoundInterest,
   "sip-return": SIPReturn,
   retirement: Retirement,

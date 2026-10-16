@@ -193,3 +193,121 @@ test("inflation: future cost and purchasing power", () => {
   close(r.powerLostPercent, 25.59);
   assert.equal(r.rows.length, 11);
 });
+
+/* -------------------------------------------------------------------------- */
+/* Mortgage refinance (expected values computed independently with python3)   */
+/* -------------------------------------------------------------------------- */
+
+import { calculateRefinance } from "./math.ts";
+
+const refiBase = {
+  currentBalance: 310_446,
+  currentRate: 7.5,
+  yearsRemaining: 27,
+  newRate: 6.25,
+  newTermYears: 30,
+  closingCosts: 7761,
+  rollClosingCosts: false,
+  cashOut: 0,
+};
+
+test("refinance: textbook case matches independent calculation", () => {
+  const r = calculateRefinance(refiBase);
+  close(r.currentPayment, 2237.4894);
+  close(r.newPayment, 1911.4694);
+  close(r.monthlySavings, 326.0199);
+  close(r.breakEvenMonths!, 23.8053, 0.001);
+  close(r.currentRemainingInterest, 414_500.55, 0.05);
+  close(r.newTotalInterest, 377_682.99, 0.05);
+  close(r.lifetimeSavings, 29_056.56, 0.05);
+  // Series: -costs at month 0, then payments saved minus costs
+  assert.equal(r.series[0].cumulativeSavings, -7761);
+  close(r.series[1].cumulativeSavings, -3848.76, 0.01);
+  close(r.series[5].cumulativeSavings, 11_800.2, 0.01);
+  close(r.series.at(-1)!.cumulativeSavings, r.lifetimeSavings, 0.01);
+});
+
+test("refinance: rolling costs into the loan raises the balance and trims the saving", () => {
+  const r = calculateRefinance({ ...refiBase, rollClosingCosts: true });
+  close(r.newLoanAmount, 318_207);
+  close(r.newPayment, 1959.2552);
+  close(r.monthlySavings, 278.2341);
+  close(r.newTotalInterest, 387_124.88, 0.05);
+  close(r.lifetimeSavings, 19_614.67, 0.05);
+  assert.equal(r.paidUpfront, 0);
+  assert.equal(r.series[0].cumulativeSavings, 0);
+  close(r.series.at(-1)!.cumulativeSavings, r.lifetimeSavings, 0.01);
+});
+
+test("refinance: no monthly saving means break-even is never reached", () => {
+  // Same rate and same remaining term: the payment does not change and the costs are lost.
+  const same = calculateRefinance({
+    currentBalance: 300_000, currentRate: 6, yearsRemaining: 25,
+    newRate: 6, newTermYears: 25, closingCosts: 6000, rollClosingCosts: false,
+  });
+  assert.equal(same.paymentFalls, false);
+  assert.equal(same.breakEvenMonths, null);
+  close(same.lifetimeSavings, -6000, 0.01);
+
+  // Higher rate over a fresh 30-year term: payment up, lifetime cost far higher.
+  const worse = calculateRefinance({
+    currentBalance: 300_000, currentRate: 6, yearsRemaining: 25,
+    newRate: 7, newTermYears: 30, closingCosts: 6000, rollClosingCosts: false,
+  });
+  assert.equal(worse.breakEvenMonths, null);
+  close(worse.monthlySavings, -63.0033);
+  close(worse.lifetimeSavings, -144_655.43, 0.05);
+});
+
+test("refinance: a shorter term raises the payment but can cut lifetime cost", () => {
+  const r = calculateRefinance({ ...refiBase, newTermYears: 15 });
+  close(r.newPayment, 2661.835);
+  close(r.monthlySavings, -424.3456);
+  assert.equal(r.breakEvenMonths, null);
+  close(r.newTotalInterest, 168_684.3, 0.05);
+  close(r.lifetimeSavings, 238_055.25, 0.05);
+});
+
+test("refinance: cash-out increases the new loan and interest", () => {
+  const r = calculateRefinance({
+    currentBalance: 300_000, currentRate: 7, yearsRemaining: 25,
+    newRate: 6, newTermYears: 30, closingCosts: 6000, rollClosingCosts: false, cashOut: 50_000,
+  });
+  close(r.newLoanAmount, 350_000);
+  close(r.newPayment, 2098.4268);
+  close(r.monthlySavings, 21.9108);
+  close(r.breakEvenMonths!, 273.838, 0.01);
+  close(r.lifetimeSavings, -75_332.38, 0.05);
+  assert.equal(r.cashOut, 50_000);
+});
+
+test("refinance: 0% rates and free refinances", () => {
+  const r = calculateRefinance({
+    currentBalance: 200_000, currentRate: 0, yearsRemaining: 10,
+    newRate: 0, newTermYears: 15, closingCosts: 0, rollClosingCosts: false,
+  });
+  close(r.currentPayment, 1666.6667);
+  close(r.newPayment, 1111.1111);
+  assert.equal(r.breakEvenMonths, 0);
+  close(r.currentRemainingInterest, 0);
+  close(r.newTotalInterest, 0);
+  close(r.lifetimeSavings, 0);
+});
+
+test("refinance: bad input never throws or returns NaN", () => {
+  const bad = calculateRefinance({
+    currentBalance: NaN, currentRate: -5, yearsRemaining: Infinity,
+    newRate: NaN, newTermYears: -3, closingCosts: -100, rollClosingCosts: true, cashOut: NaN,
+  });
+  for (const [key, value] of Object.entries(bad)) {
+    if (typeof value === "number") assert.ok(Number.isFinite(value), `${key} is not finite`);
+  }
+  assert.equal(bad.currentPayment, 0);
+  assert.equal(bad.breakEvenMonths, null);
+  assert.ok(bad.series.length >= 1);
+  assert.ok(bad.series.every((p) => Number.isFinite(p.cumulativeSavings)));
+
+  const huge = calculateRefinance({ ...refiBase, currentBalance: 1e30, newRate: 500, newTermYears: 9999 });
+  assert.ok(Number.isFinite(huge.lifetimeSavings));
+  assert.ok(huge.series.length <= 101);
+});

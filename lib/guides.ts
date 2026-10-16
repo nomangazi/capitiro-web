@@ -77,7 +77,7 @@ export const guides: GuideMeta[] = [
     published: "2026-10-10",
     updated: "2026-10-10",
     readingMinutes: 6,
-    calculator: "loan-amortization",
+    calculator: "refinance",
   },
   {
     slug: "how-much-house-can-i-afford",

@@ -17,6 +17,7 @@ const EMBED_HEIGHTS: Record<string, number> = {
   "loan-amortization": 1300,
   "credit-card-payoff": 1200,
   retirement: 1300,
+  refinance: 1400,
 };
 
 export function embedHeight(slug: string): number {

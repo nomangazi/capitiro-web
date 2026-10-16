@@ -9,6 +9,7 @@ or Ahrefs before prioritising).
 |---|---|---|
 | ✅ /calculators/mortgage | mortgage calculator | with PMI and HOA · with taxes and insurance · 15 vs 30 |
 | ✅ /calculators/loan-amortization | loan amortization calculator | extra payment calculator · amortization schedule printable |
+| ✅ /calculators/refinance | mortgage refinance calculator | refinance break-even calculator · should I refinance · cash-out refinance calculator |
 | ✅ /calculators/credit-card-payoff | credit card payoff calculator | how long to pay off $5,000 credit card · pay off in 12 months |
 | ✅ /calculators/compound-interest | compound interest calculator | with monthly contributions · daily compounding |
 | ✅ /calculators/sip-return | SIP calculator | step-up SIP · monthly investment calculator |
@@ -20,7 +21,7 @@ or Ahrefs before prioritising).
 
 | Priority | Calculator | Why |
 |---|---|---|
-| 🔜 1 | Mortgage refinance (break-even) | Very high CPC (refinance lenders) |
+| ✅ 1 | Mortgage refinance (break-even), shipped as /calculators/refinance | Very high CPC (refinance lenders) |
 | 🔜 2 | Debt consolidation / payoff (multi-debt avalanche vs snowball) | High CPC; links to an existing guide |
 | 🔜 3 | Auto loan calculator | High volume in the US |
 | 🔜 4 | How much house can I afford (28/36 DTI) | High intent, mortgage cluster |
