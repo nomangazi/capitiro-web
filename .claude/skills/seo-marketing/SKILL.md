@@ -60,7 +60,7 @@ calculators so internal links reinforce each other:
 
 - **Mortgage cluster:** 15 vs 30 year ✅, how much house can I afford ✅, PMI explained ✅, extra mortgage payments ✅, refinance break-even ✅, UK overpayments.
 - **Debt cluster:** avalanche vs snowball ✅, balance transfer math, debt consolidation loans, minimum payment trap.
-- **Investing cluster:** Rule of 72 ✅, SIP vs lump sum, index funds and fees (1% fee impact), dollar-cost averaging.
+- **Investing cluster:** Rule of 72 ✅, SIP vs lump sum ✅, index funds and fees (1% fee impact) ✅, dollar-cost averaging.
 - **Retirement cluster:** 4% rule, how much to retire by age, 401(k) vs IRA, ISA vs SIPP (UK), FIRE number.
 - **Saving cluster:** emergency fund size, high-yield savings vs CD, sinking funds.
 
