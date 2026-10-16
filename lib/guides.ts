@@ -57,6 +57,27 @@ export const guides: GuideMeta[] = [
     calculator: "savings-goal",
   },
   {
+    slug: "sip-vs-lump-sum",
+    title: "SIP vs Lump Sum: Which Investing Approach Wins?",
+    description:
+      "SIP vs lump sum investing with real numbers: $12,000 now vs $1,000 a month, $60,000 now vs $500 a month, and how to decide which suits you.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 8,
+    calculator: "sip-return",
+  },
+  {
+    slug: "investment-fees-impact",
+    title: "How a 1% Fee Eats Your Returns (With Real Numbers)",
+    seoTitle: "How a 1% Fee Eats Your Returns: Real Numbers",
+    description:
+      "What a 0.25%, 1% or 2% investment fee costs on $100,000 or $500 a month over 20, 30 and 40 years, plus practical ways to cut the fees you pay.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 9,
+    calculator: "compound-interest",
+  },
+  {
     slug: "how-long-to-pay-off-credit-card",
     title: "How Long Will It Take to Pay Off $5,000 or $10,000 of Credit Card Debt?",
     seoTitle: "How Long to Pay Off $5K or $10K Credit Card Debt",
