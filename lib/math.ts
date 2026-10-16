@@ -725,3 +725,121 @@ export function calculateAutoLoan(input: AutoLoanInput): AutoLoanResult {
     yearly,
   };
 }
+
+/* -------------------------------------------------------------------------- */
+/* Mortgage refinance                                                         */
+/* -------------------------------------------------------------------------- */
+
+export interface RefinanceInput {
+  /** Balance still owed on the current loan */
+  currentBalance: number;
+  /** Current annual interest rate, % */
+  currentRate: number;
+  /** Years left on the current loan */
+  yearsRemaining: number;
+  /** New annual interest rate, % */
+  newRate: number;
+  /** New loan term in years */
+  newTermYears: number;
+  /** Total closing costs of the refinance */
+  closingCosts: number;
+  /** true = costs are added to the new loan; false = costs are paid in cash at closing */
+  rollClosingCosts: boolean;
+  /** Extra cash borrowed against the home (0 for a plain rate-and-term refinance) */
+  cashOut?: number;
+}
+
+export interface RefinanceSeriesPoint {
+  /** Months since closing */
+  month: number;
+  /** month ÷ 12, rounded to one decimal (chart axis) */
+  year: number;
+  /** Payments saved to date, plus any cash-out received, minus cash paid at closing. The last point equals lifetimeSavings. */
+  cumulativeSavings: number;
+}
+
+export interface RefinanceResult {
+  currentMonths: number;
+  newMonths: number;
+  currentPayment: number;
+  /** New loan = balance + cash-out + closing costs rolled in */
+  newLoanAmount: number;
+  newPayment: number;
+  /** currentPayment − newPayment (negative when the payment goes up) */
+  monthlySavings: number;
+  /** true when the payment falls by more than half a cent */
+  paymentFalls: boolean;
+  /** Closing costs ÷ monthly savings; null when the payment does not fall (break-even is never reached) */
+  breakEvenMonths: number | null;
+  closingCosts: number;
+  /** Closing costs paid in cash at closing (0 when rolled in) */
+  paidUpfront: number;
+  /** Closing costs added to the new loan (0 when paid upfront) */
+  financed: number;
+  cashOut: number;
+  /** Interest left to pay if you keep the current loan to the end */
+  currentRemainingInterest: number;
+  /** Interest over the whole new loan */
+  newTotalInterest: number;
+  /** Interest on the current loan minus interest on the new loan (positive = refinance pays less interest) */
+  interestDifference: number;
+  /** Interest saved minus all closing costs (positive = refinance is cheaper over the full terms) */
+  lifetimeSavings: number;
+  /** One point per year (plus the final month) until both loans have ended */
+  series: RefinanceSeriesPoint[];
+}
+
+export function calculateRefinance(input: RefinanceInput): RefinanceResult {
+  const balance = clamp(input.currentBalance, 0, Number.MAX_SAFE_INTEGER);
+  const closingCosts = clamp(input.closingCosts, 0, Number.MAX_SAFE_INTEGER);
+  const cashOut = clamp(input.cashOut ?? 0, 0, Number.MAX_SAFE_INTEGER);
+  const roll = input.rollClosingCosts === true;
+  const currentMonths = Math.max(1, Math.round(clamp(input.yearsRemaining, 0, 50) * 12));
+  const newMonths = Math.max(1, Math.round(clamp(input.newTermYears, 0, 50) * 12));
+
+  const financed = roll ? closingCosts : 0;
+  const paidUpfront = roll ? 0 : closingCosts;
+  const newLoanAmount = balance + cashOut + financed;
+
+  const currentPayment = monthlyPayment(balance, input.currentRate, currentMonths);
+  const newPayment = monthlyPayment(newLoanAmount, input.newRate, newMonths);
+  const monthlySavings = currentPayment - newPayment;
+  const paymentFalls = monthlySavings > 0.005;
+  const breakEvenMonths = paymentFalls ? closingCosts / monthlySavings : null;
+
+  const currentRemainingInterest = Math.max(0, currentPayment * currentMonths - balance);
+  const newTotalInterest = Math.max(0, newPayment * newMonths - newLoanAmount);
+  const interestDifference = currentRemainingInterest - newTotalInterest;
+  const lifetimeSavings = interestDifference - closingCosts;
+
+  const horizon = Math.max(currentMonths, newMonths);
+  const cumulativeAt = (m: number) =>
+    Math.min(m, currentMonths) * currentPayment - Math.min(m, newMonths) * newPayment - paidUpfront + cashOut;
+  const series: RefinanceSeriesPoint[] = [];
+  for (let m = 0; m <= horizon; m += 12) {
+    series.push({ month: m, year: Math.round((m / 12) * 10) / 10, cumulativeSavings: cumulativeAt(m) });
+  }
+  if (horizon % 12 !== 0) {
+    series.push({ month: horizon, year: Math.round((horizon / 12) * 10) / 10, cumulativeSavings: cumulativeAt(horizon) });
+  }
+
+  return {
+    currentMonths,
+    newMonths,
+    currentPayment,
+    newLoanAmount,
+    newPayment,
+    monthlySavings,
+    paymentFalls,
+    breakEvenMonths,
+    closingCosts,
+    paidUpfront,
+    financed,
+    cashOut,
+    currentRemainingInterest,
+    newTotalInterest,
+    interestDifference,
+    lifetimeSavings,
+    series,
+  };
+}

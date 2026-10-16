@@ -11,6 +11,7 @@ or Ahrefs before prioritising).
 | ✅ /calculators/home-affordability | home affordability calculator | how much house can I afford calculator · 28/36 rule calculator · 31/43 FHA-style ratios |
 | ✅ /calculators/loan-amortization | loan amortization calculator | extra payment calculator · amortization schedule printable |
 | ✅ /calculators/auto-loan | auto loan calculator | car loan calculator · car payment calculator with trade in · negative equity |
+| ✅ /calculators/refinance | mortgage refinance calculator | refinance break-even calculator · should I refinance · cash-out refinance calculator |
 | ✅ /calculators/credit-card-payoff | credit card payoff calculator | how long to pay off $5,000 credit card · pay off in 12 months |
 | ✅ /calculators/compound-interest | compound interest calculator | with monthly contributions · daily compounding |
 | ✅ /calculators/sip-return | SIP calculator | step-up SIP · monthly investment calculator |
@@ -22,7 +23,7 @@ or Ahrefs before prioritising).
 
 | Priority | Calculator | Why |
 |---|---|---|
-| 🔜 1 | Mortgage refinance (break-even) | Very high CPC (refinance lenders) |
+| ✅ 1 | Mortgage refinance (break-even), shipped as /calculators/refinance | Very high CPC (refinance lenders) |
 | 🔜 2 | Debt consolidation / payoff (multi-debt avalanche vs snowball) | High CPC; links to an existing guide |
 | ✅ 3 | Auto loan calculator (shipped) | High volume in the US |
 | ✅ 4 | How much house can I afford (28/36 DTI) | Shipped as /calculators/home-affordability |

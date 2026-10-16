@@ -75,9 +75,9 @@ export const guides: GuideMeta[] = [
     description:
       "How to calculate your mortgage refinance break-even point, with a worked example showing when refinancing saves money and when it costs more.",
     published: "2026-10-10",
-    updated: "2026-10-10",
+    updated: "2026-10-16",
     readingMinutes: 6,
-    calculator: "loan-amortization",
+    calculator: "refinance",
   },
   {
     slug: "how-much-house-can-i-afford",

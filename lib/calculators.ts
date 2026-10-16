@@ -7,6 +7,7 @@ import {
   Landmark,
   LineChart,
   PiggyBank,
+  RefreshCw,
   Repeat,
   Target,
   TrendingUp,
@@ -96,6 +97,18 @@ export const calculators: CalculatorMeta[] = [
     keywords: ["credit card payoff calculator", "credit card interest calculator", "debt payoff calculator"],
     published: "2026-10-10",
     updated: "2026-10-10",
+  },
+  {
+    slug: "refinance",
+    title: "Mortgage Refinance Calculator",
+    shortTitle: "Refinance",
+    summary:
+      "Compare your current mortgage with a refinance: new payment, break-even point, closing costs and total cost over the life of the loan.",
+    category: "Borrowing",
+    icon: RefreshCw,
+    keywords: ["refinance calculator", "mortgage refinance calculator", "refinance break-even calculator", "should I refinance"],
+    published: "2026-10-16",
+    updated: "2026-10-16",
   },
   {
     slug: "compound-interest",
