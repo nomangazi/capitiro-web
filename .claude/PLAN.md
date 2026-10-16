@@ -60,7 +60,7 @@ Skills to use while working (in `.claude/skills/`):
 
 ## Phase 6: Content growth (weeks 1–6)
 - [ ] 2 guides per week until about 15–20 guides
-- [ ] Next calculators: refinance break-even, multi-debt payoff, auto loan, home affordability (see keyword-targets.md)
+- [ ] Next calculators: refinance break-even, multi-debt payoff, ~~auto loan~~ (shipped), home affordability (see keyword-targets.md)
 - [ ] Pinterest pins + Reddit/Quora answers for each new page
 - [x] Vercel Web Analytics (cookieless) + privacy policy updated
 - [ ] GA4 with Consent Mode v2 after AdSense approval (link GA4 ↔ AdSense)
