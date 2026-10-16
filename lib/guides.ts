@@ -37,6 +37,26 @@ export const guides: GuideMeta[] = [
     calculator: "inflation",
   },
   {
+    slug: "emergency-fund-size",
+    title: "How Big Should Your Emergency Fund Be?",
+    description:
+      "The 3-6 month emergency fund rule of thumb, dollar targets for $2,000-$4,500 of monthly essentials, when to save more and how long it takes to build.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 7,
+    calculator: "savings-goal",
+  },
+  {
+    slug: "high-yield-savings-vs-cds",
+    title: "High-Yield Savings vs CDs: Which Is Better?",
+    description:
+      "High-yield savings vs CDs on $10,000 over 1, 3 and 5 years at example rates, with rate-drop scenarios, early withdrawal penalties, CD ladders and UK notes.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 8,
+    calculator: "savings-goal",
+  },
+  {
     slug: "how-long-to-pay-off-credit-card",
     title: "How Long Will It Take to Pay Off $5,000 or $10,000 of Credit Card Debt?",
     seoTitle: "How Long to Pay Off $5K or $10K Credit Card Debt",
