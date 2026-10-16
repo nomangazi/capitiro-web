@@ -77,9 +77,9 @@ export function CalculatorPage({ slug, intro, calculator, article, faqs }: Calcu
 
         <AdSlot />
 
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_18rem]">
-          <article className="prose-content">{article}</article>
-          <aside className="space-y-4 lg:sticky lg:top-20 lg:self-start">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_18rem]">
+          <article className="prose-content min-w-0">{article}</article>
+          <aside className="min-w-0 space-y-4 lg:sticky lg:top-20 lg:self-start">
             <h2 className="text-sm font-semibold tracking-wide text-muted-foreground uppercase">Related calculators</h2>
             <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
               {related.map((calc) => (
