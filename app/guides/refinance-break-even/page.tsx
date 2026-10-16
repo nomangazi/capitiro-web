@@ -210,7 +210,7 @@ export default function Page() {
       <p>
         Adding the $7,761 of costs to a 6.25%, 30-year loan makes the new balance $318,207 and the payment $1,959, so your monthly
         saving is $278 instead of $326. You avoid paying cash at closing, but the lifetime result falls from about $29,100 to about
-        $27,400. It is a reasonable choice if cash is tight, as long as you see the cost for what it is.
+        $19,600, because the $7,761 you borrow keeps accruing interest, about $9,400 more over 30 years. It is a reasonable choice if cash is tight, as long as you see the cost for what it is.
       </p>
 
       <h2>Should I shorten the term instead?</h2>
@@ -307,6 +307,10 @@ export default function Page() {
       </ul>
 
       <h2>Run your own numbers</h2>
+      <p>
+        You can test your own balance, rates and closing costs, including a rolled-in or cash-out option, in the{" "}
+        <Link href="/calculators/refinance">mortgage refinance calculator</Link>. To do it by hand, follow these steps.
+      </p>
       <ol>
         <li>Find your current balance, rate and remaining term on your latest statement.</li>
         <li>Enter the new rate and term into the calculator below to get your new payment.</li>

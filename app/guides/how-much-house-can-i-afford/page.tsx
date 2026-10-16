@@ -282,6 +282,11 @@ export default function Page() {
         <li>Enter different home prices into the <Link href="/calculators/mortgage">mortgage calculator</Link> until the total monthly payment matches that figure.</li>
         <li>Then sanity-check it against your real take-home budget — the lender&apos;s maximum is a ceiling, not a target.</li>
       </ol>
+      <p>
+        To skip the trial and error, the <Link href="/calculators/home-affordability">home affordability calculator</Link> works
+        backwards for you: enter your income, debts, down payment and rate, and it returns the highest home price that fits the
+        28/36 rule, or a 31/43 stretch scenario.
+      </p>
     </GuideLayout>
   );
 }

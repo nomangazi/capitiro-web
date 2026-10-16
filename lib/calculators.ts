@@ -1,10 +1,13 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Car,
   CreditCard,
   Home,
+  KeyRound,
   Landmark,
   LineChart,
   PiggyBank,
+  RefreshCw,
   Repeat,
   Target,
   TrendingUp,
@@ -48,6 +51,18 @@ export const calculators: CalculatorMeta[] = [
     updated: "2026-10-10",
   },
   {
+    slug: "home-affordability",
+    title: "Home Affordability Calculator",
+    shortTitle: "Home Affordability",
+    summary:
+      "Find out how much house you can afford using the 28/36 rule, with taxes, insurance, PMI and HOA fees included.",
+    category: "Borrowing",
+    icon: KeyRound,
+    keywords: ["home affordability calculator", "how much house can I afford calculator", "28/36 rule calculator", "house affordability by income"],
+    published: "2026-10-16",
+    updated: "2026-10-16",
+  },
+  {
     slug: "loan-amortization",
     title: "Loan Amortization Calculator",
     shortTitle: "Loan Amortization",
@@ -60,6 +75,18 @@ export const calculators: CalculatorMeta[] = [
     updated: "2026-10-10",
   },
   {
+    slug: "auto-loan",
+    title: "Auto Loan Calculator",
+    shortTitle: "Auto Loan",
+    summary:
+      "Estimate your monthly car payment with trade-in, sales tax, fees and APR, and compare 48, 60 and 72 month terms.",
+    category: "Borrowing",
+    icon: Car,
+    keywords: ["auto loan calculator", "car loan calculator", "car payment calculator with trade in", "car payment calculator"],
+    published: "2026-10-16",
+    updated: "2026-10-16",
+  },
+  {
     slug: "credit-card-payoff",
     title: "Credit Card Payoff Calculator",
     shortTitle: "Credit Card Payoff",
@@ -70,6 +97,18 @@ export const calculators: CalculatorMeta[] = [
     keywords: ["credit card payoff calculator", "credit card interest calculator", "debt payoff calculator"],
     published: "2026-10-10",
     updated: "2026-10-10",
+  },
+  {
+    slug: "refinance",
+    title: "Mortgage Refinance Calculator",
+    shortTitle: "Refinance",
+    summary:
+      "Compare your current mortgage with a refinance: new payment, break-even point, closing costs and total cost over the life of the loan.",
+    category: "Borrowing",
+    icon: RefreshCw,
+    keywords: ["refinance calculator", "mortgage refinance calculator", "refinance break-even calculator", "should I refinance"],
+    published: "2026-10-16",
+    updated: "2026-10-16",
   },
   {
     slug: "compound-interest",
