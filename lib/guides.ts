@@ -16,6 +16,47 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "real-vs-nominal-returns",
+    title: "Real vs Nominal Returns: How Inflation Shrinks Your Savings",
+    seoTitle: "Real vs Nominal Returns: What Inflation Costs You",
+    description:
+      "Real vs nominal returns explained: the exact formula, why 7% becomes 3.88% after 3% inflation, and what $10,000 is worth in today's money after 30 years.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 7,
+    calculator: "inflation",
+  },
+  {
+    slug: "pay-rise-below-inflation",
+    title: "Is a Pay Rise Below Inflation Really a Pay Cut?",
+    description:
+      "Is a pay rise (US: raise) below inflation a pay cut? See the real-wage formula, examples at 3%, 4% and 5% raises, and how to make the case for more.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 7,
+    calculator: "inflation",
+  },
+  {
+    slug: "emergency-fund-size",
+    title: "How Big Should Your Emergency Fund Be?",
+    description:
+      "The 3-6 month emergency fund rule of thumb, dollar targets for $2,000-$4,500 of monthly essentials, when to save more and how long it takes to build.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 7,
+    calculator: "savings-goal",
+  },
+  {
+    slug: "high-yield-savings-vs-cds",
+    title: "High-Yield Savings vs CDs: Which Is Better?",
+    description:
+      "High-yield savings vs CDs on $10,000 over 1, 3 and 5 years at example rates, with rate-drop scenarios, early withdrawal penalties, CD ladders and UK notes.",
+    published: "2026-10-16",
+    updated: "2026-10-16",
+    readingMinutes: 8,
+    calculator: "savings-goal",
+  },
+  {
     slug: "sip-vs-lump-sum",
     title: "SIP vs Lump Sum: Which Investing Approach Wins?",
     description:
