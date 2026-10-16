@@ -14,6 +14,7 @@ export function isEmbedWidgetPath(pathname: string | null): boolean {
 /** Suggested iframe height in px. Taller calculators (more inputs) get more room. */
 const EMBED_HEIGHTS: Record<string, number> = {
   mortgage: 1400,
+  "home-affordability": 1500,
   "loan-amortization": 1300,
   "credit-card-payoff": 1200,
   retirement: 1300,
