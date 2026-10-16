@@ -129,6 +129,7 @@
   max-width: 48rem;
   color: var(--foreground);
   line-height: 1.75;
+  overflow-wrap: break-word;
   & h2 {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -159,6 +160,7 @@
     color: var(--primary);
     text-decoration: underline;
     text-underline-offset: 3px;
+    overflow-wrap: anywhere;
   }
   & strong { font-weight: 600; color: var(--foreground); }
   & table {
@@ -166,6 +168,14 @@
     margin-bottom: 1.25rem;
     font-size: 0.875rem;
     border-collapse: collapse;
+  }
+  /* Below md, wide tables scroll inside their own box instead of widening the page. */
+  @media (width < 48rem) {
+    & table {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+    }
   }
   & th, & td {
     border-bottom: 1px solid var(--border);
