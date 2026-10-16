@@ -59,6 +59,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <a href={siteConfig.social.pinterest} target="_blank" rel="noopener noreferrer me" className={linkClass}>
+                Pinterest<span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+            <li>
               <ConsentSettingsLink className={`${linkClass} cursor-pointer text-left`} />
             </li>
           </ul>

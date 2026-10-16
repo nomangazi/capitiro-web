@@ -49,6 +49,7 @@ deployed to Vercel on push and monetised with Google AdSense. Full roadmap: `.cl
    targeting `feature/<name>`; verify and merge them there; finally open one PR `feature/<name>` → `main`, verify the
    combined result and merge it.
 5. Branch names: `content/…` (guides, copy), `feature/…` (features), `fix/…` (bugs), `chore/…` (docs, tooling).
-   PR titles say plainly what changes. Delete merged branches.
+   PR titles say plainly what changes. Never delete branches (locally pushed or on GitHub) and never enable
+   auto-delete: the owner deletes merged branches manually.
 6. Never merge anything that touches ads, privacy/consent or legal pages without verification, and never invent facts:
    if a fact or external link can't be verified, use a stable source page or flag it in the PR and the report.
