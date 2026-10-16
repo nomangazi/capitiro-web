@@ -87,7 +87,7 @@ export const guides: GuideMeta[] = [
     published: "2026-10-10",
     updated: "2026-10-10",
     readingMinutes: 6,
-    calculator: "mortgage",
+    calculator: "home-affordability",
   },
   {
     slug: "what-is-pmi",

@@ -2,8 +2,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
+  calculateAutoLoan,
   calculateCompoundInterest,
   calculateCreditCardPayoff,
+  calculateHomeAffordability,
   calculateInflation,
   calculateLoanAmortization,
   calculateMortgage,
@@ -11,6 +13,7 @@ import {
   calculateRetirement,
   calculateSavingsGoal,
   calculateSIP,
+  type HomeAffordabilityInput,
   monthlyPayment,
 } from "./math.ts";
 
@@ -193,6 +196,209 @@ test("inflation: future cost and purchasing power", () => {
   close(r.purchasingPower, 744.09);
   close(r.powerLostPercent, 25.59);
   assert.equal(r.rows.length, 11);
+});
+
+/* ---------------------------- auto loan ---------------------------- */
+
+const autoBase = {
+  vehiclePrice: 30_000,
+  downPayment: 3_000,
+  tradeInValue: 5_000,
+  tradeInOwed: 2_000,
+  salesTaxRate: 6,
+  fees: 500,
+  annualRate: 6.9,
+  termMonths: 60,
+  financeTaxAndFees: true,
+  tradeInReducesTax: true,
+};
+
+test("auto loan: textbook case with financed tax and fees (expected values computed in Python)", () => {
+  const r = calculateAutoLoan(autoBase);
+  close(r.salesTax, 1500);
+  close(r.amountFinanced, 26_000);
+  close(r.monthlyPayment, 513.605361612729, 0.0001);
+  close(r.totalOfPayments, 30_816.321696763738, 0.001);
+  close(r.totalInterest, 4_816.321696763738, 0.001);
+  close(r.cashAtSigning, 3_000);
+  close(r.totalCost, 33_816.32169676374, 0.001);
+  assert.equal(r.negativeEquityRolledIn, 0);
+  close(r.tradeInEquity, 3_000);
+  // Yearly series: starts at the amount financed, ends at zero, 6 rows after year 0.
+  assert.equal(r.yearly.length, 6);
+  close(r.yearly[0].balance, 26_000);
+  close(r.yearly[1].balance, 21_489.874683366754, 0.001);
+  close(r.yearly.at(-1)!.balance, 0, 0.01);
+  close(r.yearly.at(-1)!.interestPaid, r.totalInterest, 0.001);
+});
+
+test("auto loan: tax and fees paid upfront, and tax on the full price", () => {
+  const upfront = calculateAutoLoan({ ...autoBase, financeTaxAndFees: false });
+  close(upfront.amountFinanced, 24_000);
+  close(upfront.monthlyPayment, 474.0972568732883, 0.0001);
+  close(upfront.totalInterest, 4_445.835412397297, 0.001);
+  close(upfront.cashAtSigning, 5_000);
+  close(upfront.totalCost, 33_445.8354123973, 0.001);
+  close(calculateAutoLoan({ ...autoBase, tradeInReducesTax: false }).salesTax, 1800);
+});
+
+test("auto loan: negative equity is rolled into the loan", () => {
+  const r = calculateAutoLoan({ ...autoBase, tradeInValue: 4_000, tradeInOwed: 7_000 });
+  close(r.amountFinanced, 32_060);
+  close(r.negativeEquityRolledIn, 3_000);
+  close(r.monthlyPayment, 633.3149189732343, 0.0001);
+  assert.equal(r.tradeInEquity, 0);
+});
+
+test("auto loan: 0% APR splits the amount evenly with no interest", () => {
+  const r = calculateAutoLoan({
+    ...autoBase,
+    vehiclePrice: 24_000,
+    downPayment: 0,
+    tradeInValue: 0,
+    tradeInOwed: 0,
+    salesTaxRate: 0,
+    fees: 0,
+    annualRate: 0,
+    termMonths: 48,
+  });
+  close(r.monthlyPayment, 500);
+  close(r.totalInterest, 0);
+  close(r.totalCost, 24_000);
+});
+
+test("auto loan: down payment covering the price finances nothing", () => {
+  const r = calculateAutoLoan({ ...autoBase, downPayment: 100_000, financeTaxAndFees: false });
+  assert.equal(r.amountFinanced, 0);
+  assert.equal(r.monthlyPayment, 0);
+  assert.equal(r.totalInterest, 0);
+  // Only the part of the down payment that is needed is counted, plus the upfront tax and fees.
+  close(r.cashAtSigning, 27_000 + 2_000);
+});
+
+test("auto loan: bad input never throws or returns NaN", () => {
+  const r = calculateAutoLoan({
+    vehiclePrice: NaN,
+    downPayment: -5,
+    tradeInValue: Infinity,
+    tradeInOwed: NaN,
+    salesTaxRate: -3,
+    fees: NaN,
+    annualRate: NaN,
+    termMonths: NaN,
+    financeTaxAndFees: true,
+    tradeInReducesTax: true,
+  });
+  for (const v of [r.salesTax, r.amountFinanced, r.monthlyPayment, r.totalInterest, r.totalCost, r.cashAtSigning]) {
+    assert.ok(Number.isFinite(v));
+  }
+  const huge = calculateAutoLoan({ ...autoBase, vehiclePrice: 1e15, annualRate: 500, termMonths: 99999 });
+  assert.ok(Number.isFinite(huge.totalCost));
+  assert.equal(huge.termMonths, 120);
+});
+
+/* ---------------------------- home affordability --------------------------- */
+
+
+const affordBase: HomeAffordabilityInput = {
+  annualIncome: 100_000,
+  monthlyDebts: 400,
+  downPayment: 60_000,
+  annualRate: 6.5,
+  years: 30,
+  propertyTaxRate: 1.1,
+  homeInsurance: 1500,
+  pmiRate: 0.5,
+  hoaMonthly: 0,
+  frontRatio: 28,
+  backRatio: 36,
+};
+
+// Expected values below come from an independent Python bisection on the full payment function.
+test("home affordability: 28/36 textbook case with PMI (front-end ratio binds)", () => {
+  const r = calculateHomeAffordability(affordBase);
+  close(r.monthlyIncome, 8333.33);
+  close(r.frontLimit, 2333.33);
+  close(r.backLimit, 2600);
+  assert.equal(r.bindingRatio, "front");
+  assert.equal(r.affordable, true);
+  assert.equal(r.pmiApplies, true);
+  close(r.maxHomePrice, 341_333.88, 0.5);
+  close(r.loanAmount, 281_333.88, 0.5);
+  close(r.principalAndInterest, 1778.22);
+  close(r.monthlyTax, 312.89);
+  close(r.monthlyInsurance, 125);
+  close(r.monthlyPmi, 117.22);
+  close(r.totalMonthly, r.maxHousingPayment, 1e-6);
+  // 31/43 stretch preset: front-end still binds, price rises to ~$373,996.
+  const stretch = calculateHomeAffordability({ ...affordBase, frontRatio: 31, backRatio: 43 });
+  close(stretch.maxHomePrice, 373_996.48, 0.5);
+  close(stretch.totalMonthly, 2583.33);
+});
+
+test("home affordability: back-end ratio binds when other debts are high", () => {
+  const r = calculateHomeAffordability({ ...affordBase, monthlyDebts: 1000, downPayment: 100_000 });
+  assert.equal(r.bindingRatio, "back");
+  close(r.maxHousingPayment, 2000);
+  assert.equal(r.pmiApplies, false);
+  close(r.totalMonthly, 2000, 1e-6);
+  // Independent bisection: price $346,407.05, P&I $1,557.46.
+  close(r.maxHomePrice, 346_407.05, 0.5);
+  close(r.principalAndInterest, 1557.46);
+});
+
+test("home affordability: 0% rate and no-PMI cases", () => {
+  const r = calculateHomeAffordability({ ...affordBase, annualRate: 0 });
+  close(r.maxHomePrice, 583_783.78, 0.5);
+  close(r.principalAndInterest, 1454.95);
+  close(r.monthlyPmi, 218.24);
+  const big = calculateHomeAffordability({ ...affordBase, annualRate: 0, downPayment: 200_000 });
+  close(big.maxHomePrice, 748_120.3, 0.5);
+  assert.equal(big.pmiApplies, false);
+  close(big.principalAndInterest, 1522.56);
+});
+
+test("home affordability: PMI step stops at exactly 20% down", () => {
+  // Budget $1,633.33 sits between the payment at $250,000 ($1,618.30, no PMI) and just above it ($1,701.64, PMI).
+  const r = calculateHomeAffordability({ ...affordBase, annualIncome: 70_000, monthlyDebts: 0, downPayment: 50_000 });
+  close(r.maxHomePrice, 250_000, 0.01);
+  close(r.loanAmount, 200_000, 0.01);
+  assert.equal(r.pmiApplies, false);
+  close(r.totalMonthly, 1618.3);
+  assert.ok(r.totalMonthly <= r.maxHousingPayment);
+});
+
+test("home affordability: debts above the back-end limit means not affordable", () => {
+  const r = calculateHomeAffordability({ ...affordBase, monthlyDebts: 3000 });
+  assert.equal(r.affordable, false);
+  assert.equal(r.debtsExceedLimit, true);
+  assert.equal(r.bindingRatio, "back");
+  assert.equal(r.maxHousingPayment, 0);
+  assert.equal(r.maxHomePrice, 0);
+  assert.equal(r.totalMonthly, 0);
+});
+
+test("home affordability: bad input never throws or returns NaN", () => {
+  const nan = Number.NaN;
+  const r = calculateHomeAffordability({
+    annualIncome: nan,
+    monthlyDebts: -5,
+    downPayment: Infinity,
+    annualRate: nan,
+    years: nan,
+    propertyTaxRate: -1,
+    homeInsurance: nan,
+    pmiRate: 99,
+    hoaMonthly: -10,
+    frontRatio: nan,
+    backRatio: 500,
+  });
+  for (const [key, value] of Object.entries(r)) {
+    if (typeof value === "number") assert.ok(Number.isFinite(value), `${key} is not finite`);
+  }
+  assert.equal(r.affordable, false);
+  const free = calculateHomeAffordability({ ...affordBase, propertyTaxRate: 0, homeInsurance: 0, downPayment: 0, annualRate: 0 });
+  assert.ok(Number.isFinite(free.maxHomePrice) && free.maxHomePrice > 0);
 });
 
 /* -------------------------------------------------------------------------- */

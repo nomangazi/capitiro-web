@@ -485,6 +485,248 @@ export function calculateInflation(amount: number, annualRate: number, years: nu
 }
 
 /* -------------------------------------------------------------------------- */
+/* Home affordability (28/36 rule and variants)                               */
+/* -------------------------------------------------------------------------- */
+
+export interface HomeAffordabilityInput {
+  /** Gross (pre-tax) annual household income */
+  annualIncome: number;
+  /** Total monthly debt payments excluding housing (car, student loans, card minimums) */
+  monthlyDebts: number;
+  /** Cash down payment (a fixed amount, not a percentage) */
+  downPayment: number;
+  annualRate: number;
+  years: number;
+  /** Annual property tax as % of home price */
+  propertyTaxRate: number;
+  /** Annual homeowners insurance premium */
+  homeInsurance: number;
+  /** Annual PMI as % of the loan amount (applies when the loan is more than 80% of the price) */
+  pmiRate: number;
+  hoaMonthly: number;
+  /** Front-end limit: housing payment as % of gross monthly income (guideline: 28) */
+  frontRatio: number;
+  /** Back-end limit: housing plus other debts as % of gross monthly income (guideline: 36) */
+  backRatio: number;
+}
+
+export interface HomeAffordabilityResult {
+  monthlyIncome: number;
+  /** frontRatio × monthly income */
+  frontLimit: number;
+  /** backRatio × monthly income − other debts (can be negative) */
+  backLimit: number;
+  /** Largest total housing payment the lower limit allows (never negative) */
+  maxHousingPayment: number;
+  /** Which limit sets the budget; "front" also covers an exact tie */
+  bindingRatio: "front" | "back";
+  /** False when no home price fits: debts use the whole back-end limit, or fixed costs exceed the budget */
+  affordable: boolean;
+  /** True when other debts alone are at or above the back-end limit */
+  debtsExceedLimit: boolean;
+  maxHomePrice: number;
+  loanAmount: number;
+  downPaymentPercent: number;
+  /** Whether PMI is charged at the maximum price (loan above 80% of the price) */
+  pmiApplies: boolean;
+  principalAndInterest: number;
+  monthlyTax: number;
+  monthlyInsurance: number;
+  monthlyPmi: number;
+  hoaMonthly: number;
+  /** Full monthly housing payment at the maximum price (equals the budget unless PMI creates a price gap) */
+  totalMonthly: number;
+}
+
+/**
+ * Largest home price whose full payment (P&I + tax + insurance + PMI + HOA) fits the budget set by the
+ * front-end and back-end ratios. The payment is piecewise linear in the price, so this is a closed form:
+ * solve without PMI; if that price needs more than 80% financing, solve with PMI; if the budget falls in
+ * the gap where PMI starts, the answer is the price with exactly 20% down.
+ */
+export function calculateHomeAffordability(input: HomeAffordabilityInput): HomeAffordabilityResult {
+  const BIG = 1e12;
+  const monthlyIncome = clamp(input.annualIncome, 0, BIG) / 12;
+  const debts = clamp(input.monthlyDebts, 0, BIG);
+  const down = clamp(input.downPayment, 0, BIG);
+  const years = Math.round(clamp(input.years, 1, 50));
+  const rate = clamp(input.annualRate, 0, 100);
+  const taxPerDollar = clamp(input.propertyTaxRate, 0, 20) / 100 / 12;
+  const pmiPerDollar = clamp(input.pmiRate, 0, 5) / 100 / 12;
+  const insuranceMonthly = clamp(input.homeInsurance, 0, BIG) / 12;
+  const hoaMonthly = clamp(input.hoaMonthly, 0, BIG);
+  const fixedMonthly = insuranceMonthly + hoaMonthly;
+
+  const frontLimit = (clamp(input.frontRatio, 0, 100) / 100) * monthlyIncome;
+  const backLimit = (clamp(input.backRatio, 0, 100) / 100) * monthlyIncome - debts;
+  // A cent of tolerance so floating-point noise at an exact tie does not flip the label.
+  const bindingRatio: "front" | "back" = backLimit < frontLimit - 0.005 ? "back" : "front";
+  const budget = Math.max(0, Math.min(frontLimit, backLimit));
+  const debtsExceedLimit = backLimit <= 0;
+
+  // Monthly principal and interest per dollar borrowed.
+  const k = monthlyPayment(1, rate, years * 12);
+  const room = budget - fixedMonthly; // what is left for price-dependent costs
+
+  let price = 0;
+  let pmiApplies = false;
+  if (room > 0) {
+    // 1) Cash-only price: no loan at all (price <= down payment).
+    const cashPrice = taxPerDollar > 0 ? room / taxPerDollar : Infinity;
+    if (cashPrice <= down) {
+      price = cashPrice;
+    } else {
+      // 2) No-PMI branch: loan = price - down, valid while price <= 5 x down (loan <= 80%).
+      const noPmiPrice = (room + down * k) / (k + taxPerDollar);
+      if (noPmiPrice <= down * 5) {
+        price = noPmiPrice;
+      } else {
+        // 3) PMI branch: PMI is charged on the whole loan once the loan exceeds 80% of the price.
+        const kp = k + pmiPerDollar;
+        const pmiPrice = (room + down * kp) / (kp + taxPerDollar);
+        if (pmiPrice > down * 5) {
+          price = pmiPrice;
+          pmiApplies = true;
+        } else {
+          price = down * 5; // budget lands in the PMI jump: stop at exactly 20% down
+        }
+      }
+    }
+  }
+  price = clamp(price, 0, BIG * 10);
+
+  const hasPrice = price > 0;
+  const loanAmount = Math.max(0, price - down);
+  const principalAndInterest = loanAmount * k;
+  const monthlyTax = price * taxPerDollar;
+  const monthlyPmi = pmiApplies ? loanAmount * pmiPerDollar : 0;
+  const monthlyInsurance = hasPrice ? insuranceMonthly : 0;
+  const hoa = hasPrice ? hoaMonthly : 0;
+
+  return {
+    monthlyIncome,
+    frontLimit,
+    backLimit,
+    maxHousingPayment: budget,
+    bindingRatio,
+    affordable: hasPrice,
+    debtsExceedLimit,
+    maxHomePrice: price,
+    loanAmount,
+    downPaymentPercent: hasPrice ? (Math.min(down, price) / price) * 100 : 0,
+    pmiApplies,
+    principalAndInterest,
+    monthlyTax,
+    monthlyInsurance,
+    monthlyPmi,
+    hoaMonthly: hoa,
+    totalMonthly: hasPrice ? principalAndInterest + monthlyTax + monthlyInsurance + monthlyPmi + hoa : 0,
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+/* Auto loan (trade-in, sales tax, fees, negative equity)                     */
+/* -------------------------------------------------------------------------- */
+
+export interface AutoLoanInput {
+  vehiclePrice: number;
+  /** Cash paid at signing toward the vehicle */
+  downPayment: number;
+  /** Value the dealer gives you for your current vehicle */
+  tradeInValue: number;
+  /** Loan balance still owed on the trade-in (a payoff above its value is negative equity) */
+  tradeInOwed: number;
+  /** Sales tax as a % of the taxable price */
+  salesTaxRate: number;
+  /** Title, registration and documentation fees combined */
+  fees: number;
+  annualRate: number;
+  termMonths: number;
+  /** true = add sales tax and fees to the loan; false = pay them in cash at signing */
+  financeTaxAndFees: boolean;
+  /** true = tax is charged on (price - trade-in value); false = on the full price. Varies by US state. */
+  tradeInReducesTax: boolean;
+}
+
+export interface AutoLoanYear {
+  year: number;
+  /** Loan balance at the end of the year (year 0 = amount financed) */
+  balance: number;
+  /** Cumulative interest paid by the end of the year */
+  interestPaid: number;
+}
+
+export interface AutoLoanResult {
+  salesTax: number;
+  /** Positive equity: trade-in value above what is owed on it */
+  tradeInEquity: number;
+  /** Negative equity (owed above trade-in value) that ends up inside the loan */
+  negativeEquityRolledIn: number;
+  amountFinanced: number;
+  monthlyPayment: number;
+  totalInterest: number;
+  /** Sum of all monthly payments */
+  totalOfPayments: number;
+  /** Down payment actually needed, plus tax and fees paid upfront */
+  cashAtSigning: number;
+  /** Cash at signing plus every monthly payment (the trade-in vehicle itself is not counted) */
+  totalCost: number;
+  termMonths: number;
+  yearly: AutoLoanYear[];
+}
+
+export function calculateAutoLoan(input: AutoLoanInput): AutoLoanResult {
+  const big = Number.MAX_SAFE_INTEGER;
+  const price = clamp(input.vehiclePrice, 0, big);
+  const down = clamp(input.downPayment, 0, big);
+  const tradeIn = clamp(input.tradeInValue, 0, big);
+  const owed = clamp(input.tradeInOwed, 0, big);
+  const taxRate = clamp(input.salesTaxRate, 0, 30);
+  const fees = clamp(input.fees, 0, big);
+  const term = Math.round(clamp(input.termMonths, 1, 120));
+
+  const taxableBase = input.tradeInReducesTax ? Math.max(0, price - tradeIn) : price;
+  const salesTax = (taxableBase * taxRate) / 100;
+  const tradeInEquity = Math.max(0, tradeIn - owed);
+  const negativeEquity = Math.max(0, owed - tradeIn);
+
+  // Vehicle price plus any trade-in payoff, less the trade-in credit. Never below zero.
+  const vehicleNet = Math.max(0, price + owed - tradeIn);
+  const taxAndFees = salesTax + fees;
+  const financeExtras = !!input.financeTaxAndFees;
+
+  const needToCover = financeExtras ? vehicleNet + taxAndFees : vehicleNet;
+  const downApplied = Math.min(down, needToCover);
+  const amountFinanced = needToCover - downApplied;
+  const upfrontExtras = financeExtras ? 0 : taxAndFees;
+
+  const amort = amortize(amountFinanced, input.annualRate, term, 0);
+  const totalOfPayments = amort.monthlyPayment * amort.months;
+  const cashAtSigning = downApplied + upfrontExtras;
+
+  const yearly: AutoLoanYear[] = [{ year: 0, balance: amountFinanced, interestPaid: 0 }];
+  let cumulativeInterest = 0;
+  for (const row of amort.yearly) {
+    cumulativeInterest += row.interest;
+    yearly.push({ year: row.year, balance: row.balance, interestPaid: cumulativeInterest });
+  }
+
+  return {
+    salesTax,
+    tradeInEquity,
+    negativeEquityRolledIn: Math.min(negativeEquity, amountFinanced),
+    amountFinanced,
+    monthlyPayment: amort.monthlyPayment,
+    totalInterest: amort.totalInterest,
+    totalOfPayments,
+    cashAtSigning,
+    totalCost: cashAtSigning + totalOfPayments,
+    termMonths: term,
+    yearly,
+  };
+}
+
+/* -------------------------------------------------------------------------- */
 /* Mortgage refinance                                                         */
 /* -------------------------------------------------------------------------- */
 
