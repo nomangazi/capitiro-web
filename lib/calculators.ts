@@ -3,6 +3,7 @@ import {
   Car,
   CreditCard,
   Home,
+  KeyRound,
   Landmark,
   LineChart,
   PiggyBank,
@@ -47,6 +48,18 @@ export const calculators: CalculatorMeta[] = [
     keywords: ["mortgage calculator", "monthly mortgage payment", "mortgage payment with taxes and insurance", "PMI calculator"],
     published: "2026-10-10",
     updated: "2026-10-10",
+  },
+  {
+    slug: "home-affordability",
+    title: "Home Affordability Calculator",
+    shortTitle: "Home Affordability",
+    summary:
+      "Find out how much house you can afford using the 28/36 rule, with taxes, insurance, PMI and HOA fees included.",
+    category: "Borrowing",
+    icon: KeyRound,
+    keywords: ["home affordability calculator", "how much house can I afford calculator", "28/36 rule calculator", "house affordability by income"],
+    published: "2026-10-16",
+    updated: "2026-10-16",
   },
   {
     slug: "loan-amortization",
