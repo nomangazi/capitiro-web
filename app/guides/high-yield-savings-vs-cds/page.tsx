@@ -202,7 +202,7 @@ export default function Page() {
 
       <h2>What is a CD ladder?</h2>
       <p>
-        A ladder spreads money across CDs of different lengths so that one matures each year. You get higher long-term rates on
+        A ladder spreads money across CDs of different lengths so that one matures each year. You can capture higher long-term rates, when they are offered, on
         part of the money, plus regular access to cash. Here is an example with $10,000 split into five $2,000 rungs at example rates.
       </p>
       <table>
@@ -257,7 +257,7 @@ export default function Page() {
       <p>
         In the US, deposits at an FDIC-insured bank are protected up to $250,000 per depositor, per insured bank, per ownership
         category. See the{" "}
-        <a href="https://www.fdic.gov/" target="_blank" rel="noopener noreferrer">FDIC website</a> for details. Credit unions have equivalent
+        <a href="https://www.fdic.gov/" target="_blank" rel="noopener noreferrer">FDIC website</a> for details. Federally insured credit unions have equivalent
         coverage through the NCUA. Interest on both is generally taxable as ordinary income in the US. Within the insurance limit, the
         main risks are not losing the deposit but an HYSA rate that falls, or a CD that locks you in when rates rise.
       </p>

@@ -179,14 +179,14 @@ export default function Page() {
       <ul>
         <li><strong>High-yield savings account.</strong> The usual choice. It is instantly accessible, and the rate is variable. The{" "}
           <Link href="/guides/high-yield-savings-vs-cds">comparison of high-yield savings and CDs</Link> explains the trade-offs.</li>
-        <li><strong>Money market account.</strong> Similar, sometimes with check-writing or a debit card.</li>
+        <li><strong>Money market account.</strong> Similar, sometimes with check-writing or a debit card. A bank money market account is deposit-insured; a money market fund is an investment and is not.</li>
         <li><strong>CDs for part of the fund.</strong> Money you are unlikely to need within a year can sit in a CD, but early withdrawal usually costs interest.</li>
         <li><strong>Not the stock market.</strong> A market fall often happens during recessions, which is exactly when job losses rise.</li>
       </ul>
       <p>
         In the US, check that the bank is insured by the{" "}
         <a href="https://www.fdic.gov/" target="_blank" rel="noopener noreferrer">FDIC</a>, which protects deposits up to $250,000 per
-        depositor, per insured bank, per ownership category. Credit unions have similar federal insurance through the NCUA.
+        depositor, per insured bank, per ownership category. Federally insured credit unions have similar coverage through the NCUA.
       </p>
 
       <h2>Should you build it before paying off debt?</h2>
