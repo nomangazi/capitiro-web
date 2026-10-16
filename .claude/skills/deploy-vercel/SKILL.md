@@ -20,8 +20,8 @@ For UI changes, also check 390px and 1366px widths (see the capitiro-design skil
 
 | Variable | Example | Required |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | `https://capitiro.com` | Yes, once a custom domain exists (used for canonical URLs, the sitemap and OG). Falls back to the Vercel production URL. |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | `hello@capitiro.com` | Yes. Shown on Contact, Privacy and Terms pages. Must be a real inbox. |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.capitiro.com` (www is primary; the apex redirects to it) | Yes, once a custom domain exists (used for canonical URLs, the sitemap and OG). Falls back to the Vercel production URL. |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | `contact@capitiro.com` | Yes. Shown on Contact, Privacy and Terms pages. Must be a real inbox. |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | `ca-pub-1234567890123456` | After you apply to AdSense. Enables the script, verification meta tag and ads.txt. |
 | `NEXT_PUBLIC_ADSENSE_SLOT_INCONTENT` | `1234567890` | After approval. Enables the manual in-content units. |
 
