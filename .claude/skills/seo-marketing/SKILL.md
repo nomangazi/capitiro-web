@@ -69,7 +69,7 @@ calculators so internal links reinforce each other:
 `app/sitemap.ts`, `app/robots.ts`, canonical URLs, Open Graph image (`app/opengraph-image.tsx`), manifest,
 static generation for every route, breadcrumbs, and fast pages. After deploy:
 1. Verify the domain in **Google Search Console** and **Bing Webmaster Tools**, then submit `/sitemap.xml`.
-2. Request indexing for the homepage and each calculator.
+2. Request indexing for the homepage and each calculator. Bing, Yandex, Seznam and Naver are notified automatically on every production deploy via IndexNow (`deploy-vercel` skill).
 3. Watch Search Console → Pages (indexing errors) and Core Web Vitals weekly.
 
 ## 6. Off-site marketing (do weekly)
