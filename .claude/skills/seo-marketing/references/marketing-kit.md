@@ -249,7 +249,7 @@ Mortgages, Personal Finance, Credit Cards, Debt, Retirement Planning, Investing,
 Financial Planning, Compound Interest.
 Search for questions like "How long does it take to pay off a credit card?", "How much house can I afford on my
 salary?", "Is a balance transfer a good idea?", "What is the 4% rule?" and answer 1 or 2 a week with the same
-rules as above. Quora allows a link in the answer text and in your profile; the same disclosure rule applies.
+rules as above. Quora currently allows a link in the answer text and in your profile (check current rules); the same disclosure rule applies.
 
 ### 2.3 Draft answers (8)
 
@@ -350,7 +350,7 @@ Where: r/CreditCards, r/debtfree, r/personalfinance, Quora.
 > - $500 a month from age 25 grows to about $1,135,080 by 67
 > - $500 a month from age 35 grows to about $578,840 by 67
 >
-> Waiting ten years cost more than $556,000 while the contributions were only $60,000 lower. If you have less than the benchmark at 30, the practical levers are: capture any employer match, raise your contribution with each pay rise, and retire a little later.
+> Waiting ten years cost $556,240 while the contributions were only $60,000 lower. If you have less than the benchmark at 30, the practical levers are: capture any employer match, raise your contribution with each pay rise, and retire a little later.
 >
 > Also note inflation. $1 million in 42 years is worth about $354,000 in today's money at 2.5% inflation.
 >
@@ -406,7 +406,7 @@ Where: r/personalfinance, r/Mortgages, r/UKPersonalFinance (UK version only), Qu
 
 #### Draft 8: "How do I remove PMI?" (guide: what-is-pmi)
 
-> This applies to borrower-paid PMI on a US conventional loan. Two thresholds under the Homeowners Protection Act, based on the home's original value:
+> This applies to borrower-paid PMI on a US conventional loan. Two thresholds, plus a backstop, under the Homeowners Protection Act, based on the home's original value:
 >
 > - At 80% loan-to-value you can ask to cancel, in writing, if your payment history is good.
 > - At 78% it must end automatically, if you are current on payments.
@@ -555,7 +555,7 @@ treat them as a source of visitors, feedback and brand awareness rather than SEO
 
 - **Product Hunt**: launch the embeddable widgets as the product ("free embeddable financial calculators"). One launch,
   once there are 10 or more calculators. Read their current guidelines first and prepare a short description and a screenshot.
-- **AlternativeTo**: list Capitiro as a free alternative to other online calculator sites. Free to submit; follow their listing rules.
+- **AlternativeTo**: list Capitiro as a free alternative to other online calculator sites. Free to submit at the time of writing (check current rules); follow their listing rules.
 - **Indie Hackers**: share a build-in-public post about the site (what you built, what worked, honest numbers).
 - **Show HN (Hacker News)**: one "Show HN" post when there is something technical and novel to show (for example: private,
   client-side calculators with embeddable widgets). Read the Show HN rules, expect blunt feedback, and never ask for upvotes.

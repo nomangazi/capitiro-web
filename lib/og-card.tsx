@@ -116,7 +116,7 @@ export function renderPinCard({ label, title, benefit }: { label: string; title:
           <div style={{ display: "flex", fontSize: 40, lineHeight: 1.4, color: "rgba(255,255,255,0.85)" }}>{truncateText(benefit, 150)}</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "2px solid rgba(255,255,255,0.25)", paddingTop: 36 }}>
-          <div style={{ display: "flex", fontSize: 42, fontWeight: 700 }}>www.capitiro.com</div>
+          <div style={{ display: "flex", fontSize: 42, fontWeight: 700 }}>{new URL(siteConfig.url).host}</div>
           <div style={{ display: "flex", fontSize: 30, color: "rgba(255,255,255,0.7)" }}>Free. No sign-up.</div>
         </div>
       </div>
