@@ -193,3 +193,108 @@ test("inflation: future cost and purchasing power", () => {
   close(r.powerLostPercent, 25.59);
   assert.equal(r.rows.length, 11);
 });
+
+/* ---------------------------- home affordability --------------------------- */
+
+import { calculateHomeAffordability, type HomeAffordabilityInput } from "./math.ts";
+
+const affordBase: HomeAffordabilityInput = {
+  annualIncome: 100_000,
+  monthlyDebts: 400,
+  downPayment: 60_000,
+  annualRate: 6.5,
+  years: 30,
+  propertyTaxRate: 1.1,
+  homeInsurance: 1500,
+  pmiRate: 0.5,
+  hoaMonthly: 0,
+  frontRatio: 28,
+  backRatio: 36,
+};
+
+// Expected values below come from an independent Python bisection on the full payment function.
+test("home affordability: 28/36 textbook case with PMI (front-end ratio binds)", () => {
+  const r = calculateHomeAffordability(affordBase);
+  close(r.monthlyIncome, 8333.33);
+  close(r.frontLimit, 2333.33);
+  close(r.backLimit, 2600);
+  assert.equal(r.bindingRatio, "front");
+  assert.equal(r.affordable, true);
+  assert.equal(r.pmiApplies, true);
+  close(r.maxHomePrice, 341_333.88, 0.5);
+  close(r.loanAmount, 281_333.88, 0.5);
+  close(r.principalAndInterest, 1778.22);
+  close(r.monthlyTax, 312.89);
+  close(r.monthlyInsurance, 125);
+  close(r.monthlyPmi, 117.22);
+  close(r.totalMonthly, r.maxHousingPayment, 1e-6);
+  // 31/43 stretch preset: front-end still binds, price rises to ~$373,996.
+  const stretch = calculateHomeAffordability({ ...affordBase, frontRatio: 31, backRatio: 43 });
+  close(stretch.maxHomePrice, 373_996.48, 0.5);
+  close(stretch.totalMonthly, 2583.33);
+});
+
+test("home affordability: back-end ratio binds when other debts are high", () => {
+  const r = calculateHomeAffordability({ ...affordBase, monthlyDebts: 1000, downPayment: 100_000 });
+  assert.equal(r.bindingRatio, "back");
+  close(r.maxHousingPayment, 2000);
+  assert.equal(r.pmiApplies, false);
+  close(r.totalMonthly, 2000, 1e-6);
+  // Independent bisection: price $346,407.05, P&I $1,557.46.
+  close(r.maxHomePrice, 346_407.05, 0.5);
+  close(r.principalAndInterest, 1557.46);
+});
+
+test("home affordability: 0% rate and no-PMI cases", () => {
+  const r = calculateHomeAffordability({ ...affordBase, annualRate: 0 });
+  close(r.maxHomePrice, 583_783.78, 0.5);
+  close(r.principalAndInterest, 1454.95);
+  close(r.monthlyPmi, 218.24);
+  const big = calculateHomeAffordability({ ...affordBase, annualRate: 0, downPayment: 200_000 });
+  close(big.maxHomePrice, 748_120.3, 0.5);
+  assert.equal(big.pmiApplies, false);
+  close(big.principalAndInterest, 1522.56);
+});
+
+test("home affordability: PMI step stops at exactly 20% down", () => {
+  // Budget $1,633.33 sits between the payment at $250,000 ($1,618.30, no PMI) and just above it ($1,701.64, PMI).
+  const r = calculateHomeAffordability({ ...affordBase, annualIncome: 70_000, monthlyDebts: 0, downPayment: 50_000 });
+  close(r.maxHomePrice, 250_000, 0.01);
+  close(r.loanAmount, 200_000, 0.01);
+  assert.equal(r.pmiApplies, false);
+  close(r.totalMonthly, 1618.3);
+  assert.ok(r.totalMonthly <= r.maxHousingPayment);
+});
+
+test("home affordability: debts above the back-end limit means not affordable", () => {
+  const r = calculateHomeAffordability({ ...affordBase, monthlyDebts: 3000 });
+  assert.equal(r.affordable, false);
+  assert.equal(r.debtsExceedLimit, true);
+  assert.equal(r.bindingRatio, "back");
+  assert.equal(r.maxHousingPayment, 0);
+  assert.equal(r.maxHomePrice, 0);
+  assert.equal(r.totalMonthly, 0);
+});
+
+test("home affordability: bad input never throws or returns NaN", () => {
+  const nan = Number.NaN;
+  const r = calculateHomeAffordability({
+    annualIncome: nan,
+    monthlyDebts: -5,
+    downPayment: Infinity,
+    annualRate: nan,
+    years: nan,
+    propertyTaxRate: -1,
+    homeInsurance: nan,
+    pmiRate: 99,
+    hoaMonthly: -10,
+    frontRatio: nan,
+    backRatio: 500,
+  });
+  for (const [key, value] of Object.entries(r)) {
+    if (typeof value === "number") assert.ok(Number.isFinite(value), `${key} is not finite`);
+  }
+  assert.equal(r.affordable, false);
+  const free = calculateHomeAffordability({ ...affordBase, propertyTaxRate: 0, homeInsurance: 0, downPayment: 0, annualRate: 0 });
+  assert.ok(Number.isFinite(free.maxHomePrice) && free.maxHomePrice > 0);
+});
