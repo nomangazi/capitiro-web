@@ -77,4 +77,4 @@ Every recommendation states: what was observed, why it matters, the fix, and **h
 - Content depth: `seo:check` flags most calculator pages under 600 words and guides under 900 words. Expand with
   more worked examples, comparison tables, US/UK/EU notes and 5–10 internal links per guide.
 - Consider an `Organization` `sameAs` list once social profiles exist (entity clarity for AI search).
-- IndexNow (Bing/Yandex) could speed up non-Google indexing; low priority.
+- IndexNow is live: each production build submits recently changed sitemap URLs (`scripts/indexnow.mjs`, see `deploy-vercel`). Bump `updated` in the registry so changed pages enter the 3-day window. Google ignores IndexNow; keep using Search Console.
