@@ -199,8 +199,8 @@ export default function HomeAffordabilityPage() {
             </tbody>
           </table>
           <p>
-            If your debts alone reach the back-end limit, the calculator shows that no price fits and tells you why. Paying off a car
-            loan or card balance before you apply can raise your budget more than a pay rise.
+            If your debts alone reach the back-end limit, the calculator shows that no price fits and tells you why. When the back-end
+            limit is the one that binds, paying off a car loan or card balance before you apply raises your budget directly.
           </p>
 
           <h2>What the home affordability calculator does not include</h2>
