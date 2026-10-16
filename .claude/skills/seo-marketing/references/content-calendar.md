@@ -13,7 +13,7 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | 3 | How long to pay off $5,000 / $10,000 of credit card debt | Balance transfer cards: the real math | credit-card-payoff |
 | 4 | The 4% rule explained | How much should I have saved for retirement by age? | retirement |
 | 5 | SIP vs lump sum investing | How a 1% fee eats your returns | sip-return, compound-interest |
-| 6 | How big should my emergency fund be? | High-yield savings vs CDs | savings-goal |
+| ✅ 6 | How big should my emergency fund be? | High-yield savings vs CDs | savings-goal |
 | 7 | Inflation and your savings: real vs nominal returns | Is a pay rise below inflation a pay cut? | inflation |
 | 8 | ISA vs SIPP (UK) | 401(k) vs IRA (US) | retirement |
 | 9 | APR vs APY vs AER explained | Simple vs compound interest | compound-interest |
