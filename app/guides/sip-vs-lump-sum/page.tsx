@@ -23,7 +23,7 @@ export default function Page() {
       <ul>
         <li>At a constant positive return, a lump sum always ends higher than the same total invested monthly. At 7% for 10 years, $60,000 invested now grows to about $120,580, against about $87,047 for $500 a month.</li>
         <li>The gap is not a flaw in monthly investing. The monthly plan simply keeps money out of the market for longer: on average, a dollar in the $500-a-month plan is invested for about 5 years, not 10.</li>
-        <li>Monthly investing reduces timing regret. In the falling-market example below, $1,000 a month ends about $2,446 ahead of a $12,000 lump sum.</li>
+        <li>Monthly investing reduces timing regret. In the example below where prices fall and stay down, $1,000 a month ends at $10,846 against $8,400 for the $12,000 lump sum, a gap of $2,446.</li>
         <li>Most people do not face the choice. If your money arrives as salary, monthly investing is the plan, and the useful question is how much and how early.</li>
         <li>If you do have a lump sum, the decision is about risk tolerance and behavior as much as maths.</li>
       </ul>
@@ -159,9 +159,9 @@ export default function Page() {
         </thead>
         <tbody>
           <tr>
-            <td>Falls from 100 to 70 by month 7, then recovers to 100</td>
+            <td>Falls 5 points a month from 100 to 70 by month 7, then rises 6 points a month back to 100 by month 12</td>
             <td>$12,000</td>
-            <td>$14,099</td>
+            <td>$14,088</td>
           </tr>
           <tr>
             <td>Falls from 100 to 70 by month 7 and stays there</td>
@@ -178,8 +178,8 @@ export default function Page() {
       <p>
         When the price dips, the monthly investor finishes well ahead, because several instalments bought at low prices. When it
         rises, the lump sum wins, as in the steady-return tables. You cannot know which path is coming, and that is exactly why
-        some investors accept a lower expected result in exchange for a smoother ride. This is sometimes called sequence risk: the
-        order of returns matters, especially early on.
+        some investors accept a lower expected result in exchange for a smoother ride. This is timing risk: the order of returns
+        matters, especially early on.
       </p>
 
       <h2>What if you have a lump sum but want to ease in?</h2>

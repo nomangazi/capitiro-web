@@ -319,7 +319,7 @@ export default function Page() {
           <tr>
             <td>Fund expense ratio (called ongoing charges, OCF, or total expense ratio, TER, in the UK and Europe)</td>
             <td>An annual percentage of fund assets, deducted inside the fund.</td>
-            <td>Fund fact sheet, prospectus fee table, or the Key Information Document (KID) for UK and EU funds.</td>
+            <td>Fund fact sheet, prospectus fee table, or the Key Information Document (KID) or Key Investor Information Document (KIID) for UK and EU funds.</td>
           </tr>
           <tr>
             <td>Adviser or advisory fee</td>
@@ -355,7 +355,7 @@ export default function Page() {
       <p>
         Both the US regulator&apos;s investor education site,{" "}
         <a href="https://www.investor.gov/" target="_blank" rel="noopener noreferrer">Investor.gov</a>, and the UK&apos;s
-        independent{" "}
+        free, government-backed{" "}
         <a href="https://www.moneyhelper.org.uk/en" target="_blank" rel="noopener noreferrer">MoneyHelper</a> service publish
         plain-language guidance on investment costs. Regular investing also affects what your fees add up to, which we cover in{" "}
         <Link href="/guides/sip-vs-lump-sum">SIP vs lump sum investing</Link>.
@@ -366,7 +366,7 @@ export default function Page() {
         Sometimes. A fee can be reasonable if you get something you need and would not do yourself, such as a financial plan, help
         with tax or support to stay invested in a downturn. The tables above assume the same gross return whatever you pay. In
         reality, returns differ by fund and no one knows in advance which will do better, so a higher fee does not guarantee higher
-        returns, and a low fee does not guarantee good ones. Fees matter because they are certain, while returns are not.
+        returns, and a low fee does not guarantee good ones. Fees matter because the rate you pay is known in advance, while returns are not.
       </p>
 
       <h2>How should you decide?</h2>
