@@ -16,6 +16,17 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "isa-vs-sipp",
+    title: "ISA vs SIPP: Which Is Better for Your Retirement Savings?",
+    seoTitle: "ISA vs SIPP: Which Is Better for Retirement?",
+    description:
+      "ISA vs SIPP compared: tax relief, access, limits and a worked example of £400 a month over 25 years, with the tax on SIPP withdrawals included.",
+    published: "2026-10-19",
+    updated: "2026-10-19",
+    readingMinutes: 8,
+    calculator: "retirement",
+  },
+  {
     slug: "real-vs-nominal-returns",
     title: "Real vs Nominal Returns: How Inflation Shrinks Your Savings",
     seoTitle: "Real vs Nominal Returns: What Inflation Costs You",
