@@ -184,7 +184,7 @@ export default function Page() {
         </tbody>
       </table>
       <p>
-        With a 20% rate on the taxable part, the SIPP leaves you £14,888 ahead of the ISA. With a 40% rate, it leaves you £29,776
+        With a 20% rate on the taxable part, the SIPP leaves you £14,888 ahead of the ISA. With a 40% rate, it leaves you £29,775
         behind. The break-even is where the SIPP&apos;s 25% head start is cancelled out: taxing the taxable 75% at about 26.7% on average is
         equivalent to taxing 100% of the pot at 20%, which matches the 20% relief you got going in.
       </p>
@@ -218,7 +218,7 @@ export default function Page() {
         push pension withdrawals into higher bands. Read{" "}
         <Link href="/guides/4-percent-rule">the 4% rule guide</Link> to turn a pot into income, and{" "}
         <Link href="/guides/retirement-savings-by-age">retirement savings by age</Link> for common benchmarks. Remember that{" "}
-        <Link href="/guides/investment-fees-impact">investment fees</Link> reduce the pot in both wrappers, and they are ignored in
+        investment fees reduce the pot in both wrappers, and they are ignored in
         the example above.
       </p>
 
