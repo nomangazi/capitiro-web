@@ -202,8 +202,7 @@ export default function Page() {
       <p>
         Without a match, the cheaper IRA wins by $68,890. With the match, the 401(k) still comes out well ahead despite the higher
         fees, because the match adds money you would not otherwise get (once it vests). Our guide on{" "}
-        <Link href="/guides/investment-fees-impact">how investment fees reduce your returns</Link> goes deeper, and you can model
-        any rate yourself with the <Link href="/calculators/compound-interest">compound interest calculator</Link>.
+        <Link href="/guides/investment-fees-impact">how investment fees reduce your returns</Link> goes deeper.
       </p>
 
       <h2>Traditional or Roth: what does the math look like?</h2>

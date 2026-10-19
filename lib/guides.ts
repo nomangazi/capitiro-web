@@ -18,6 +18,7 @@ export const guides: GuideMeta[] = [
   {
     slug: "401k-vs-ira",
     title: "401(k) vs IRA: Which Should You Fund First?",
+    seoTitle: "401(k) vs IRA: Which to Fund First in 2026 (Limits & Match)",
     description:
       "401(k) vs IRA compared: 2026 contribution limits, employer match, Roth vs traditional, fees and withdrawal rules, with a worked example over 30 years.",
     published: "2026-10-19",
