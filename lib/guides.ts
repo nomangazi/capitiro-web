@@ -16,6 +16,17 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "apr-vs-apy-aer",
+    title: "APR vs APY vs AER Explained: What's the Difference?",
+    seoTitle: "APR vs APY vs AER: What's the Difference?",
+    description:
+      "APR vs APY vs AER explained: how compounding turns a 5% rate into 5.12% a year, why UK savings quote AER, and what a 24% card APR really costs.",
+    published: "2026-10-22",
+    updated: "2026-10-22",
+    readingMinutes: 7,
+    calculator: "compound-interest",
+  },
+  {
     slug: "isa-vs-sipp",
     title: "ISA vs SIPP: Which Is Better for Your Retirement Savings?",
     seoTitle: "ISA vs SIPP: Which Is Better for Retirement?",
