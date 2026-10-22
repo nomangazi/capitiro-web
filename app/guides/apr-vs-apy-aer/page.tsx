@@ -107,7 +107,7 @@ export default function Page() {
         <tbody>
           <tr>
             <td>Includes compounding?</td>
-            <td>Usually no</td>
+            <td>Often not for credit cards; loan APRs include fees and payment timing</td>
             <td>Yes</td>
             <td>Yes</td>
           </tr>
@@ -135,8 +135,8 @@ export default function Page() {
       <h2>Which term is used in the US, UK and EU?</h2>
       <ul>
         <li><strong>United States:</strong> banks quote an APY on savings accounts and CDs and an APR on loans and credit cards. A savings account may also show an &quot;interest rate&quot;, which is the APR-style figure before compounding.</li>
-        <li><strong>United Kingdom:</strong> savings and ISAs are advertised with an AER, often alongside a &quot;gross&quot; rate (before tax). Loans and credit cards show an APR, and loan ads usually quote a &quot;representative APR&quot;, the rate that at least 51% of accepted customers get.</li>
-        <li><strong>Euro area and wider EU:</strong> consumer credit uses an APR (called TAEG, TAE or a similar name in some languages), and its calculation is set by EU consumer credit rules. Savings products are often shown as a nominal annual rate, and in some countries as an effective annual rate. Check which one a bank means before comparing two offers.</li>
+        <li><strong>United Kingdom:</strong> savings and ISAs are advertised with an AER, often alongside a &quot;gross&quot; rate (before tax). Loans and credit cards show an APR, and loan ads usually quote a &quot;representative APR&quot;, the rate that firms must reasonably expect at least 51% of customers to get or better.</li>
+        <li><strong>Euro area and wider EU:</strong> consumer credit uses an APR (called TAEG, TAE or a similar name in some languages), and its calculation is set by EU consumer credit rules. Savings products may be shown as a nominal annual rate or an effective annual rate, depending on the country and bank. Check which one a bank means before comparing two offers.</li>
       </ul>
       <p>
         Labels differ and definitions can vary slightly by country and product, so read the small print.
