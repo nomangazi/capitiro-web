@@ -65,7 +65,7 @@ Rules of thumb:
 - Pinning at a steady pace beats bursts. Never post more than 5 new pins in a day.
 - When a new guide ships, post its pin within a week.
 
-### 1.5 Pin entries: guides (11)
+### 1.5 Pin entries: guides (13)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination: `https://www.capitiro.com/guides/<slug>`.
 
@@ -145,6 +145,20 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Destination: https://www.capitiro.com/guides/rule-of-72
 - Title: The Rule of 72: How Long Does It Take to Double Your Money?
 - Description: The Rule of 72 is a mental-math shortcut: years to double is about 72 divided by the annual rate. At 6% that is 12 years, at 8% it is 9 years and at 10% about 7.2 years. See how accurate it is, and how the same rule shows how fast a 24% APR credit card balance doubles (in under three years) and how inflation erodes cash.
+
+#### Simple vs compound interest
+- Board: Investing and Compound Interest for Beginners
+- Image: https://www.capitiro.com/pin/guides/simple-vs-compound-interest
+- Destination: https://www.capitiro.com/guides/simple-vs-compound-interest
+- Title: Simple vs Compound Interest: How Big Is the Difference?
+- Description: Simple interest is paid on the original amount only. Compound interest is also paid on past interest. $10,000 at 5% for 30 years earns $15,000 of simple interest but $34,677.44 compounded monthly, and at 7% the balances are $31,000 and $81,164.97. See the formulas, where each type applies and why compounding costs more on a credit card.
+
+#### Rent vs buy
+- Board: Mortgage and Home Buying Tips
+- Image: https://www.capitiro.com/pin/guides/rent-vs-buy
+- Destination: https://www.capitiro.com/guides/rent-vs-buy
+- Title: Rent vs Buy: The Full Cost Comparison Over 7 Years
+- Description: Owning costs more than the mortgage payment. In an illustrative example (a $400,000 home, 20% down, 6.5% rate, rent of $2,400 a month rising 3% a year), buying costs about $64,000 more than renting over 7 years if the price stays flat, and about $22,000 less if it rises 3% a year. See each cost side by side, including property tax, maintenance, closing costs and the opportunity cost of your down payment, plus how to decide.
 
 ### 1.6 Pin entries: calculators (8)
 

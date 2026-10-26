@@ -16,6 +16,28 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "simple-vs-compound-interest",
+    title: "Simple vs Compound Interest: What's the Difference?",
+    seoTitle: "Simple vs Compound Interest: The Difference",
+    description:
+      "Simple vs compound interest explained: formulas, where each applies, and why $10,000 at 5% for 30 years earns $15,000 simple but $34,677 compounded.",
+    published: "2026-10-26",
+    updated: "2026-10-26",
+    readingMinutes: 7,
+    calculator: "compound-interest",
+  },
+  {
+    slug: "rent-vs-buy",
+    title: "Rent vs Buy: The Full Cost Comparison",
+    seoTitle: "Rent vs Buy: Full Cost Comparison Over 7 Years",
+    description:
+      "Rent vs buy compared over 7 years: mortgage interest, property tax, maintenance, closing costs and the cost of tying up your down payment.",
+    published: "2026-10-26",
+    updated: "2026-10-26",
+    readingMinutes: 7,
+    calculator: "mortgage",
+  },
+  {
     slug: "apr-vs-apy-aer",
     title: "APR vs APY vs AER Explained: What's the Difference?",
     seoTitle: "APR vs APY vs AER: What's the Difference?",
