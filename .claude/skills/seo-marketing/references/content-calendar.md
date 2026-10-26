@@ -16,7 +16,7 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | ✅ 6 | How big should my emergency fund be? | High-yield savings vs CDs | savings-goal |
 | ✅ 7 | Inflation and your savings: real vs nominal returns | Is a pay rise below inflation a pay cut? | inflation |
 | ✅ 8 | ISA vs SIPP (UK) | 401(k) vs IRA (US) | retirement |
-| 9 | APR vs APY vs AER explained | Simple vs compound interest | compound-interest |
+| ✅ 9 | APR vs APY vs AER explained | Simple vs compound interest | compound-interest |
 | 10 | Rent vs buy: the full cost comparison | Debt consolidation loans: pros and cons | mortgage, loan-amortization |
 
 By week 6 (about 15 guides plus 8 calculators), apply for AdSense if Search Console shows the pages indexed.
