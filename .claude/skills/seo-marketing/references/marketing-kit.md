@@ -146,6 +146,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Title: The Rule of 72: How Long Does It Take to Double Your Money?
 - Description: The Rule of 72 is a mental-math shortcut: years to double is about 72 divided by the annual rate. At 6% that is 12 years, at 8% it is 9 years and at 10% about 7.2 years. See how accurate it is, and how the same rule shows how fast a 24% APR credit card balance doubles (in under three years) and how inflation erodes cash.
 
+#### Simple vs compound interest
+- Board: Investing and Compound Interest for Beginners
+- Image: https://www.capitiro.com/pin/guides/simple-vs-compound-interest
+- Destination: https://www.capitiro.com/guides/simple-vs-compound-interest
+- Title: Simple vs Compound Interest: How Big Is the Difference?
+- Description: Simple interest is paid on the original amount only. Compound interest is also paid on past interest. $10,000 at 5% for 30 years earns $15,000 of simple interest but $34,677.44 compounded monthly, and at 7% the balances are $31,000 and $81,164.97. See the formulas, where each type applies and why compounding costs more on a credit card.
+
 ### 1.6 Pin entries: calculators (8)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/calculators/<slug>`. Destination: `https://www.capitiro.com/calculators/<slug>`.
