@@ -146,6 +146,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Title: The Rule of 72: How Long Does It Take to Double Your Money?
 - Description: The Rule of 72 is a mental-math shortcut: years to double is about 72 divided by the annual rate. At 6% that is 12 years, at 8% it is 9 years and at 10% about 7.2 years. See how accurate it is, and how the same rule shows how fast a 24% APR credit card balance doubles (in under three years) and how inflation erodes cash.
 
+#### Rent vs buy
+- Board: Mortgage and Home Buying Tips
+- Image: https://www.capitiro.com/pin/guides/rent-vs-buy
+- Destination: https://www.capitiro.com/guides/rent-vs-buy
+- Title: Rent vs Buy: The Full Cost Comparison Over 7 Years
+- Description: Owning costs more than the mortgage payment. In an illustrative example (a $400,000 home, 20% down, 6.5% rate, rent of $2,400 a month rising 3% a year), buying costs about $64,000 more than renting over 7 years if the price stays flat, and about $22,000 less if it rises 3% a year. See each cost side by side, including property tax, maintenance, closing costs and the opportunity cost of your down payment, plus how to decide.
+
 ### 1.6 Pin entries: calculators (8)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/calculators/<slug>`. Destination: `https://www.capitiro.com/calculators/<slug>`.
