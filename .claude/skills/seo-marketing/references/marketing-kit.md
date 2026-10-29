@@ -65,7 +65,7 @@ Rules of thumb:
 - Pinning at a steady pace beats bursts. Never post more than 5 new pins in a day.
 - When a new guide ships, post its pin within a week.
 
-### 1.5 Pin entries: guides (13)
+### 1.5 Pin entries: guides (14)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination: `https://www.capitiro.com/guides/<slug>`.
 
@@ -159,6 +159,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Destination: https://www.capitiro.com/guides/rent-vs-buy
 - Title: Rent vs Buy: The Full Cost Comparison Over 7 Years
 - Description: Owning costs more than the mortgage payment. In an illustrative example (a $400,000 home, 20% down, 6.5% rate, rent of $2,400 a month rising 3% a year), buying costs about $64,000 more than renting over 7 years if the price stays flat, and about $22,000 less if it rises 3% a year. See each cost side by side, including property tax, maintenance, closing costs and the opportunity cost of your down payment, plus how to decide.
+
+#### Debt consolidation loans
+- Board: Debt Payoff and Credit Card Help
+- Image: https://www.capitiro.com/pin/guides/debt-consolidation-loans
+- Destination: https://www.capitiro.com/guides/debt-consolidation-loans
+- Title: Debt Consolidation Loans: Pros and Cons With Real Numbers
+- Description: Is a consolidation loan worth it? In an illustrative example ($15,000 of card debt at 24% APR, an 11% APR 5-year loan with a 5% fee), the loan costs $343.30 a month and $5,598.09 in interest and fees, against $10,891.17 in interest if the cards are cleared over the same 5 years. The fee pays back by month 6. See a side-by-side comparison with balance transfers, what changes with a longer term or a higher rate, and how to decide.
 
 ### 1.6 Pin entries: calculators (8)
 
