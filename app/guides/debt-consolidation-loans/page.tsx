@@ -26,7 +26,7 @@ export default function Page() {
           In the example below, $15,000 of card debt at 24% APR costs $5,598.09 in interest and fees if consolidated into an 11%, 5-year loan with a 5% fee, against $10,891.17 in
           interest if the cards are cleared over the same 5 years.
         </strong>{" "}
-        The same loan at a much higher rate would save almost nothing.
+        The same loan at a much higher rate could save nothing or even cost more.
       </p>
 
       <h2>Key takeaways</h2>
