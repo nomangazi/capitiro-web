@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "debt-consolidation-loans",
+    title: "Debt Consolidation Loans: Pros and Cons",
+    description:
+      "Debt consolidation loans compared with keeping cards or a balance transfer: a $15,000 example at 24% vs 11% APR with a 5% fee, break-even and how to decide.",
+    published: "2026-10-29",
+    updated: "2026-10-29",
+    readingMinutes: 7,
+    calculator: "credit-card-payoff",
+  },
+  {
     slug: "simple-vs-compound-interest",
     title: "Simple vs Compound Interest: What's the Difference?",
     seoTitle: "Simple vs Compound Interest: The Difference",
