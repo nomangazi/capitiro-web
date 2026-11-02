@@ -11,10 +11,10 @@ export const metadata = buildMetadata({ title: guide.seoTitle ?? guide.title, de
 /** $5,000 at 22% APR. Declining minimum = max(1% of balance + that month's interest, $25). */
 const OPTIONS = [
   { option: "Declining minimum (1% + interest)", payment: "$141.67, falling to about $25", time: "230 months (19 years 2 months)", interest: "$8,099.77", total: "$13,099.77" },
-  { option: "Fixed at the first minimum", payment: "$141.67", time: "58 months (4 years 10 months)", interest: "$3,121.43", total: "$8,121.43" },
+  { option: "Fixed at the first minimum", payment: "$141.67", time: "58 months (4 years 10 months)", interest: "$3,121.28", total: "$8,121.28" },
   { option: "Fixed $200", payment: "$200.00", time: "34 months (2 years 10 months)", interest: "$1,749.88", total: "$6,749.88" },
   { option: "Fixed $300", payment: "$300.00", time: "21 months (1 year 9 months)", interest: "$1,021.60", total: "$6,021.60" },
-  { option: "Fixed to clear in 24 months", payment: "$259.39", time: "24 months (2 years)", interest: "$1,225.38", total: "$6,225.38" },
+  { option: "Fixed to clear in 24 months", payment: "$259.40", time: "24 months (2 years)", interest: "$1,225.32", total: "$6,225.32" },
 ];
 
 export default function Page() {
@@ -25,7 +25,7 @@ export default function Page() {
         open and the interest flowing, not to clear the debt quickly.{" "}
         <strong>
           In the example below, a $5,000 balance at 22% APR takes 230 months (over 19 years) and costs $8,099.77 in interest if you
-          pay only a declining minimum, against 58 months and $3,121.43 if you keep paying the first minimum every month.
+          pay only a declining minimum, against 58 months and $3,121.28 if you keep paying the first minimum every month.
         </strong>{" "}
         That gap is the minimum payment trap.
       </p>
@@ -34,7 +34,7 @@ export default function Page() {
       <ul>
         <li>A minimum that shrinks with your balance means each payment does less work, so the debt lingers for years.</li>
         <li>In the example, interest is $8,099.77 on a $5,000 balance. You repay $13,099.77 in total, about 2.6 times what you borrowed.</li>
-        <li>Simply keeping the first month&apos;s payment fixed cuts the time from 230 months to 58 and the interest by $4,978.34.</li>
+        <li>Simply keeping the first month&apos;s payment fixed cuts the time from 230 months to 58 and the interest by $4,978.49.</li>
         <li>Paying $300 instead of $200 a month saves $728.28 in interest and 13 months.</li>
         <li>Pick a payoff date, work out the fixed payment that reaches it, and treat the minimum as a safety net, not a plan.</li>
       </ul>
@@ -70,6 +70,13 @@ export default function Page() {
         here. It only bites at the very end, when the final payment is $22.86.
       </p>
 
+      <p>
+        Think of each payment as two parts: interest, which is the lender&apos;s share, and principal, which is the part that actually
+        shrinks the debt. With a minimum tied to the balance, the principal share starts small and keeps shrinking, so progress
+        slows exactly when you hope it will speed up. A fixed payment works the other way. Interest falls as the balance falls, so
+        more of the same payment goes to principal each month.
+      </p>
+
       <h2>How do different payment strategies compare?</h2>
       <p>
         Here is the same $5,000 at 22% APR under five approaches. Use the{" "}
@@ -101,17 +108,17 @@ export default function Page() {
       <h2>Worked example: what does each extra dollar buy?</h2>
       <p>
         Start with the declining minimum: 230 months, $8,099.77 of interest. Now keep paying the first minimum of $141.67 instead of
-        letting it fall. You finish in 58 months and pay $3,121.43, which is 172 months and $4,978.34 less. You did not pay more in
+        letting it fall. You finish in 58 months and pay $3,121.28, which is 172 months and $4,978.49 less. You did not pay more in
         the first month. You simply refused to pay less later.
       </p>
       <ul>
-        <li><strong>$141.67 to $200 (+$58.33):</strong> 24 months sooner and $1,371.55 less interest.</li>
+        <li><strong>$141.67 to $200 (+$58.33):</strong> 24 months sooner and $1,371.40 less interest.</li>
         <li><strong>$200 to $300 (+$100):</strong> 13 months sooner and $728.28 less interest.</li>
-        <li><strong>$141.67 to $300 (+$158.33):</strong> 37 months sooner and $2,099.83 less interest.</li>
+        <li><strong>$141.67 to $300 (+$158.33):</strong> 37 months sooner and $2,099.68 less interest.</li>
       </ul>
       <p>
-        The 24-month plan needs $259.39 a month. That is $117.72 more than the first minimum, yet total interest is $1,225.38, which is
-        $6,874.39 less than the declining minimum. A fixed $300 clears the card in 21 months for $1,021.60, so $259.39 is a fair
+        The 24-month plan needs $259.40 a month. That is $117.73 more than the first minimum, yet total interest is $1,225.32, which is
+        $6,874.45 less than the declining minimum. A fixed $300 clears the card in 21 months for $1,021.60, so $259.40 is a fair
         middle path if you want a firm two-year date.
       </p>
 
@@ -119,12 +126,18 @@ export default function Page() {
       <ul>
         <li><strong>Start with a date.</strong> Choose how many months you can live with, then find the fixed payment that reaches it.</li>
         <li><strong>Fix the amount.</strong> Set a standing payment at your chosen level, so a falling minimum cannot lower it.</li>
-        <li><strong>Make the budget real.</strong> If $259.39 is too much, find the highest figure you can keep up for the whole period.</li>
+        <li><strong>Make the budget real.</strong> If $259.40 is too much, find the highest figure you can keep up for the whole period.</li>
         <li><strong>Add windfalls.</strong> Tax refunds and bonuses are most valuable at the start, when the balance and interest are highest.</li>
         <li><strong>Stop adding to the balance.</strong> New spending resets the clock and every example above assumes none.</li>
         <li><strong>Check a cheaper rate.</strong> A 0% offer may help, once fees are counted; see <Link href="/guides/balance-transfer-math">balance transfer math</Link>.</li>
         <li><strong>If you have several cards,</strong> pay the minimum on all and send the extra to one. Read <Link href="/guides/debt-avalanche-vs-snowball">avalanche vs snowball</Link> to choose which.</li>
       </ul>
+
+      <p>
+        A simple test is to ask what the debt would cost if you did nothing differently. If the answer is years of payments you
+        would not choose, raise the fixed amount before anything else. Even a modest increase has a large effect early on, because
+        interest is calculated on a balance that has barely moved.
+      </p>
 
       <h2>What mistakes should you avoid?</h2>
       <ul>
