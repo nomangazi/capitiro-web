@@ -16,6 +16,27 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "minimum-payment-trap",
+    title: "The Credit Card Minimum Payment Trap",
+    description:
+      "Paying only the minimum on a $5,000 card at 22% APR can take 19 years and cost $8,099.77 in interest. See how fixed payments change the result.",
+    published: "2026-11-02",
+    updated: "2026-11-02",
+    readingMinutes: 6,
+    calculator: "credit-card-payoff",
+  },
+  {
+    slug: "car-loan-48-vs-72-months",
+    title: "Car Loan: 48 vs 72 Months, the Real Cost",
+    seoTitle: "Car Loan: 48 vs 72 Months, the Real Cost",
+    description:
+      "A 72-month car loan costs $2,343.26 more interest than a 48-month loan on $30,000 at 7% APR. See the payments, the negative equity risk and how to choose.",
+    published: "2026-11-02",
+    updated: "2026-11-02",
+    readingMinutes: 6,
+    calculator: "auto-loan",
+  },
+  {
     slug: "debt-consolidation-loans",
     title: "Debt Consolidation Loans: Pros and Cons",
     description:
