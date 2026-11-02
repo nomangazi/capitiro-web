@@ -18,5 +18,9 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | ✅ 8 | ISA vs SIPP (UK) | 401(k) vs IRA (US) | retirement |
 | ✅ 9 | APR vs APY vs AER explained | Simple vs compound interest | compound-interest |
 | ✅ 10 | Rent vs buy: the full cost comparison | Debt consolidation loans: pros and cons | mortgage, loan-amortization |
+| 11 | The credit card minimum payment trap | Car loan 48 vs 72 months: the real cost | credit-card-payoff, auto-loan |
+| 12 | Dollar-cost averaging explained | What is your FIRE number? | sip-return, retirement |
+| 13 | Overpay your mortgage or invest? (UK and US) | Mortgage points: are they worth paying? | loan-amortization, mortgage |
+| 14 | Sinking funds: save for irregular costs | How much will $500 a month grow to? | savings-goal, compound-interest |
 
 By week 6 (about 15 guides plus 8 calculators), apply for AdSense if Search Console shows the pages indexed.
