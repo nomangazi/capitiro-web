@@ -167,6 +167,20 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Title: Debt Consolidation Loans: Pros and Cons With Real Numbers
 - Description: Is a consolidation loan worth it? In an illustrative example ($15,000 of card debt at 24% APR, an 11% APR 5-year loan with a 5% fee), the loan costs $343.30 a month and $5,598.09 in interest and fees, against $10,891.17 in interest if the cards are cleared over the same 5 years. The fee pays back by month 6. See a side-by-side comparison with balance transfers, what changes with a longer term or a higher rate, and how to decide.
 
+#### The credit card minimum payment trap
+- Board: Debt Payoff and Credit Card Help
+- Image: https://www.capitiro.com/pin/guides/minimum-payment-trap
+- Destination: https://www.capitiro.com/guides/minimum-payment-trap
+- Title: The Credit Card Minimum Payment Trap: What It Really Costs
+- Description: Paying only the minimum on a $5,000 card at 22% APR can take 19 years and cost $8,099.77 in interest (illustrative example, assuming the minimum is 1% of the balance plus interest, with a $25 floor). A fixed $200 a month clears it in 34 months for $1,749.88. See the comparison table and how to decide.
+
+#### Car loan: 48 vs 72 months
+- Board: Debt Payoff and Credit Card Help
+- Image: https://www.capitiro.com/pin/guides/car-loan-48-vs-72-months
+- Destination: https://www.capitiro.com/guides/car-loan-48-vs-72-months
+- Title: Car Loan: 48 vs 72 Months, the Real Cost
+- Description: On a $30,000 loan at 7% APR, a 72-month term costs $2,343.26 more interest than 48 months, though the payment is $206.92 lower. See the numbers for 36 to 84 months, the negative equity risk and how to choose.
+
 ### 1.6 Pin entries: calculators (8)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/calculators/<slug>`. Destination: `https://www.capitiro.com/calculators/<slug>`.
