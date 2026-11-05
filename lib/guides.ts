@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "dollar-cost-averaging",
+    title: "Dollar-Cost Averaging Explained: How It Works",
+    description:
+      "Dollar-cost averaging explained with numbers: how fixed monthly investing lowers your average cost, what $300 a month grows to, and when it helps.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readingMinutes: 7,
+    calculator: "sip-return",
+  },
+  {
     slug: "minimum-payment-trap",
     title: "The Credit Card Minimum Payment Trap",
     description:
