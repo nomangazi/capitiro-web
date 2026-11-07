@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Clarity } from "@/components/analytics/Clarity";
 import { SiteChrome } from "@/components/layout/SiteChrome";
 import { JsonLd } from "@/components/site/JsonLd";
 import { websiteJsonLd } from "@/lib/seo";
@@ -55,13 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Cookieless page-view analytics (Vercel Web Analytics); no consent banner required. */}
         <Analytics />
         <SiteChrome>
-          {siteConfig.clarityId && (
-            // Microsoft Clarity: heatmaps and session recordings. Masking must stay "Strict" in the Clarity
-            // dashboard so calculator inputs are never recorded (we promise visitors their numbers stay private).
-            <Script id="clarity" strategy="afterInteractive">
-              {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",${JSON.stringify(siteConfig.clarityId)});`}
-            </Script>
-          )}
+          {siteConfig.clarityId && <Clarity projectId={siteConfig.clarityId} />}
           {siteConfig.adsense.client && (
             // Loads AdSense (including Auto ads and Google's consent message for EEA/UK visitors).
             <Script
