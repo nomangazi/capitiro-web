@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "fire-number",
+    title: "What Is Your FIRE Number? How to Calculate It",
+    description:
+      "Your FIRE number is annual spending x 25 at a 4% withdrawal rate. See targets for $30k to $100k of spending, Lean to Fat FIRE and a worked timeline.",
+    published: "2026-11-09",
+    updated: "2026-11-09",
+    readingMinutes: 6,
+    calculator: "retirement",
+  },
+  {
     slug: "dollar-cost-averaging",
     title: "Dollar-Cost Averaging Explained: How It Works",
     description:
