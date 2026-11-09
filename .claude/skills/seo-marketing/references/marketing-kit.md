@@ -65,7 +65,7 @@ Rules of thumb:
 - Pinning at a steady pace beats bursts. Never post more than 5 new pins in a day.
 - When a new guide ships, post its pin within a week.
 
-### 1.5 Pin entries: guides (14)
+### 1.5 Pin entries: guides (15)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination: `https://www.capitiro.com/guides/<slug>`.
 
@@ -180,6 +180,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Destination: https://www.capitiro.com/guides/car-loan-48-vs-72-months
 - Title: Car Loan: 48 vs 72 Months, the Real Cost
 - Description: On a $30,000 loan at 7% APR, a 72-month term costs $2,343.26 more interest than 48 months, though the payment is $206.92 lower. See the numbers for 36 to 84 months, the negative equity risk and how to choose.
+
+#### What is your FIRE number
+- Board: Retirement Planning Basics
+- Image: https://www.capitiro.com/pin/guides/fire-number
+- Destination: https://www.capitiro.com/guides/fire-number
+- Title: What Is Your FIRE Number? How to Calculate It (With Examples)
+- Description: Your FIRE number is your annual spending multiplied by 25 at a 4% withdrawal rate. In a hypothetical example, $50,000 of yearly spending needs $1,250,000 at 4% or $1,428,571 at 3.5%. Saving $2,000 a month from $100,000 at a constant 7% takes 19 years in nominal dollars, or 26 years once 2.5% inflation is taken out. See targets for $30,000 to $100,000 of spending and Lean, Regular, Fat and Coast FIRE explained.
 
 ### 1.6 Pin entries: calculators (8)
 
