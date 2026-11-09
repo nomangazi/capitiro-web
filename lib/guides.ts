@@ -16,6 +16,17 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "overpay-mortgage-or-invest",
+    title: "Overpay Your Mortgage or Invest? The Real Math (UK and US)",
+    seoTitle: "Overpay Mortgage or Invest? The Real Math",
+    description:
+      "Overpaying a 6.5% mortgage by $300 a month saves $135,115 in interest. See how that compares with investing at 4%, 6% or 8%, and where the breakeven sits.",
+    published: "2026-11-09",
+    updated: "2026-11-09",
+    readingMinutes: 7,
+    calculator: "loan-amortization",
+  },
+  {
     slug: "dollar-cost-averaging",
     title: "Dollar-Cost Averaging Explained: How It Works",
     description:

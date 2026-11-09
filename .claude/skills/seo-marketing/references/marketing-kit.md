@@ -181,6 +181,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Title: Car Loan: 48 vs 72 Months, the Real Cost
 - Description: On a $30,000 loan at 7% APR, a 72-month term costs $2,343.26 more interest than 48 months, though the payment is $206.92 lower. See the numbers for 36 to 84 months, the negative equity risk and how to choose.
 
+#### Overpay your mortgage or invest?
+- Board: Mortgage and Home Buying Tips
+- Image: https://www.capitiro.com/pin/guides/overpay-mortgage-or-invest
+- Destination: https://www.capitiro.com/guides/overpay-mortgage-or-invest
+- Title: Overpay Your Mortgage or Invest? The Real Math (UK and US)
+- Description: On a $300,000 mortgage at 6.5% for 30 years, $300 extra a month saves $135,115 in interest and ends the loan 9 years 2 months early. Compared like for like over 30 years, overpaying finishes $19,776 ahead if investments return 6% a year and $92,944 behind at 8% (hypothetical constant returns, taxes and fees ignored). The breakeven is about 6.4%. See the table for 3%, 5% and 7% mortgages and how to decide.
+
 ### 1.6 Pin entries: calculators (8)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/calculators/<slug>`. Destination: `https://www.capitiro.com/calculators/<slug>`.
