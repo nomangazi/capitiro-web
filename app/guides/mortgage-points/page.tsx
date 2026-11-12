@@ -13,7 +13,7 @@ export default function Page() {
     <GuideLayout slug={SLUG}>
       <p>
         Mortgage points let you pay cash at closing in exchange for a lower interest rate. They are worth paying only if you keep the
-        loan longer than the break-even point, which is often around five years or more. This guide shows the math with one
+        loan longer than the break-even point, which in our example is about five years. This guide shows the math with one
         illustrative example, so you can test your own quote.
       </p>
 
@@ -97,8 +97,9 @@ export default function Page() {
       </table>
       <p>
         Before subtracting the cost, one point saves $23,803 of interest over 30 years and two points save $47,348. After five years the
-        net result is close to zero because you are only just reaching break-even. The interest figure is slightly more generous than
-        the simple payment break-even because the lower rate also pays down principal a little faster.
+        cash position from lower payments is about break-even (one point has returned $3,967 of its $4,000 cost), yet the
+        interest-based net is +$1,026. The gap is the extra principal the lower rate pays down: about $1,060 more equity, which you
+        only get back as cash when you sell or refinance.
       </p>
 
       <h2>When do points pay off, and when do they not?</h2>
@@ -145,7 +146,7 @@ export default function Page() {
       <p>
         If you have $4,000 extra, you could put it into the down payment instead. On the same loan, a $396,000 balance at 6.75% has
         a payment of $2,568.45, a saving of only $25.94 a month and about $5,340 of interest over 30 years. One point on the $400,000
-        loan saves $66.12 a month and $23,803 of interest. The cash saves less per dollar on the down payment, but the comparison is
+        loan saves $66.12 a month and $23,803 of interest. In this example the cash saves less per dollar on the down payment, but the comparison is
         not quite fair: down payment money stays in the house as equity, while points are a cost you do not get back. A larger down
         payment can also help you reach the 20% equity that avoids PMI (see <Link href="/guides/what-is-pmi">what PMI is</Link>). If
         you are close to a threshold, check that first.
