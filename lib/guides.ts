@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "mortgage-points",
+    title: "Mortgage Points: Are They Worth Paying?",
+    description:
+      "One mortgage point costs 1% of the loan. On a $400,000 loan, a point that cuts 6.75% to 6.50% saves $66.12 a month and breaks even in about 61 months.",
+    published: "2026-11-12",
+    updated: "2026-11-12",
+    readingMinutes: 6,
+    calculator: "mortgage",
+  },
+  {
     slug: "fire-number",
     title: "What Is Your FIRE Number? How to Calculate It",
     description:
