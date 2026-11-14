@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "sinking-funds",
+    title: "Sinking Funds: Save for Irregular Costs",
+    description:
+      "A sinking fund turns irregular bills into a monthly saving. $5,400 of yearly costs needs $450 a month, and saving for a $2,400 holiday beats a 24% card by $416.",
+    published: "2026-11-14",
+    updated: "2026-11-14",
+    readingMinutes: 7,
+    calculator: "savings-goal",
+  },
+  {
     slug: "mortgage-points",
     title: "Mortgage Points: Are They Worth Paying?",
     description:
