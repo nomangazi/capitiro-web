@@ -65,7 +65,7 @@ Rules of thumb:
 - Pinning at a steady pace beats bursts. Never post more than 5 new pins in a day.
 - When a new guide ships, post its pin within a week.
 
-### 1.5 Pin entries: guides (15)
+### 1.5 Pin entries: guides (16)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination: `https://www.capitiro.com/guides/<slug>`.
 
@@ -194,6 +194,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Destination: https://www.capitiro.com/guides/overpay-mortgage-or-invest
 - Title: Overpay Your Mortgage or Invest? The Real Math (UK and US)
 - Description: On a $300,000 mortgage at 6.5% for 30 years, $300 extra a month saves $135,115 in interest and ends the loan 9 years 2 months early. Compared like for like over 30 years, overpaying finishes $19,776 ahead if investments return 6% a year and $92,944 behind at 8% (hypothetical constant returns, taxes and fees ignored). The breakeven is about 6.4%. See the table for 3%, 5% and 7% mortgages and how to decide.
+
+#### How much will $500 a month grow to?
+- Board: Investing and Compound Interest for Beginners
+- Image: https://www.capitiro.com/pin/guides/how-much-will-500-a-month-grow
+- Destination: https://www.capitiro.com/guides/how-much-will-500-a-month-grow
+- Title: How Much Will $500 a Month Grow To? 10 to 40 Years
+- Description: How much will $500 a month grow to? At an assumed 6% a year, it becomes about $81,940 in 10 years, $231,020 in 20 years, $502,258 in 30 years and $995,745 in 40 years, with end-of-month contributions and monthly compounding. See the table for 4%, 6%, 8% and 10%, how much of the balance is growth, and why one extra percentage point matters (5% vs 6% over 30 years is $416,129 vs $502,258). Hypothetical constant returns, fees and taxes ignored. Returns are not guaranteed.
 
 ### 1.6 Pin entries: calculators (8)
 
