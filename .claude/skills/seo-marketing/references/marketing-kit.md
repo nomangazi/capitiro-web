@@ -65,7 +65,7 @@ Rules of thumb:
 - Pinning at a steady pace beats bursts. Never post more than 5 new pins in a day.
 - When a new guide ships, post its pin within a week.
 
-### 1.5 Pin entries: guides (15)
+### 1.5 Pin entries: guides (20)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination: `https://www.capitiro.com/guides/<slug>`.
 
@@ -103,6 +103,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Destination: https://www.capitiro.com/guides/extra-mortgage-payments
 - Title: How Extra Mortgage Payments Save You Money ($100, $200 or $500 a Month)
 - Description: On a $320,000 mortgage at 6.5% for 30 years, an extra $100 a month saves about $61,700 in interest and shortens the loan by almost 4 years. See what $200 and $500 extra do, why paying early saves the most, the best ways to pay extra, and when to pay off other debt or build an emergency fund first. Free loan amortization calculator included.
+
+#### Bi-weekly mortgage payments
+- Board: Mortgage and Home Buying Tips
+- Image: https://www.capitiro.com/pin/guides/biweekly-mortgage-payments
+- Destination: https://www.capitiro.com/guides/biweekly-mortgage-payments
+- Title: Bi-Weekly Mortgage Payments: Do They Really Save Money?
+- Description: Paying half your mortgage payment every two weeks gives 26 half-payments, which is 13 full payments a year. On a $400,000 loan at 6.5% for 30 years, that one extra payment a year (about $210.69 a month) saves about $116,342 in interest and 5 years 10 months. You can get the same result by adding 1/12 to each monthly payment, with no paid program. See the table for $300,000 and $400,000 loans at 6%, 6.5% and 7%, and what to check with your lender.
 
 #### Refinance break-even
 - Board: Mortgage and Home Buying Tips
@@ -194,6 +201,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Destination: https://www.capitiro.com/guides/overpay-mortgage-or-invest
 - Title: Overpay Your Mortgage or Invest? The Real Math (UK and US)
 - Description: On a $300,000 mortgage at 6.5% for 30 years, $300 extra a month saves $135,115 in interest and ends the loan 9 years 2 months early. Compared like for like over 30 years, overpaying finishes $19,776 ahead if investments return 6% a year and $92,944 behind at 8% (hypothetical constant returns, taxes and fees ignored). The breakeven is about 6.4%. See the table for 3%, 5% and 7% mortgages and how to decide.
+
+#### How much will $500 a month grow to?
+- Board: Investing and Compound Interest for Beginners
+- Image: https://www.capitiro.com/pin/guides/how-much-will-500-a-month-grow
+- Destination: https://www.capitiro.com/guides/how-much-will-500-a-month-grow
+- Title: How Much Will $500 a Month Grow To? 10 to 40 Years
+- Description: How much will $500 a month grow to? At an assumed 6% a year, it becomes about $81,940 in 10 years, $231,020 in 20 years, $502,258 in 30 years and $995,745 in 40 years, with end-of-month contributions and monthly compounding. See the table for 4%, 6%, 8% and 10%, how much of the balance is growth, and why one extra percentage point matters (5% vs 6% over 30 years is $416,129 vs $502,258). Hypothetical constant returns, fees and taxes ignored. Returns are not guaranteed.
 
 ### 1.6 Pin entries: calculators (8)
 

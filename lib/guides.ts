@@ -16,6 +16,27 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "biweekly-mortgage-payments",
+    title: "Bi-Weekly Mortgage Payments: Do They Save Money?",
+    description:
+      "Bi-weekly mortgage payments add one extra payment a year. On a $400,000 loan at 6.5% that saves about $116,342 in interest and 5 years 10 months.",
+    published: "2026-11-16",
+    updated: "2026-11-16",
+    readingMinutes: 7,
+    calculator: "loan-amortization",
+  },
+  {
+    slug: "how-much-will-500-a-month-grow",
+    title: "How Much Will $500 a Month Grow To? 10 to 40 Years",
+    seoTitle: "How Much Will $500 a Month Grow To?",
+    description:
+      "At an assumed 6%, $500 a month grows to $81,940 in 10 years, $231,020 in 20 and $502,258 in 30. See 4%, 6%, 8% and 10% results for up to 40 years.",
+    published: "2026-11-16",
+    updated: "2026-11-16",
+    readingMinutes: 7,
+    calculator: "compound-interest",
+  },
+  {
     slug: "sinking-funds",
     title: "Sinking Funds: Save for Irregular Costs",
     description:
