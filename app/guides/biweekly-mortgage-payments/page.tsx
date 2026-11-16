@@ -130,7 +130,7 @@ export default function Page() {
           payments. Ask for every fee in writing and compare it with the simple monthly alternative, which has no such cost.
         </li>
         <li>
-          <strong>Prepayment penalties.</strong> These are uncommon on standard US mortgages but check your loan documents.
+          <strong>Prepayment penalties.</strong> Check your loan documents for any prepayment penalty before paying extra.
         </li>
         <li>
           <strong>Whether your payment includes escrow.</strong> Taxes and insurance are separate. Only the principal and interest
