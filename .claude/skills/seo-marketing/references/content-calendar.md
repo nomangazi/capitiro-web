@@ -1,4 +1,4 @@
-# Content calendar (first 10 weeks)
+# Content calendar
 
 Two guides per week. Each guide: 900–1,500 words, a worked example with verified numbers, a comparison table,
 a "how to decide" section and links to 1–2 calculators. After publishing, make 3 Pinterest pins and answer
@@ -21,6 +21,10 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | ✅ 11 | The credit card minimum payment trap | Car loan 48 vs 72 months: the real cost | credit-card-payoff, auto-loan |
 | ✅ 12 | Dollar-cost averaging explained | What is your FIRE number? | sip-return, retirement |
 | ✅ 13 | Overpay your mortgage or invest? (UK and US) | Mortgage points: are they worth paying? | loan-amortization, mortgage |
-| 14 | Sinking funds: save for irregular costs | How much will $500 a month grow to? | savings-goal, compound-interest |
+| ✅ 14 | Sinking funds: save for irregular costs | How much will $500 a month grow to? | savings-goal, compound-interest |
+| 15 | Bi-weekly mortgage payments: do they save money? | Personal loan vs credit card: which costs less? | loan-amortization, credit-card-payoff |
+| 16 | How much car can I afford? (20/4/10 rule) | Cash-out refinance: when does it make sense? | auto-loan, refinance |
+| 17 | Fixed vs variable rate mortgages (US, UK, EU) | Roth vs traditional 401(k) | mortgage, retirement |
+| 18 | How long to become a millionaire? | How to save $10,000 in a year | compound-interest, savings-goal |
 
 By week 6 (about 15 guides plus 8 calculators), apply for AdSense if Search Console shows the pages indexed.
