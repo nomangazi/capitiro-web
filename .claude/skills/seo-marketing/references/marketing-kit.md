@@ -104,6 +104,13 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Title: How Extra Mortgage Payments Save You Money ($100, $200 or $500 a Month)
 - Description: On a $320,000 mortgage at 6.5% for 30 years, an extra $100 a month saves about $61,700 in interest and shortens the loan by almost 4 years. See what $200 and $500 extra do, why paying early saves the most, the best ways to pay extra, and when to pay off other debt or build an emergency fund first. Free loan amortization calculator included.
 
+#### Bi-weekly mortgage payments
+- Board: Mortgage and Home Buying Tips
+- Image: https://www.capitiro.com/pin/guides/biweekly-mortgage-payments
+- Destination: https://www.capitiro.com/guides/biweekly-mortgage-payments
+- Title: Bi-Weekly Mortgage Payments: Do They Really Save Money?
+- Description: Paying half your mortgage payment every two weeks gives 26 half-payments, which is 13 full payments a year. On a $400,000 loan at 6.5% for 30 years, that one extra payment a year (about $210.69 a month) saves about $116,342 in interest and 5 years 10 months. You can get the same result by adding 1/12 to each monthly payment, with no paid program. See the table for $300,000 and $400,000 loans at 6%, 6.5% and 7%, and what to check with your lender.
+
 #### Refinance break-even
 - Board: Mortgage and Home Buying Tips
 - Image: https://www.capitiro.com/pin/guides/refinance-break-even

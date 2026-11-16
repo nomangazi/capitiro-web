@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "biweekly-mortgage-payments",
+    title: "Bi-Weekly Mortgage Payments: Do They Save Money?",
+    description:
+      "Bi-weekly mortgage payments add one extra payment a year. On a $400,000 loan at 6.5% that saves about $116,342 in interest and 5 years 10 months.",
+    published: "2026-11-16",
+    updated: "2026-11-16",
+    readingMinutes: 7,
+    calculator: "loan-amortization",
+  },
+  {
     slug: "sinking-funds",
     title: "Sinking Funds: Save for Irregular Costs",
     description:
