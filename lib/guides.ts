@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "personal-loan-vs-credit-card",
+    title: "Personal Loan vs Credit Card: Which Costs Less?",
+    description:
+      "On $10,000 at assumed rates, a 36-month 12% loan with a 5% fee costs $2,586.48 versus $4,985.16 on a 24% card at the same $349.62 monthly payment.",
+    published: "2026-11-19",
+    updated: "2026-11-19",
+    readingMinutes: 6,
+    calculator: "credit-card-payoff",
+  },
+  {
     slug: "biweekly-mortgage-payments",
     title: "Bi-Weekly Mortgage Payments: Do They Save Money?",
     description:
