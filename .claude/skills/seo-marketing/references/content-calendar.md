@@ -22,7 +22,7 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | ✅ 12 | Dollar-cost averaging explained | What is your FIRE number? | sip-return, retirement |
 | ✅ 13 | Overpay your mortgage or invest? (UK and US) | Mortgage points: are they worth paying? | loan-amortization, mortgage |
 | ✅ 14 | Sinking funds: save for irregular costs | How much will $500 a month grow to? | savings-goal, compound-interest |
-| 15 | Bi-weekly mortgage payments: do they save money? | Personal loan vs credit card: which costs less? | loan-amortization, credit-card-payoff |
+| ✅ 15 | Bi-weekly mortgage payments: do they save money? | Personal loan vs credit card: which costs less? | loan-amortization, credit-card-payoff |
 | 16 | How much car can I afford? (20/4/10 rule) | Cash-out refinance: when does it make sense? | auto-loan, refinance |
 | 17 | Fixed vs variable rate mortgages (US, UK, EU) | Roth vs traditional 401(k) | mortgage, retirement |
 | 18 | How long to become a millionaire? | How to save $10,000 in a year | compound-interest, savings-goal |
