@@ -30,7 +30,7 @@ export default function Page() {
       <ul>
         <li>A loan charges a fixed rate on a shrinking balance and ends on a set date. A card charges a (usually variable) rate for as long as you carry a balance.</li>
         <li>The rate gap drives the result. A 5% origination fee on $10,000 is $526.32 here, and the loan still saves $2,398.68 against the card at the same payment.</li>
-        <li>At 24% APR the loan&apos;s edge shrinks as its own rate rises: with a 5% fee, a 24% loan costs $743.36 more than clearing the card over the same 36 months.</li>
+        <li>The loan&apos;s edge shrinks as its own rate rises: with a 5% fee, a 24% APR loan costs $743.36 more than clearing a 24% APR card over the same 36 months.</li>
         <li>If you will clear the balance in a few months, a card (especially one with a 0% offer) can cost less than any loan fee.</li>
         <li>Always compare total interest plus fees on the same basis, not the monthly payment alone.</li>
       </ul>
@@ -38,7 +38,7 @@ export default function Page() {
         <small>
           Assumptions for every figure: a $10,000 balance, no new spending, fixed monthly payments, interest added monthly (APR ÷ 12).
           The rates, fee and terms are illustrative assumptions, not market data or current offers. The arithmetic is the same in any
-          currency, so $10,000 can be read as £10,000 or €10,000. Figures are rounded to the cent.
+          currency, so $10,000 can be read as £10,000 or €10,000. Figures are rounded to the cent. Payments are calculated unrounded, so typing a rounded payment such as $349.62 into a calculator can change the last digits by a few cents.
         </small>
       </p>
 
@@ -175,8 +175,8 @@ export default function Page() {
       <p>
         Yes, and the details matter. In the UK, Section 75 of the Consumer Credit Act 1974 can make a card provider jointly liable
         with a retailer for certain purchases within set price limits, which does not generally apply to a personal loan used to pay
-        a debt; rules and limits are specific, so check the official guidance. US card dispute rights also vary by product. Arrangement
-        fees are common on US loans, while some UK and EU lenders charge none, and early-repayment rules, cooling-off periods and APR
+        a debt; rules and limits are specific, so check the official guidance. US card dispute rights also vary by product. Origination
+        or arrangement fees vary by lender and country, and some lenders in all three regions charge none. Early-repayment rules, cooling-off periods and APR
         definitions vary by country. Read the agreement for your country before you sign.
       </p>
 
