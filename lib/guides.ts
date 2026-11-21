@@ -16,6 +16,16 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "how-much-car-can-i-afford",
+    title: "How Much Car Can I Afford? The 20/4/10 Rule",
+    description:
+      "Under the 20/4/10 rule, a $100,000 income and $350 a month of running costs points to a car of about $25,230, or $43,500 if only the loan payment counts.",
+    published: "2026-11-21",
+    updated: "2026-11-21",
+    readingMinutes: 6,
+    calculator: "auto-loan",
+  },
+  {
     slug: "personal-loan-vs-credit-card",
     title: "Personal Loan vs Credit Card: Which Costs Less?",
     description:
