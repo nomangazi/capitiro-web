@@ -271,7 +271,7 @@ export default function Page() {
       </p>
       <p>
         The break-even for the fee itself comes fast. At 24% the monthly interest is $120 on $6,000, so a 1% fee ($60) is repaid
-        within the first month and a 3% fee ($180) by month 2, when $236 of interest has been avoided. The formula from above gives
+        within the first month and a 3% fee ($180) by month 2, when $236 of interest has been avoided compared with staying on the 24% card and paying $300 a month. The formula from above gives
         the same answer: 1 ÷ 2 = 0.5 months and 3 ÷ 2 = 1.5 months.
       </p>
 

@@ -308,7 +308,7 @@ export default function Page() {
       <p>
         Start with where the money comes from. Income means investing monthly. A lump sum you could invest now means weighing the
         higher expected result against how you would cope with a fall soon after investing. If a drop would make you sell, phasing in
-        over 3 to 12 months costs $3,773 at 7% on $60,000 over 10 years. That is the price of a smoother start.
+        over 12 months costs up to $3,773 at 7% on $60,000 over 10 years. That is the price of a smoother start.
       </p>
       <h3>Is monthly investing the same as dollar-cost averaging?</h3>
       <p>
