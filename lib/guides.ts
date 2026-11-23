@@ -16,6 +16,17 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "mortgage-payment-with-taxes-insurance-pmi",
+    title: "Mortgage Payment With Taxes, Insurance and PMI (PITI) Explained",
+    seoTitle: "Mortgage Payment With Taxes, Insurance & PMI (PITI)",
+    description:
+      "On a $350,000 home at an assumed 6.5%, 5% down makes a $2,686 monthly PITI payment including PMI, versus $2,216 with 20% down and no PMI.",
+    published: "2026-11-24",
+    updated: "2026-11-24",
+    readingMinutes: 7,
+    calculator: "mortgage",
+  },
+  {
     slug: "cash-out-refinance",
     title: "Cash-Out Refinance: When Does It Make Sense?",
     description:
