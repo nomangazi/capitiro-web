@@ -151,10 +151,11 @@ export const guides: GuideMeta[] = [
   {
     slug: "debt-consolidation-loans",
     title: "Debt Consolidation Loans: Pros and Cons",
+    seoTitle: "Debt Consolidation Loans: Worth It? Pros & Cons",
     description:
-      "Debt consolidation loans compared with keeping cards or a balance transfer: a $15,000 example at 24% vs 11% APR with a 5% fee, break-even and how to decide.",
+      "Is a debt consolidation loan worth it? On $15,000 of 24% card debt, an 11% loan with a 5% fee costs $5,598 vs $10,891 on the cards. Pros, cons and break-even.",
     published: "2026-10-29",
-    updated: "2026-10-29",
+    updated: "2026-11-24",
     readingMinutes: 7,
     calculator: "credit-card-payoff",
   },
@@ -183,11 +184,11 @@ export const guides: GuideMeta[] = [
   {
     slug: "apr-vs-apy-aer",
     title: "APR vs APY vs AER Explained: What's the Difference?",
-    seoTitle: "APR vs APY vs AER: What's the Difference?",
+    seoTitle: "AER vs APY: Same Idea, Different Name (UK vs US)",
     description:
-      "APR vs APY vs AER explained: how compounding turns a 5% rate into 5.12% a year, why UK savings quote AER, and what a 24% card APR really costs.",
+      "AER vs APY: both show what savings really earn in a year with compounding. AER is the UK name, APY the US one. A 5% rate paid monthly is 5.12%.",
     published: "2026-10-22",
-    updated: "2026-10-22",
+    updated: "2026-11-24",
     readingMinutes: 7,
     calculator: "compound-interest",
   },
@@ -227,10 +228,11 @@ export const guides: GuideMeta[] = [
   {
     slug: "pay-rise-below-inflation",
     title: "Is a Pay Rise Below Inflation Really a Pay Cut?",
+    seoTitle: "Is a Pay Rise Below Inflation a Pay Cut? Real Pay",
     description:
-      "Is a pay rise (US: raise) below inflation a pay cut? See the real-wage formula, examples at 3%, 4% and 5% raises, and how to make the case for more.",
+      "Yes, in real terms: a 3% pay rise at 5% inflation is a 1.9% pay cut. See the real pay rise formula, raises vs inflation tables and how to ask for more.",
     published: "2026-10-16",
-    updated: "2026-10-16",
+    updated: "2026-11-24",
     readingMinutes: 7,
     calculator: "inflation",
   },
@@ -256,22 +258,22 @@ export const guides: GuideMeta[] = [
   },
   {
     slug: "sip-vs-lump-sum",
-    title: "SIP vs Lump Sum: Which Investing Approach Wins?",
+    title: "Lump Sum vs Monthly Investing (SIP): Which Wins?",
     description:
-      "SIP vs lump sum investing with real numbers: $12,000 now vs $1,000 a month, $60,000 now vs $500 a month, and how to decide which suits you.",
+      "Lump sum vs monthly investing with real numbers: $60,000 now grows to $120,580 against $87,047 for $500 a month over 10 years at 7%. How to decide.",
     published: "2026-10-16",
-    updated: "2026-10-16",
+    updated: "2026-11-24",
     readingMinutes: 8,
     calculator: "sip-return",
   },
   {
     slug: "investment-fees-impact",
     title: "How a 1% Fee Eats Your Returns (With Real Numbers)",
-    seoTitle: "How a 1% Fee Eats Your Returns: Real Numbers",
+    seoTitle: "How Much Does a 1% Fee Cost Over 30 Years?",
     description:
-      "What a 0.25%, 1% or 2% investment fee costs on $100,000 or $500 a month over 20, 30 and 40 years, plus practical ways to cut the fees you pay.",
+      "A 1% fee costs $209,392 (25.8%) of a $100,000 investment over 30 years at 7%. See 0.25%, 1% and 2% fees over 20, 30 and 40 years, and how to cut them.",
     published: "2026-10-16",
-    updated: "2026-10-16",
+    updated: "2026-11-24",
     readingMinutes: 9,
     calculator: "compound-interest",
   },
@@ -289,11 +291,11 @@ export const guides: GuideMeta[] = [
   {
     slug: "balance-transfer-math",
     title: "Balance Transfer Cards: The Real Math (Fees, 0% Periods and Break-Even)",
-    seoTitle: "Balance Transfer Math: Fees, 0% & Break-Even",
+    seoTitle: "Balance Transfer Fees: 1% vs 3% and Break-Even",
     description:
-      "Is a balance transfer worth it? Compare 3% and 5% fees on 15, 18 and 21-month 0% offers against a 24% card, plus break-even, revert-rate risk and UK notes.",
+      "Is a balance transfer worth it? Compare 1% vs 3% fees and 0% promo lengths with break-even: at 24% APR a 3% fee is repaid in 1.5 months. UK notes too.",
     published: "2026-10-10",
-    updated: "2026-10-10",
+    updated: "2026-11-24",
     readingMinutes: 8,
     calculator: "credit-card-payoff",
   },

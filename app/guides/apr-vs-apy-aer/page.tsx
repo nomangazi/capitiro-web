@@ -27,9 +27,10 @@ export default function Page() {
   return (
     <GuideLayout slug={SLUG}>
       <p>
-        APR is the yearly rate <em>before</em> compounding, while APY (US) and AER (UK) are the yearly rate <em>after</em> compounding.{" "}
-        <strong>A 5% rate with interest added monthly is a 5.12% APY or AER, so $10,000 earns $511.62 in a year instead of $500.</strong>{" "}
-        The gap is small for savings but larger for debt: a 24% credit card APR compounded monthly costs an effective 26.82% a year.
+        <strong>AER vs APY: they are the same idea under two names. AER (annual equivalent rate) is the UK term and APY (annual percentage yield) is the US term, and both show what a savings account really pays in a year once interest on interest is included.</strong>{" "}
+        A 5% rate with interest added monthly is a 5.12% APY or AER, so $10,000 earns $511.62 in a year instead of $500. APR is the
+        different one: it is the yearly rate <em>before</em> compounding. The gap is small for savings but larger for debt: a 24%
+        credit card APR compounded monthly costs an effective 26.82% a year.
       </p>
 
       <h2>Key takeaways</h2>
@@ -46,6 +47,14 @@ export default function Page() {
           tax, fees or promotional changes. Rates are illustrative, not current market rates. The arithmetic is identical in any
           currency, so $10,000 can be read as £10,000 or €10,000. Figures are rounded to the cent.
         </small>
+      </p>
+
+      <h2>What is the difference between AER and APY?</h2>
+      <p>
+        In practice, none: AER and APY are the same calculation, (1 + rate ÷ n)<sup>n</sup> − 1, given different names by UK and US
+        providers. A 5.00% AER and a 5.00% APY both turn $10,000 into $10,500.00 after a year. What differs is the surrounding
+        rules, such as how a bank quotes the figure, whether it is before tax, and whether the rate is fixed or can change, so
+        always check the account terms. Use the same name for like-for-like comparisons: AER with AER, APY with APY.
       </p>
 
       <h2>What do APR, APY and AER mean?</h2>
@@ -213,6 +222,30 @@ export default function Page() {
         Financial Conduct Authority{" "}
         <a href="https://www.fca.org.uk/consumers" target="_blank" rel="noopener noreferrer">consumer pages</a>. This guide is general
         information, not financial advice.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>What is the difference between AER and APY?</h3>
+      <p>
+        There is no difference in the maths. AER is the UK name and APY is the US name for the yearly interest rate including
+        compounding. A 5% stated rate paid monthly is 5.1162% on either label. Check the account terms for tax treatment and whether
+        the rate can change.
+      </p>
+      <h3>Is AER higher than APY?</h3>
+      <p>
+        Not by definition. A 5.00% AER and a 5.00% APY earn the same: $500.00 on $10,000 in a year. Two accounts can still pay
+        different amounts if their rates, fees or conditions differ, so compare the figure itself, not the label.
+      </p>
+      <h3>Is AER the same as APR?</h3>
+      <p>
+        No. APR is the yearly rate before compounding, while AER includes it. A 5% APR compounded monthly equals a 5.12% AER, which
+        is $11.62 more on $10,000 than a flat 5%. See the{" "}
+        <Link href="/calculators/compound-interest">compound interest calculator</Link> to try other rates.
+      </p>
+      <h3>How do I convert an APR to APY or AER?</h3>
+      <p>
+        Use (1 + APR ÷ n)<sup>n</sup> − 1, where n is how many times a year interest is added. Monthly is n = 12 and daily is n = 365.
+        For 5%, monthly gives 5.1162% and daily gives 5.1267%.
       </p>
     </GuideLayout>
   );

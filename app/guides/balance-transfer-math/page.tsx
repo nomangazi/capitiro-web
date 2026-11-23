@@ -209,6 +209,72 @@ export default function Page() {
         lower your current rate, the more the fee matters.
       </p>
 
+      <h2>Is a 1% or a 3% balance transfer fee better? Comparing total cost and break-even</h2>
+      <p>
+        A lower fee is cheaper on the same offer, but the promo length can outweigh it. On $6,000 a 1% fee is $60 and a 3% fee is
+        $180, a $120 difference (on $10,000 it is $100 against $300). The table compares offers at the same $300 monthly payment,
+        with total cost = fee + interest on whatever is left once the 0% period ends, charged at an assumed 24% revert rate.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>0% offer</th>
+            <th>Fee</th>
+            <th>Left when promo ends</th>
+            <th>Total cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12 months, 1% fee</td>
+            <td>$60</td>
+            <td>$2,460</td>
+            <td>$314</td>
+          </tr>
+          <tr>
+            <td>15 months, 1% fee</td>
+            <td>$60</td>
+            <td>$1,560</td>
+            <td>$164</td>
+          </tr>
+          <tr>
+            <td>18 months, 1% fee</td>
+            <td>$60</td>
+            <td>$660</td>
+            <td>$82</td>
+          </tr>
+          <tr>
+            <td>15 months, 3% fee</td>
+            <td>$180</td>
+            <td>$1,680</td>
+            <td>$300</td>
+          </tr>
+          <tr>
+            <td>18 months, 3% fee</td>
+            <td>$180</td>
+            <td>$780</td>
+            <td>$210</td>
+          </tr>
+          <tr>
+            <td>21 months, 3% fee</td>
+            <td>$180</td>
+            <td>$0</td>
+            <td>$180</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        With the same 18-month promo, the 1% fee saves about $127 over the 3% fee ($82 against $210). The promo length changes the
+        ranking, though. A 15-month offer with a 1% fee ($164) beats an 18-month offer with a 3% fee ($210) by about $45, but a
+        12-month offer with a 1% fee ($314) costs about $104 more than that 18-month, 3% offer. As a rule, an extra promo month is worth
+        a higher fee only when the interest it saves is larger than the extra fee, here $120.
+      </p>
+      <p>
+        The break-even for the fee itself comes fast. At 24% the monthly interest is $120 on $6,000, so a 1% fee ($60) is repaid
+        within the first month and a 3% fee ($180) by month 2, when $236 of interest has been avoided. The formula from above gives
+        the same answer: 1 ÷ 2 = 0.5 months and 3 ÷ 2 = 1.5 months.
+      </p>
+
       <h2>When is a balance transfer not worth it?</h2>
       <p>The savings shrink in two situations. The first is paying the debt off quickly. Here is an 18-month offer on $6,000 at 24%:</p>
       <table>
@@ -380,7 +446,32 @@ export default function Page() {
       <h2>What should I do next?</h2>
       <p>
         Add the fee to your balance, divide by the promo months and check that the payment fits your budget. If it does, compare
-        the total cost with staying. If it does not, plan for the leftover balance before you apply.
+        the total cost with staying. If it does not, plan for the leftover balance before you apply. If a transfer is not available to
+        you, a loan may be the alternative: see{" "}
+        <Link href="/guides/debt-consolidation-loans">debt consolidation loans: pros and cons</Link>.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Is a 1% or 3% balance transfer fee better?</h3>
+      <p>
+        On the same offer, 1% is cheaper: on $6,000 it is $60 against $180. But compare the total cost. A 1% fee with a 12-month
+        0% period costs about $314 on a $300 monthly payment, more than a 3% fee with 18 months ($210), because more is left to
+        accrue interest at the revert rate.
+      </p>
+      <h3>How do I calculate the break-even point on a balance transfer?</h3>
+      <p>
+        Break-even months ≈ fee % ÷ (existing APR ÷ 12). At 24% APR a 3% fee breaks even in 1.5 months and a 1% fee in 0.5 months.
+        For two competing offers, add each fee to the interest charged after its promo ends and pick the lower total.
+      </p>
+      <h3>Is a balance transfer worth it?</h3>
+      <p>
+        It is when the interest you avoid during the 0% period is larger than the fee and you clear the balance in time. For $6,000
+        at 24% with $300 a month, an 18-month offer with a 3% fee costs about $210 against $1,739 of interest by staying put.
+      </p>
+      <h3>What happens when the 0% period ends?</h3>
+      <p>
+        Whatever is left is charged the card&apos;s regular APR. In the 18-month, 3% example $780 is left, and at an assumed 24%
+        revert rate it is cleared in 3 more months for $30 of interest. Check the real revert rate in your offer.
       </p>
     </GuideLayout>
   );

@@ -197,6 +197,39 @@ export default function Page() {
         <Link href="/guides/how-long-to-pay-off-credit-card">how long to pay off a credit card</Link>. This guide is general
         information, not financial advice.
       </p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Is a debt consolidation loan worth it?</h3>
+      <p>
+        It is when the loan&apos;s all-in cost (interest plus fees) is clearly below what you would pay on the existing debts and the
+        cards stay paid off. In the example, $15,000 at 24% costs $5,598.09 as an 11%, 5-year loan with a 5% fee, against $10,891.17
+        if the cards are cleared over the same 5 years. The break-even is month 6.
+      </p>
+      <h3>When is debt consolidation a bad idea?</h3>
+      <p>
+        When the rate gap is small, the fee is large, the term is stretched or you keep spending on the cards. The same loan at 22%
+        instead of 11% costs $11,165.29, which is $274.12 more than clearing the cards over 5 years. A 7-year term costs $7,709.76
+        against $3,609.38 for 3 years.
+      </p>
+      <h3>Is a debt consolidation loan or a balance transfer cheaper?</h3>
+      <p>
+        A 0% balance transfer can cost less if you qualify and clear most of the balance in the promo: $4,645.19 for the 18-month,
+        3% fee offer against $5,598.09 for the loan here. The loan has a fixed end date and no revert rate. Compare both on total
+        cost, using <Link href="/guides/balance-transfer-math">balance transfer math</Link> and{" "}
+        <Link href="/guides/personal-loan-vs-credit-card">personal loan vs credit card</Link>.
+      </p>
+      <h3>Does a debt consolidation loan hurt your credit score?</h3>
+      <p>
+        Applying usually involves a credit check, which can temporarily lower a score, and effects vary by lender and country.
+        Paying the new loan on time and keeping the old cards near zero is what helps. Ask the lender whether it uses a soft check
+        to show your rate before a full application.
+      </p>
+      <h3>What if I can only afford the minimum payments?</h3>
+      <p>
+        Minimum payments mostly cover interest, which is why balances last so long: see{" "}
+        <Link href="/guides/minimum-payment-trap">the credit card minimum payment trap</Link>. If you cannot meet payments, speak to
+        a free, regulated debt advice service before taking on more credit.
+      </p>
     </GuideLayout>
   );
 }
