@@ -65,7 +65,7 @@ Rules of thumb:
 - Pinning at a steady pace beats bursts. Never post more than 5 new pins in a day.
 - When a new guide ships, post its pin within a week.
 
-### 1.5 Pin entries: guides (20)
+### 1.5 Pin entries: guides (22)
 
 Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination: `https://www.capitiro.com/guides/<slug>`.
 
@@ -208,6 +208,20 @@ Pin image URL pattern: `https://www.capitiro.com/pin/guides/<slug>`. Destination
 - Destination: https://www.capitiro.com/guides/how-much-will-500-a-month-grow
 - Title: How Much Will $500 a Month Grow To? 10 to 40 Years
 - Description: How much will $500 a month grow to? At an assumed 6% a year, it becomes about $81,940 in 10 years, $231,020 in 20 years, $502,258 in 30 years and $995,745 in 40 years, with end-of-month contributions and monthly compounding. See the table for 4%, 6%, 8% and 10%, how much of the balance is growth, and why one extra percentage point matters (5% vs 6% over 30 years is $416,129 vs $502,258). Hypothetical constant returns, fees and taxes ignored. Returns are not guaranteed.
+
+#### Cash-out refinance
+- Board: Mortgage and Home Buying Tips
+- Image: https://www.capitiro.com/pin/guides/cash-out-refinance
+- Destination: https://www.capitiro.com/guides/cash-out-refinance
+- Title: Cash-Out Refinance: When Does It Make Sense?
+- Description: A cash-out refinance charges the new rate on your whole balance, not just the cash. In our example, keeping a 3.25% mortgage and borrowing $50,000 separately at 8.5% costs $1,925.55 a month for 10 years, while a 6.75% cash-out refinance costs $2,123.89 a month for 30 years and adds about $288,984 of interest over the full terms. See the comparison with a HELOC, home equity loan and personal loan, and how to decide. Assumed rates, not quotes.
+
+#### Fixed vs variable rate mortgage
+- Board: Mortgage and Home Buying Tips
+- Image: https://www.capitiro.com/pin/guides/fixed-vs-variable-rate-mortgage
+- Destination: https://www.capitiro.com/guides/fixed-vs-variable-rate-mortgage
+- Title: Fixed vs Variable Rate Mortgage: Which Is Better?
+- Description: On a $300,000 30-year loan, a fixed 6.5% costs $1,896 a month and a variable loan starting at an assumed 5.5% costs $1,703. If the variable rate rises 2 points after 5 years, the payment jumps to $2,050 and total interest ends up $34,517 higher than fixed. The variable loan only wins if its rate averages below about 6.85% after year 5. US ARMs, UK fixes and trackers, and EU Euribor loans explained. Assumed rates, not advice.
 
 ### 1.6 Pin entries: calculators (8)
 

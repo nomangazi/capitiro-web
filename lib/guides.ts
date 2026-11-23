@@ -16,6 +16,26 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "cash-out-refinance",
+    title: "Cash-Out Refinance: When Does It Make Sense?",
+    description:
+      "A $50,000 cash-out refinance at an assumed 6.75% adds $288,984 of interest versus keeping a 3.25% loan and borrowing the cash separately at 8.5%.",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readingMinutes: 7,
+    calculator: "refinance",
+  },
+  {
+    slug: "fixed-vs-variable-rate-mortgage",
+    title: "Fixed vs Variable Rate Mortgage: Which Is Better?",
+    description:
+      "On a $300,000 loan, a fixed 6.5% costs $1,896 a month and an assumed 5.5% variable $1,703, but a 2-point rise after 5 years adds $34,517 in interest.",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readingMinutes: 7,
+    calculator: "mortgage",
+  },
+  {
     slug: "how-much-car-can-i-afford",
     title: "How Much Car Can I Afford? The 20/4/10 Rule",
     description:
