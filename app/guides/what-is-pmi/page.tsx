@@ -354,7 +354,7 @@ export default function Page() {
         <li>Get PMI quotes at your actual credit score and at two or three down payment levels.</li>
         <li>Work out the date you will reach 80% with and without extra payments.</li>
         <li>Compare the total PMI to the cost of waiting, using the moving-target idea above.</li>
-        <li>Confirm the full payment, including taxes and insurance, still fits your budget.</li>
+        <li>Confirm the full payment, including taxes and insurance, still fits your budget. See <Link href="/guides/mortgage-payment-with-taxes-insurance-pmi">how PITI adds up with taxes, insurance and PMI</Link>.</li>
         <li>Check whether a lower-rate, longer or shorter loan fits better. See the <Link href="/guides/15-vs-30-year-mortgage">15-year vs 30-year mortgage guide</Link>.</li>
       </ol>
       <p>Figures here are illustrations based on the stated assumptions, not offers or advice.</p>

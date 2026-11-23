@@ -145,7 +145,8 @@ export default function MortgagePage() {
           <p>
             The 5% down payment costs about $538 more each month than 20% down, but needs $60,000 less cash up front. PMI rates vary
             with your credit score and down payment, so replace 0.5% with the rate on your quote. Read{" "}
-            <a href="/guides/what-is-pmi">what PMI is and how to avoid it</a> for the ways to shorten or skip it.
+            <a href="/guides/what-is-pmi">what PMI is and how to avoid it</a> for the ways to shorten or skip it, or{" "}
+            <a href="/guides/mortgage-payment-with-taxes-insurance-pmi">how tax, insurance and PMI add up in a full monthly payment</a>.
           </p>
 
           <h2>What the mortgage calculator does not include</h2>

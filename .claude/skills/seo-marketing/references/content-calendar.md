@@ -32,6 +32,8 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | 22 | Roth vs traditional 401(k) | How long to become a millionaire? | retirement, compound-interest |
 | 23 | How to save $10,000 in a year | — | savings-goal |
 
+Added from Search Console demand (not a calendar week): "Mortgage Payment With Taxes, Insurance and PMI (PITI) Explained" (`/guides/mortgage-payment-with-taxes-insurance-pmi`, 2026-11-24), targeting "mortgage calculator with pmi and taxes", "mortgage calculator with tax and pmi" and "pmi payment".
+
 Weeks 17–21 focus on car loans and home buying: the auto-loan and home-affordability calculators already get Google
 traffic, so this cluster comes first. Every car/home guide links to auto-loan or home-affordability (and mortgage).
 
