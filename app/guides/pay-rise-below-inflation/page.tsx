@@ -52,7 +52,7 @@ export default function Page() {
         </small>
       </p>
 
-      <h2>How do you calculate whether a pay rise beats inflation?</h2>
+      <h2>How do you calculate a real pay rise and whether it beats inflation?</h2>
       <p>
         <strong>Real pay change = (1 + raise) ÷ (1 + inflation) − 1</strong>
       </p>
@@ -287,6 +287,34 @@ export default function Page() {
         and Eurostat&apos;s{" "}
         <a href="https://ec.europa.eu/eurostat/web/hicp" target="_blank" rel="noopener noreferrer">harmonised index of consumer prices (HICP)</a>{" "}
         for the euro area. We do not quote a current rate here because it changes every month.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Is a pay rise below inflation a pay cut?</h3>
+      <p>
+        In real terms, yes. Your pay is higher in cash, but prices rose faster, so it buys less. A 3% raise at 5% inflation takes
+        $60,000 to $61,800, which is worth $58,857 in last year&apos;s prices, a real cut of 1.9%.
+      </p>
+      <h3>How do I calculate a real pay rise?</h3>
+      <p>
+        Real pay rise = (1 + raise) ÷ (1 + inflation) − 1. For a 4% raise with 2.5% inflation the real change is 1.04 ÷ 1.025 − 1 =
+        +1.5%. The shortcut raise − inflation is close for small rates. Use the{" "}
+        <Link href="/calculators/inflation">inflation calculator</Link> to run it with your own salary.
+      </p>
+      <h3>What pay rise do I need to keep up with inflation?</h3>
+      <p>
+        Multiply your salary by (1 + inflation). At 5% inflation a $60,000 salary needs to reach $63,000 just to stand still, and
+        a raise of about 6.05% to gain 1% in real terms.
+      </p>
+      <h3>Is a pay freeze a pay cut?</h3>
+      <p>
+        Yes, in real terms. A 0% raise at 4% inflation leaves $60,000 worth $57,692 in last year&apos;s prices, a real cut of 3.8%.
+      </p>
+      <h3>What should I do with savings if inflation is above my pay rise?</h3>
+      <p>
+        Compare the rate your savings earn with inflation, because cash that earns less loses buying power too. Our guides to{" "}
+        <Link href="/guides/high-yield-savings-vs-cds">high-yield savings vs CDs</Link> and{" "}
+        <Link href="/guides/real-vs-nominal-returns">real vs nominal returns</Link> explain how to check.
       </p>
     </GuideLayout>
   );

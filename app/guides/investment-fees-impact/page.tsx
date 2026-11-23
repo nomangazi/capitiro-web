@@ -396,6 +396,31 @@ export default function Page() {
         This guide is general education, not personal financial advice. Figures use hypothetical constant returns and are not
         forecasts.
       </p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>How much does a 1% fee cost over 30 years?</h3>
+      <p>
+        At a 7% gross return, a 1% annual fee costs 25.8% of the final balance over 30 years. $100,000 grows to $602,258 instead of
+        $811,650, a loss of $209,392. The loss scales with the amount: on $10,000 it is $20,939 ($60,226 instead of $81,165). With
+        $500 a month the final balance is $502,258 instead of $609,985, a loss of $107,727 (17.7%).
+      </p>
+      <h3>Does a 1% fee mean I lose 1% of my money?</h3>
+      <p>
+        No. The fee is charged every year on the whole balance, including past growth, so the share lost compounds: 18.0% after 20
+        years, 25.8% after 30 and 32.8% after 40 on a $100,000 lump sum.
+      </p>
+      <h3>Is a 1% fee a lot compared with 0.25%?</h3>
+      <p>
+        Over 30 years on $100,000, a 0.25% fee costs $58,325 and a 1% fee costs $209,392, about 3.6 times as much for the same
+        gross return. Check what you get for the extra cost, since fees are one factor next to risk, diversification and advice.
+      </p>
+      <h3>How can I see what fees cost on my own investments?</h3>
+      <p>
+        Enter your balance, monthly amount and years in the{" "}
+        <Link href="/calculators/compound-interest">compound interest calculator</Link> twice, once at your gross return and once at
+        that return minus your total fee. For the effect of regular saving over time, see{" "}
+        <Link href="/guides/how-much-will-500-a-month-grow">how much $500 a month will grow to</Link>.
+      </p>
     </GuideLayout>
   );
 }

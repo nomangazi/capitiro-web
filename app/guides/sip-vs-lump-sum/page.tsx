@@ -12,10 +12,10 @@ export default function Page() {
   return (
     <GuideLayout slug={SLUG}>
       <p>
-        If you already have the money, investing it all at once ends with more in the account than spreading it out, as long as
-        the investment keeps rising, simply because every dollar is invested for longer. Investing a fixed amount every month, which
+        <strong>Lump sum or monthly investment? If you already have the money, investing it all at once ends with more in the account than spreading it out, as long as
+        the investment keeps rising, simply because every dollar is invested for longer.</strong> Investing a fixed amount every month, which
         people call a SIP, dollar-cost averaging or regular investing, wins on a different measure: it is easier to start, easier to
-        stick to, and it limits the regret of putting everything in just before a fall. This guide puts numbers on both sides and
+        stick to, and it limits the regret of putting everything in just before a fall. This guide compares lump sum vs monthly investing with numbers on both sides and
         shows how to choose.
       </p>
 
@@ -42,7 +42,7 @@ export default function Page() {
         <em>phasing in</em>: splitting a lump sum you already hold into equal instalments over several months.
       </p>
 
-      <h2>Which ends with more money: a lump sum or monthly investing?</h2>
+      <h2>Lump sum or monthly investment: which ends with more money?</h2>
       <p>
         We tested both with a constant annual return, compounded monthly, with no fees or taxes. Monthly amounts are invested at the
         start of each month. The first example compares $12,000 invested today with $1,000 a month for 12 months, measured at the
@@ -222,7 +222,7 @@ export default function Page() {
         pays out if prices drop early. Shorter phasing periods cost less and also protect less.
       </p>
 
-      <h2>How do lump sum and monthly investing compare?</h2>
+      <h2>Lump sum vs monthly investing: how do they compare?</h2>
       <table>
         <thead>
           <tr>
@@ -260,7 +260,7 @@ export default function Page() {
         </tbody>
       </table>
 
-      <h2>How should you decide between them?</h2>
+      <h2>How do you decide between a lump sum and monthly investments?</h2>
       <ol>
         <li><strong>Check where the money comes from.</strong> If it is monthly income, invest monthly and automate it. The question is settled.</li>
         <li><strong>If you hold a lump sum, check your time horizon.</strong> The longer you will stay invested, the less a few months of phasing matters either way.</li>
@@ -295,6 +295,31 @@ export default function Page() {
       <p>
         This guide is general education, not personal financial advice. Investments can fall as well as rise, and past performance
         does not predict future returns.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <h3>Is it better to invest a lump sum or monthly?</h3>
+      <p>
+        If you hold the money now and the market rises, a lump sum has come out ahead on average because it is invested for longer: at
+        7% over 10 years, $60,000 invested now becomes about $120,580 against $87,047 for $500 a month. If the money arrives as salary,
+        monthly investing is the practical plan, and it also lowers timing regret.
+      </p>
+      <h3>How do I decide between a lump sum and monthly investments?</h3>
+      <p>
+        Start with where the money comes from. Income means investing monthly. A lump sum you could invest now means weighing the
+        higher expected result against how you would cope with a fall soon after investing. If a drop would make you sell, phasing in
+        over 12 months costs up to $3,773 at 7% on $60,000 over 10 years. That is the price of a smoother start.
+      </p>
+      <h3>Is monthly investing the same as dollar-cost averaging?</h3>
+      <p>
+        Yes, for regular contributions. Dollar-cost averaging, pound-cost averaging and a SIP all mean investing a fixed amount on
+        a schedule. Read more in our guide to <Link href="/guides/dollar-cost-averaging">dollar-cost averaging</Link>.
+      </p>
+      <h3>Can I turn a lump sum into monthly income?</h3>
+      <p>
+        A common guideline is to withdraw about 4% of the pot a year, which on $300,000 is $12,000 a year, or $1,000 a month. That is
+        a rule of thumb, not a guarantee, and it depends on returns, fees, tax and how long the money must last. See{" "}
+        <Link href="/guides/4-percent-rule">the 4% rule explained</Link> for the limits.
       </p>
     </GuideLayout>
   );
