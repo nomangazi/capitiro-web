@@ -1,6 +1,6 @@
 # Content calendar
 
-Two guides per week. Each guide: 900–1,500 words, a worked example with verified numbers, a comparison table,
+Four guides per week (Monday 2, Thursday 1, Saturday 1); scheduled runs take the next unpublished guides in table order. Each guide: 900–1,500 words, a worked example with verified numbers, a comparison table,
 a "how to decide" section and links to 1–2 calculators. After publishing, make 3 Pinterest pins and answer
 2 related Reddit/Quora questions.
 
@@ -24,7 +24,15 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | ✅ 14 | Sinking funds: save for irregular costs | How much will $500 a month grow to? | savings-goal, compound-interest |
 | ✅ 15 | Bi-weekly mortgage payments: do they save money? | Personal loan vs credit card: which costs less? | loan-amortization, credit-card-payoff |
 | ✅ 16 | How much car can I afford? (20/4/10 rule) | Cash-out refinance: when does it make sense? | auto-loan, refinance |
-| 17 | Fixed vs variable rate mortgages (US, UK, EU) | Roth vs traditional 401(k) | mortgage, retirement |
-| 18 | How long to become a millionaire? | How to save $10,000 in a year | compound-interest, savings-goal |
+| 17 | ✅ Fixed vs variable rate mortgages (US, UK, EU) | How much down payment for a house: 5% vs 10% vs 20% | mortgage, home-affordability |
+| 18 | Lease vs buy a car: the full cost | Should you pay off your car loan early? | auto-loan |
+| 19 | How mortgage rates change how much house you can afford | Debt-to-income ratio explained (and how lenders use it) | home-affordability, mortgage |
+| 20 | New vs used car: total cost over 5 years | How big a car down payment should you make? | auto-loan |
+| 21 | The true monthly cost of owning a home (tax, insurance, upkeep) | Upside-down car loan: negative equity explained | home-affordability, auto-loan |
+| 22 | Roth vs traditional 401(k) | How long to become a millionaire? | retirement, compound-interest |
+| 23 | How to save $10,000 in a year | — | savings-goal |
+
+Weeks 17–21 focus on car loans and home buying: the auto-loan and home-affordability calculators already get Google
+traffic, so this cluster comes first. Every car/home guide links to auto-loan or home-affordability (and mortgage).
 
 By week 6 (about 15 guides plus 8 calculators), apply for AdSense if Search Console shows the pages indexed.
