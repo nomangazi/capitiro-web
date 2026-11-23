@@ -26,6 +26,16 @@ export const guides: GuideMeta[] = [
     calculator: "refinance",
   },
   {
+    slug: "fixed-vs-variable-rate-mortgage",
+    title: "Fixed vs Variable Rate Mortgage: Which Is Better?",
+    description:
+      "On a $300,000 loan, a fixed 6.5% costs $1,896 a month and an assumed 5.5% variable $1,703, but a 2-point rise after 5 years adds $34,517 in interest.",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readingMinutes: 7,
+    calculator: "mortgage",
+  },
+  {
     slug: "how-much-car-can-i-afford",
     title: "How Much Car Can I Afford? The 20/4/10 Rule",
     description:
