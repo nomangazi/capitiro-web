@@ -16,13 +16,15 @@ export const siteConfig = {
   locale: "en_US",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@capitiro.com",
   /** Date the legal pages were last reviewed. Update whenever their content changes. */
-  legalUpdated: "2026-10-10",
+  legalUpdated: "2026-11-26",
   /** Official brand profiles, emitted as Organization `sameAs` and linked from the footer. */
   social: {
     pinterest: "https://www.pinterest.com/capitirofinance/",
   },
   /** Microsoft Clarity project id (heatmaps + session recordings). Public value; override with NEXT_PUBLIC_CLARITY_ID, set to "" to disable. */
   clarityId: process.env.NEXT_PUBLIC_CLARITY_ID ?? "yvn44sv5s0",
+  /** Google Tag Manager / Google tag id (GA4). Public value; override with NEXT_PUBLIC_GTM_ID, set to "" to disable. */
+  gtmId: process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-PJ5BSPX9",
   adsense: {
     /** e.g. "ca-pub-1234567890123456". Ads and ads.txt are disabled while this is empty. */
     client: process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "",

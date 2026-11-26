@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>The numbers you type into our calculators are processed <strong>only in your browser</strong>. We never receive or store them.</li>
         <li>We don&apos;t require accounts and don&apos;t ask for your name, email or financial details.</li>
-        <li>We measure visits with cookieless analytics (Vercel Web Analytics) and study page usability with Microsoft Clarity, with every typed value masked.</li>
+        <li>We measure visits with Vercel Web Analytics and Google Analytics, and study page usability with Microsoft Clarity, with every typed value masked.</li>
         <li>We show ads from Google AdSense. Google and its partners may use cookies to show and measure ads, subject to your consent where required by law.</li>
       </ul>
 
@@ -49,6 +49,18 @@ export default function PrivacyPolicyPage() {
         We use Vercel Web Analytics to understand which pages are visited, from which country and on what type of device. It does
         not use cookies, does not track you across other websites and does not store your IP address; visitors are counted using
         an anonymous identifier that is discarded after 24 hours. We only see aggregated statistics.
+      </p>
+      <h3>Google Analytics</h3>
+      <p>
+        We also use Google Analytics, loaded through Google Tag Manager, to understand how visitors find and use the Site (for
+        example which pages are viewed, how long visits last and which website referred you). Google Analytics uses cookies and
+        similar identifiers. It never receives the numbers you type into our calculators. In the EEA, the UK and Switzerland it
+        runs according to the choice you make in our consent message. Learn more in{" "}
+        <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">
+          how Google uses information from sites that use its services
+        </a>
+        , or opt out with the{" "}
+        <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer" target="_blank">Google Analytics opt-out browser add-on</a>.
       </p>
       <h3>Usability analytics (Microsoft Clarity)</h3>
       <p>
