@@ -6,6 +6,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Clarity } from "@/components/analytics/Clarity";
+import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
 import { SiteChrome } from "@/components/layout/SiteChrome";
 import { JsonLd } from "@/components/site/JsonLd";
 import { websiteJsonLd } from "@/lib/seo";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* Cookieless page-view analytics (Vercel Web Analytics); no consent banner required. */}
         <Analytics />
         <SiteChrome>
+          {siteConfig.gtmId && <GoogleTagManager id={siteConfig.gtmId} />}
           {siteConfig.clarityId && <Clarity projectId={siteConfig.clarityId} />}
           {siteConfig.adsense.client && (
             // Loads AdSense (including Auto ads and Google's consent message for EEA/UK visitors).
