@@ -24,7 +24,7 @@ a "how to decide" section and links to 1–2 calculators. After publishing, make
 | ✅ 14 | Sinking funds: save for irregular costs | How much will $500 a month grow to? | savings-goal, compound-interest |
 | ✅ 15 | Bi-weekly mortgage payments: do they save money? | Personal loan vs credit card: which costs less? | loan-amortization, credit-card-payoff |
 | ✅ 16 | How much car can I afford? (20/4/10 rule) | Cash-out refinance: when does it make sense? | auto-loan, refinance |
-| 17 | ✅ Fixed vs variable rate mortgages (US, UK, EU) | How much down payment for a house: 5% vs 10% vs 20% | mortgage, home-affordability |
+| ✅ 17 | Fixed vs variable rate mortgages (US, UK, EU) | How much down payment for a house: 5% vs 10% vs 20% | mortgage, home-affordability |
 | 18 | Lease vs buy a car: the full cost | Should you pay off your car loan early? | auto-loan |
 | 19 | How mortgage rates change how much house you can afford | Debt-to-income ratio explained (and how lenders use it) | home-affordability, mortgage |
 | 20 | New vs used car: total cost over 5 years | How big a car down payment should you make? | auto-loan |

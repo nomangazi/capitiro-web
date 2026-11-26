@@ -16,6 +16,17 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "how-much-down-payment-for-a-house",
+    title: "How Much Down Payment for a House: 5% vs 10% vs 20%",
+    seoTitle: "Down Payment for a House: 5% vs 10% vs 20%",
+    description:
+      "On a $400,000 home at an assumed 6.5%, 5% down costs $2,560 a month with PMI and $484,669 in interest, versus $2,023 and $408,142 at 20% down.",
+    published: "2026-11-26",
+    updated: "2026-11-26",
+    readingMinutes: 7,
+    calculator: "mortgage",
+  },
+  {
     slug: "mortgage-payment-with-taxes-insurance-pmi",
     title: "Mortgage Payment With Taxes, Insurance and PMI (PITI) Explained",
     seoTitle: "Mortgage Payment With Taxes, Insurance & PMI (PITI)",
