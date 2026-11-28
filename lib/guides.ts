@@ -16,6 +16,17 @@ export interface GuideMeta {
 /** Registry of long-form guides. Each guide lives at app/guides/<slug>/page.tsx. Newest first. */
 export const guides: GuideMeta[] = [
   {
+    slug: "lease-vs-buy-car",
+    title: "Lease vs Buy a Car: The Full Cost",
+    seoTitle: "Lease vs Buy a Car: Total Cost Over 3 and 6 Years",
+    description:
+      "On an assumed $35,000 car, two 3-year leases cost $39,143.04 over 6 years versus $27,018.30 net to buy on a 7% loan, keep 6 years and sell.",
+    published: "2026-11-28",
+    updated: "2026-11-28",
+    readingMinutes: 7,
+    calculator: "auto-loan",
+  },
+  {
     slug: "how-much-down-payment-for-a-house",
     title: "How Much Down Payment for a House: 5% vs 10% vs 20%",
     seoTitle: "Down Payment for a House: 5% vs 10% vs 20%",
