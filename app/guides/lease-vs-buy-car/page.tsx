@@ -14,16 +14,16 @@ const COMPARE = [
   { row: "Monthly payment", lease: "$460.32 for 36 months", buy: "$633.64 for 60 months" },
   { row: "Payments after year 3", lease: "A second lease, same terms", buy: "$633.64 until month 60, then none" },
   { row: "Assumed value when you stop", lease: "Returned, no resale value to you", buy: "$21,000 at year 3, $14,000 at year 6" },
-  { row: "Net cost, 3 years", lease: "$19,571.36", buy: "$18,963.36" },
-  { row: "Net cost, 6 years", lease: "$39,142.72", buy: "$27,018.30" },
+  { row: "Net cost, 3 years", lease: "$19,571.52", buy: "$18,963.36" },
+  { row: "Net cost, 6 years", lease: "$39,143.04", buy: "$27,018.30" },
   { row: "Average per month, 6 years", lease: "$543.65", buy: "$375.25" },
 ];
 
 /** Buy side at different assumed values after 6 years. */
 const RESALE = [
-  { value: "$10,500 (30% of price)", net: "$30,518.30", gap: "$8,624.42" },
-  { value: "$14,000 (40% of price)", net: "$27,018.30", gap: "$12,124.42" },
-  { value: "$17,500 (50% of price)", net: "$23,518.30", gap: "$15,624.42" },
+  { value: "$10,500 (30% of price)", net: "$30,518.30", gap: "$8,624.74" },
+  { value: "$14,000 (40% of price)", net: "$27,018.30", gap: "$12,124.74" },
+  { value: "$17,500 (50% of price)", net: "$23,518.30", gap: "$15,624.74" },
 ];
 
 export default function Page() {
@@ -33,7 +33,7 @@ export default function Page() {
         Leasing means paying to use a car for a set period, while buying means paying for the whole car and keeping what is left of
         its value. Leasing usually has the lower monthly payment, and buying usually costs less the longer you keep the car.{" "}
         <strong>
-          On an assumed $35,000 car, two back-to-back 3-year leases cost $39,142.72 over 6 years, against $27,018.30 net to buy with
+          On an assumed $35,000 car, two back-to-back 3-year leases cost $39,143.04 over 6 years, against $27,018.30 net to buy with
           a 5-year loan at 7%, keep for 6 years and sell.
         </strong>{" "}
         The result depends heavily on the quote, the mileage you drive and what the car is really worth later.
@@ -42,8 +42,8 @@ export default function Page() {
       <h2>Key takeaways</h2>
       <ul>
         <li>The lease payment is lower ($460.32 against $633.64 a month in the example) because you pay for the car&apos;s expected loss in value, not the whole price.</li>
-        <li>Over 3 years the two are close in this example: $19,571.36 to lease against $18,963.36 net to buy and sell.</li>
-        <li>Over 6 years, leasing twice costs $12,124.42 more, because the buyer stops paying after year 5 and still owns a car.</li>
+        <li>Over 3 years the two are close in this example: $19,571.52 to lease against $18,963.36 net to buy and sell.</li>
+        <li>Over 6 years, leasing twice costs $12,124.74 more, because the buyer stops paying after year 5 and still owns a car.</li>
         <li>Everything hinges on the assumed resale value. If the car is worth less than assumed, the buying advantage shrinks.</li>
         <li>Mileage limits, wear charges and early-exit fees can change a lease quote. Read them before comparing payments.</li>
       </ul>
@@ -74,7 +74,7 @@ export default function Page() {
         factor is a lease interest rate written as a small decimal, and multiplying it by 2,400 gives an approximate APR. Ask the
         lessor for it, since it is not always quoted. In the UK, the lease-like products are personal contract hire (PCH), which is
         a pure rental with no option to buy, and personal contract purchase (PCP), which is a loan with a large final payment
-        you can pay, refinance or walk away from. Terms and protections differ across the US, UK and EU.
+        you can pay, refinance or usually walk away from, subject to mileage and condition terms. Terms and protections differ across the US, UK and EU.
       </p>
 
       <h2>How do leasing and buying compare over 3 and 6 years?</h2>
@@ -119,7 +119,7 @@ export default function Page() {
 
       <h2>What if the car is worth less than I assume?</h2>
       <p>
-        Resale value is the least certain input. Here is the buy side after 6 years at three assumed values, against the $39,142.72
+        Resale value is the least certain input. Here is the buy side after 6 years at three assumed values, against the $39,143.04
         lease total. These percentages are hypothetical assumptions, not forecasts for any car.
       </p>
       <table>
@@ -148,7 +148,7 @@ export default function Page() {
 
       <h2>What extra costs can change a lease?</h2>
       <ul>
-        <li><strong>Mileage limits.</strong> Leases set an annual allowance and charge for each mile over it. As an assumed example, 2,000 miles a year over the limit at $0.25 a mile adds $1,500 to each 3-year lease, or $3,000 over two. That would take the 6-year lease total to $42,142.72.</li>
+        <li><strong>Mileage limits.</strong> Leases set an annual allowance and charge for each mile over it. As an assumed example, 2,000 miles a year over the limit at $0.25 a mile adds $1,500 to each 3-year lease, or $3,000 over two. That would take the 6-year lease total to $42,143.04.</li>
         <li><strong>Wear and damage.</strong> Charges at return for dents, tyre or tire wear and interior damage can be significant.</li>
         <li><strong>Early termination.</strong> Ending a lease early can mean paying most of the remaining payments or a large fee.</li>
         <li><strong>Fees and taxes.</strong> Acquisition, disposition and documentation fees apply, and tax rules differ by country and US state.</li>
